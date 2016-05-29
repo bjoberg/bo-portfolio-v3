@@ -1,0 +1,110 @@
+{
+  "Go to a concert on Navy Pier": {
+    "key": "1",
+    "title": "Go to a concert on Navy Pier",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Take a picture in front of the Bean": {
+    "key": "2",
+    "title": "Take a picture in front of the Bean",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Climb the Willis Tower": {
+    "key": "3",
+    "title": "Climb the Willis Tower",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to a Cubs game": {
+    "key": "4",
+    "title": "Go to a Cubs game",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to White Sox game": {
+    "key": "5",
+    "title": "Go to White Sox game",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Ride the ferris wheel on Navy Pier": {
+    "key": "6",
+    "title": "Ride the ferris wheel on Navy Pier",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Get a deep dish pizza from Gino’s": {
+    "key": "7",
+    "title": "Get a deep dish pizza from Gino’s",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Try a new restaurant every week": {
+    "key": "8",
+    "title": "Try a new restaurant every week",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to the shedd aquarium": {
+    "key": "9",
+    "title": "Go to the shedd aquarium",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Segway tour through the city": {
+    "key": "10",
+    "title": "Segway tour through the city",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Have a drink at the 95th floor of the hancock": {
+    "key": "11",
+    "title": "Have a drink at the 95th floor of the hancock",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to the Lincoln Park Zoo": {
+    "key": "12",
+    "title": "Go to the Lincoln Park Zoo",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to Second City": {
+    "key": "13",
+    "title": "Go to Second City",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go on the architectural tour": {
+    "key": "14",
+    "title": "Go on the architectural tour",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to Chicago Premium Outlets": {
+    "key": "15",
+    "title": "Go to Chicago Premium Outlets",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Buy something on Michigan Avenue": {
+    "key": "16",
+    "title": "Buy something on Michigan Avenue",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to Water Tower Mall": {
+    "key": "17",
+    "title": "Go to Water Tower Mall",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Go to Lollapalooza": {
+    "key": "18",
+    "title": "Go to Lollapallooza",
+    "completed": "FALSE",
+    "post": ""
+  }
+}

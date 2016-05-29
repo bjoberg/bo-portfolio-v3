@@ -1,0 +1,24 @@
+{
+  "name": "express-blog",
+  "version": "1.0.0",
+  "description": "This application was built using [Express.js](http://expressjs.com/). Development was based off of a Treehouse tutorial - [Express Basics](https://teamtreehouse.com/library/express-basics).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjoberg/express-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjoberg/express-blog/issues"
+  },
+  "homepage": "https://github.com/bjoberg/express-blog#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "material-design-lite": "^1.1.3"
+  }
+}

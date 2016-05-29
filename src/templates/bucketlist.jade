@@ -1,0 +1,30 @@
+extends ./layout
+
+block content
+  section#bucketlist
+    .container
+      .row
+        h1 The Bucketlist
+        .col-lg-12
+          table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+            thead
+              tr
+                th Item
+                th Description
+                th More info
+            tbody
+              for item in bucketlist
+                - var completed = item.completed
+                if completed === "FALSE"
+                  tr
+                    td #{item.key}
+                    td #{item.title}
+                    td 
+                else 
+                  tr.completed
+                    td 
+                      label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect(for="#{item.key}")
+                        input(type="checkbox" id="#{item.key}" checked disabled).mdl-checkbox__input
+                    td #{item.title}
+                    td 
+                      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.page-scroll(href='#{item.post}') Blog post
