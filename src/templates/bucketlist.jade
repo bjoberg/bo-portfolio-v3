@@ -4,8 +4,8 @@ block content
   section#bucketlist
     .container
       .row
-        h1 The Bucketlist
         .col-lg-12
+          h1 The Bucketlist
           table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
             thead
               tr
@@ -27,4 +27,4 @@ block content
                         input(type="checkbox" id="#{item.key}" checked disabled).mdl-checkbox__input
                     td #{item.title}
                     td 
-                      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.page-scroll(href='#{item.post}') Blog post
+                      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.page-scroll(href='blog/#{item.post}') Blog post

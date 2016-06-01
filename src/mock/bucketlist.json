@@ -8,8 +8,8 @@
   "Take a picture in front of the Bean": {
     "key": "2",
     "title": "Take a picture in front of the Bean",
-    "completed": "FALSE",
-    "post": ""
+    "completed": "TRUE",
+    "post": "The%20Chicago%20Bean"
   },
   "Climb the Willis Tower": {
     "key": "3",
@@ -79,7 +79,7 @@
   },
   "Go on the architectural tour": {
     "key": "14",
-    "title": "Go on the architectural tour",
+    "title": "Chicago architecture river cruise",
     "completed": "FALSE",
     "post": ""
   },
@@ -104,6 +104,18 @@
   "Go to Lollapalooza": {
     "key": "18",
     "title": "Go to Lollapallooza",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Take a picture in front of the Buckingham Fountain": {
+    "key": "19",
+    "title": "Take a picture in front of the Buckingham Fountain",
+    "completed": "FALSE",
+    "post": ""
+  },
+  "Chicago city hop-on hop-off tour": {
+    "key": "20",
+    "title": "Chicago city hop-on hop-off tour",
     "completed": "FALSE",
     "post": ""
   }
