@@ -387,7 +387,7 @@ body {
 /******************* MATERIAL DESIGN CHANGES *****************/
 .blog-card-square.mdl-card {
   width: 100%;
-  height: 500px;
+  min-height: 500px;
 }
 .blog-card-square > .mdl-card__title {
   color: #fff;

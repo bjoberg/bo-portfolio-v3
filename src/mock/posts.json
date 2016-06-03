@@ -1,4 +1,14 @@
 {
+  "The Buckingham Fountain": {
+    "key": "3",
+    "title": "The Buckingham Fountain",
+    "date":"May 30, 2016",
+    "teaser": "On Monday- May 30th, it was my first official day living in Chicago for the summer...",
+    "description": "<hr class='green'><p class='post'><b>Written by: </b><a href='https://www.facebook.com/hayli.richman?fref=ts'>Hayli Richman</a><br><br>On Monday- May 30th, it was my first official day living in Chicago for the summer. Brett, our friend Lindsay, and I decided to spend some time outside on the sunny, 80-degree day. We began walking from our apartment at Dwight Lofts to Grant Park. We are very fortunate that Grant Park is only a 10-minute walk from where we are living.<br><br>Once in transit, we ventured through Grant Park, The Art Institute of Chicago’s garden, Millennium Park, and the Lakefront Path (stopping to take numerous pictures of course).  Finally, we reached our final destination of The Buckingham Fountain.<br><br>The Buckingham Fountain is total eye candy. The architecture is beautiful, the fountain itself is massive, and part of the Chicago skyline lies behind it. This creates a flawless background for any picture-perfect moment. The fountain runs from 8am to 11pm every day from April to October, and is also known for its major water displays that occur every hour on the hour. They last for 20 minutes and shoot water to a height of 150 feet in the air. Unfortunately, we did not arrive at a time to witness this spectacular display, so we will have to go back soon to get a glimpse of it.<br><br>Brett and I went to dinner with my grandparents the night before and they offered to drive us around and give us a quick tour of the city. We drove passed The Buckingham Fountain that evening and saw how the fountain is lit up at night. We also noticed that at this time of night, a large crowd forms around the fountain to witness the water works at hand because at around 10:30pm, lights and music accompany the show. I definitely want to go back to the fountain at this time for the experience of the water, lights, and music in unison.<br><br>All and all, The Buckingham Fountain is a must see when visiting Chicago during the summertime. The fountain’s history, structure, location, and water show make it one of the most beautiful parts of the city. I believe Brett, Lindsay, and I would all agree that it is worth visiting.</p><img src='/static/img/blog/chicago/buckingham-fountain/buckingham-brett-hayli.jpg' class='img-responsive wow bounceIn' alt='Buckingham Fountain, Brett Oberg and Hayli Richman' />",
+    "mainImage": "buckingham-fountain/buckingham-fountain.jpg",
+    "cardImage": "buckingham-fountain/buckingham-fountain-small.jpg",
+    "imageGallery": "https://goo.gl/photos/5BYgHGZ8C2JUXQQX8"
+  },
   "The Chicago Bean": {
     "key": "2",
     "title": "The Chicago Bean",

@@ -110,8 +110,8 @@
   "Take a picture in front of the Buckingham Fountain": {
     "key": "19",
     "title": "Take a picture in front of the Buckingham Fountain",
-    "completed": "FALSE",
-    "post": ""
+    "completed": "TRUE",
+    "post": "The%20Buckingham%20Fountain"
   },
   "Chicago city hop-on hop-off tour": {
     "key": "20",
