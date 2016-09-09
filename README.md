@@ -12,7 +12,7 @@ Portfolio website.
 
 ## Credits
 
-[Treehouse Tutorial - Express Basics](https://teamtreehouse.com/library/express-basics)
+Treehouse Tutorial - [Express Basics](https://teamtreehouse.com/library/express-basics)
 
 ## License
 
