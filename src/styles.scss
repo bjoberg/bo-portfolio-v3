@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-$primary: #A20000;
+/* Color Palette */
+//$primary: 
+//$secondary:
+//$accent:
+$white: rgb(250,250,250);
+$black: rgb(0,0,0);
 
-h1 {
-    color: $primary;
+head, body {
+    background-color: $white;
+    font-family: 'Poppins', sans-serif !important;
+    color: $black;
 }
