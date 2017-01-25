@@ -1,0 +1,101 @@
+$primary: #009688;
+$secondary: #135951;
+$light-gray: #BDBDBD;
+$dark-gray: #424242;
+$black: #000000;
+$white: #ffffff;
+
+.container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.font-primary {
+    color: $primary;
+}
+
+.font-secondary {
+    color: $secondary;
+}
+
+#profile-picture {
+   
+}
+
+#profile-content {
+    
+}
+
+h1 {
+    color: $black;
+    font-weight: 700;
+    font-size: 25px;
+    
+}
+
+h2 {
+    color: $dark-gray;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+h3 {
+    color: $light-gray;
+    font-weight: 300;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+li {
+    color: $dark-gray;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul.horizontal-list li {
+    display: inline;
+    padding-right: 3px;
+}
+
+a {
+    color: $dark-gray;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+a:hover {
+    color: $primary !important;
+    padding-bottom: 2px !important;
+    border-bottom: solid 2px $primary !important;
+}
+
+ul.vertical-list li a:hover::after {
+    content: " ->";
+}
+
+a:visited {
+    color: $dark-gray;
+    padding-bottom: 2px;
+    border-bottom: none;
+}
