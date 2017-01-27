@@ -10,6 +10,7 @@ $white: #ffffff;
     margin-bottom: 100px;
     margin-right: 100px;
     margin-left: 100px;
+    max-width: 2000px;
 }
 
 .no-padding {
@@ -20,27 +21,18 @@ $white: #ffffff;
     margin: 0px !important;
 }
 
-.font-primary {
-    color: $primary;
-}
-
-.font-secondary {
-    color: $secondary;
-}
-
 #profile-picture {
-   
+   margin-right: 50px;
 }
 
 #profile-content {
-    
+    // TODO
 }
 
 h1 {
     color: $black;
     font-weight: 700;
     font-size: 25px;
-    
 }
 
 h2 {
@@ -98,4 +90,14 @@ a:visited {
     color: $dark-gray;
     padding-bottom: 2px;
     border-bottom: none;
+}
+
+@media (max-width: 960px) {
+    #profile-picture {
+        margin-right: 0px;
+    }
+
+    #profile-content {
+        margin-top: 50px;
+    }
 }
