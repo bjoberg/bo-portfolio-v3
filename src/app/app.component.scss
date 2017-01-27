@@ -82,10 +82,6 @@ a:hover {
     border-bottom: solid 2px $primary !important;
 }
 
-ul.vertical-list li a:hover::after {
-    content: " ->";
-}
-
 a:visited {
     color: $dark-gray;
     padding-bottom: 2px;

@@ -73,7 +73,4 @@ export class AppComponent {
   }
 
   // General class methods
-  public addArrow() {
-
-  }
 }
