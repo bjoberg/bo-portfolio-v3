@@ -6,10 +6,10 @@ $black: #000000;
 $white: #ffffff;
 
 .container {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
     max-width: 2000px;
 }
 
@@ -95,5 +95,12 @@ a:visited {
 
     #profile-content {
         margin-top: 50px;
+    }
+}
+
+@media (max-width: 580px) {
+    .container {
+        margin-right: 5%;
+        margin-left: 5%;
     }
 }
