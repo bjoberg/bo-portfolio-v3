@@ -22,13 +22,6 @@ describe('AppComponent', () => {
   it(`should have as title 'Brett Oberg'`, async(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Brett Oberg');
-  }));
-
-  it('should add arrow to the end of <a></a> tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(app.getTitle()).toEqual('Brett Oberg');
   }));
 });
