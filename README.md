@@ -1,5 +1,7 @@
 # BrettOberg.com
 
+[![Build Status](hhttps://travis-ci.org/bjoberg/brettoberg.com.svg?branch=master)](https://travis-ci.org/bjoberg/brettoberg.com)
+
 This is my portfolio website.
 
 ## Development server
