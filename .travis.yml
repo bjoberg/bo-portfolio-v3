@@ -35,4 +35,4 @@ before_script:
 - ng build
 
 after_success:
-- bash ./travis-ci/deploy.sh
+- bash ./scripts/deploy.sh

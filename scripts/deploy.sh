@@ -8,7 +8,7 @@
 # }
 
 push_to_master() {
-    git push origin development:testing
+    git push origin testing:master
 }
 
 # setup_git
