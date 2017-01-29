@@ -11,6 +11,10 @@ node_js:
   #- '6.6.0'
   #- '6.5.0'
 
+branches:
+  only:
+  - testing
+
 addons:
 apt:
   sources:
