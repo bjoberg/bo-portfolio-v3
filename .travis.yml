@@ -33,4 +33,6 @@ before_script:
 - npm install -g karma
 - npm install
 - ng build
-- ng test --single-run
+
+after_success:
+- ./travis-ci/deploy.sh
