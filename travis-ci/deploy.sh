@@ -8,9 +8,12 @@ add_remote() {
 }
 
 push_to_master() {
-    git push origin testing:master 
+    git push origin testing:master
 }
 
 setup_git
+echo "Git configuration setup"
 add_remote
+echo "Remote has been added"
 push_to_master
+echo "Testing branch has been pushed to master"
