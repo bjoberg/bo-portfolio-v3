@@ -8,6 +8,7 @@
 # }
 
 push_to_master() {
+    git config -l
     git push origin testing:master
 }
 
