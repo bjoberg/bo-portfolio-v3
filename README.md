@@ -1,6 +1,7 @@
 # BrettOberg.com
 
 [![Build Status](https://travis-ci.org/bjoberg/brettoberg.com.svg?branch=testing)](https://travis-ci.org/bjoberg/brettoberg.com)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=brett-oberg-portfolio)](https://www.heroku.com/about)
 
 This is my portfolio website.
 
