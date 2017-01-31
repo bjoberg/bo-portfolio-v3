@@ -1,6 +1,10 @@
-clone_testing_branch() {
+clone_repo() {
   git clone https://$MY_OAUTH@github.com/bjoberg/brettoberg.com.git
   cd brettoberg.com
+}
+
+checkout_testing_branch() {
+  git checkout testing
 }
 
 setup_git() {
@@ -13,8 +17,10 @@ push_to_master() {
     git push origin testing:master
 }
 
-clone_testing_branch
-echo "Testing branch cloned. Moved into brettoberg.com directory."
+clone_repo
+echo "Repo cloned. Moved into brettoberg.com directory."
+checkout_testing_branch
+echo "Testing branch checked out."
 setup_git
 echo "Git configuration setup."
 push_to_master
