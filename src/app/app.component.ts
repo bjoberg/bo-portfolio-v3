@@ -28,7 +28,8 @@ export class AppComponent {
     this.subtitle = "Student. Software Engineer. Photographer.";
 
     // Add my software projects
-    this.softwareProjects = [new SoftwareProject("Kolours", new URL("https://bjoberg.github.io/kolours/"))];
+    this.softwareProjects = [new SoftwareProject("BrettOberg.com", new URL("http://www.brettoberg.com/"))];
+    this.softwareProjects.push(new SoftwareProject("Kolours", new URL("https://bjoberg.github.io/kolours/")));
     this.softwareProjects.push(new SoftwareProject("Presence of Energy", new URL("https://www.presenceofenergy.com/")));
 
     // Add my photography projects
