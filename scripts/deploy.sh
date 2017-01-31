@@ -1,5 +1,6 @@
 clone_testing_branch() {
   git clone https://$MY_OAUTH@github.com/bjoberg/brettoberg.com.git
+  cd brettoberg.com
 }
 
 setup_git() {
@@ -13,7 +14,7 @@ push_to_master() {
 }
 
 clone_testing_branch
-echo "Testing branch cloned."
+echo "Testing branch cloned. Moved into brettoberg.com directory."
 setup_git
 echo "Git configuration setup."
 push_to_master
