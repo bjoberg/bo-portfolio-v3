@@ -8,7 +8,9 @@
     "test": "ng test --single-run",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "start": "ng serve"
+    "start": "http-server",
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build && mv dist/* ."
   },
   "private": true,
   "dependencies": {
@@ -31,9 +33,7 @@
     "express": "^4.14.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.7.2"
-  },
-  "devDependencies": {
+    "zone.js": "^0.7.2",
     "codelyzer": "~2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
@@ -46,5 +46,6 @@
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
     "webdriver-manager": "10.2.5"
-  }
+  },
+  "devDependencies": {}
 }
