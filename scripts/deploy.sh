@@ -9,7 +9,7 @@ setup_git() {
 }
 
 push_to_master() {
-    git config -l
+    git status
     git push origin testing:master
 }
 
