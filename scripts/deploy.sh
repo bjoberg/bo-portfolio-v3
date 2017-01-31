@@ -1,6 +1,7 @@
 setup_git() {
   git config --global user.email "brett@obergmail.com"
   git config --global user.name "bjoberg"
+  echo $MY_TEST
 }
 
 push_to_master() {
