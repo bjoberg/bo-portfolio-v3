@@ -4,7 +4,7 @@
     <div id="profile-content" fxFlex.xl="60%" fxFlex.lg="60%" fxFlex.md="60%" fxFlex.sm="100%" fxFlex.xs="100%" class="flex-item">
       <h1 class="no-padding no-margin">{{getTitle()}}</h1>
       <h2>{{getSubTitle()}}</h2>
-      <h3>Software Projects!</h3>
+      <h3>Software Projects.</h3>
       <ul class="vertical-list">
         <li *ngFor="let project of softwareProjects"><a target="_new" href="{{project.getUrl()}}">{{project.getTitle()}}</a></li>
       </ul>
