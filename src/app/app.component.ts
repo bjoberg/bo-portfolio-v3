@@ -42,7 +42,7 @@ export class AppComponent {
     this.email = "brett@obergmail.com";
 
     // Add my extras
-    this.extras = [new Extra("Resume", new URL("https://drive.google.com/file/d/0B4i30BX81iQGd2tzSzk2Q2ZoOVk/view?usp=sharing"), "<i class='fa fa-file-text-o fa-lg' aria-hidden='true'></i>")];
+    this.extras = [new Extra("Resume", new URL("https://drive.google.com/file/d/0B4i30BX81iQGUldkdENTZXNucEk/view?usp=sharing"), "<i class='fa fa-file-text-o fa-lg' aria-hidden='true'></i>")];
     this.extras.push(new Extra("Github", new URL("https://github.com/bjoberg"), "<i class='fa fa-github fa-lg' aria-hidden='true'></i>"));
     this.extras.push(new Extra("Instagram", new URL("https://www.instagram.com/bjoberg/"), "<i class='fa fa-instagram fa-lg' aria-hidden='true'></i>"));
     this.extras.push(new Extra("500px", new URL("https://500px.com/bjoberg"), "<i class='fa fa-500px fa-lg' aria-hidden='true'></i>"));
