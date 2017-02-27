@@ -1,6 +1,6 @@
 {
   "name": "brettoberg.com",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "engines": {
     "node": "6.9.2",
     "npm": "4.1.1"
@@ -14,7 +14,7 @@
     "e2e": "protractor",
     "start": "http-server",
     "heroku-prebuild": "npm install -g http-server",
-    "heroku-postbuild": "ng build && mv dist/* ."
+    "heroku-postbuild": "ng build --prod && mv dist/* ."
   },
   "private": true,
   "dependencies": {
