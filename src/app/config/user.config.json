@@ -1,0 +1,35 @@
+{
+  "about": {
+    "avatar": "http://www.brettoberg.com/assets/images/headshot.jpg",
+    "description_long": "",
+    "description_short": "Software Engineer by trade. Landscape, travel, and lifestyle photographer by passion.",
+    "email": "brett@obergmail.com",
+    "location": "Madison, WI"
+  },
+  "skills": {
+    "programming-languages": [
+      {"language": "Angular 2", "url": "https://angular.io/"},
+      {"language": "React.js", "url": "https://facebook.github.io/react/"},
+      {"language": "CSS", "url": "https://www.w3schools.com/css"},
+      {"language": "HTML", "url": "https://www.w3schools.com/html/"},
+      {"language": "Java", "url": "https://www.java.com/en/"},
+      {"language": "Swift", "url": "https://developer.apple.com/swift/"},
+      {"language": "MySQL", "url": "https://www.mysql.com/"},
+      {"language": "JavaScript", "url": "https://www.w3schools.com/js/"}
+    ],
+    "other": [
+      {"skill": "Photoshop", "url": "http://www.adobe.com/products/photoshop.html"},
+      {"skill": "Lightroom", "url": "http://www.adobe.com/products/photoshop-lightroom.html"}
+    ]
+  },
+  "social": [
+    {"title": "500px", "url": "https://500px.com/bjoberg", "icon_small": "", "icon_medium": "", "icon_large": ""},
+    {"title": "Instagram", "url": "https://www.instagram.com/brett.oberg/", "icon_small": "", "icon_medium": "", "icon_large": ""},
+    {"title": "Github", "url": "https://github.com/bjoberg", "icon_small": "", "icon_medium": "", "icon_large": ""},
+    {"title": "Google+", "url": "https://plus.google.com/114593328028628529895", "icon_small": "", "icon_medium": "", "icon_large": ""},
+    {"title": "LinkedIn", "url": "https://www.linkedin.com/in/brett-oberg-7bb5a594/", "icon_small": "", "icon_medium": "", "icon_large": ""}
+  ],
+  "recognition": [
+    {"title": "Healing Touch Madison", "description": "Featured background image.", "url": "http://www.healingtouchmadison.com/"}
+  ]
+}

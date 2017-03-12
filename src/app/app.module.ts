@@ -1,3 +1,4 @@
+// External
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,14 +6,25 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+// Local
 import { AppComponent } from './app.component';
+import { Routing } from './app.routing';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent,
+    FooterComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
+    Routing,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
@@ -21,4 +33,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

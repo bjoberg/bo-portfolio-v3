@@ -1,0 +1,13 @@
+{
+  "title": {
+    "string": "Brett Oberg",
+    "url": "http://www.brettoberg.com",
+    "icon": null
+  },
+  "nav-items": [
+    {"item": "About", "url": "http://www.brettoberg.com/about", "icon": null},
+    {"item": "Contact", "url": "http://www.brettoberg.com/contact", "icon": null},
+    {"item": "Development", "url": "http://www.brettoberg.com/development", "icon": null},
+    {"item": "Photography", "url": "http://www.brettoberg.com/photography", "icon": null}
+  ]
+}
