@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 // Local
-import { SoftwareProject } from '../../objects/SoftwareProject';
-import { PhotographyProject } from '../../objects/PhotographyProject';
-import { Extra } from '../../objects/Extra';
+import { SoftwareProject } from '../../models/SoftwareProject';
+import { PhotographyProject } from '../../models/PhotographyProject';
+import { Extra } from '../../models/Extra';
 
 @Component({
   selector: 'home-component',
