@@ -1,19 +1,119 @@
 /* Color Palette */
-//$primary: 
+$primary: #3F51B5;
 //$secondary:
 //$accent:
-$white: rgb(250,250,250);
-$black: rgb(0,0,0);
+$dark-gray: #424242;
+$light-gray: #F5F5F5;
+$white: #ffffff;
+$black: #000000;
+
+// Font 
+$font-large: 2.5em;
+$font-medium: 1.5em;
+$font-normal: 1.0em;
 
 head, body {
-    background-color: $white;
     font-family: 'Open Sans', sans-serif !important;
-    color: $black;
-    letter-spacing: .1em;
-    line-height: 1.5em;
 }
 
 body {
+    background-color: $light-gray;
     margin: 0px;
     padding: 0px;
+}
+
+// //////////////////// Layout ////////////////////
+.container {
+    margin-top: 2%;
+    margin-right: 8%;
+    margin-left: 8%;
+    margin-bottom: 10%;
+}
+
+// //////////////////// Styling ////////////////////
+.component-is-primary {
+    color: $white !important;
+    background-color: $primary !important;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+// //////////////////// General text ////////////////////
+h1 {
+    font-size: $font-large;
+    letter-spacing: 1em;
+    color: $black;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    line-height: inherit;
+}
+
+h2 {
+    font-size: $font-medium;
+    letter-spacing: 1em;
+    color: $dark-gray;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: inherit;
+}
+
+p {
+    font-size: $font-normal;
+    letter-spacing: 1em;
+    color: $dark-gray;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+    line-height: 1.5em;
+}
+
+// //////////////////// Images ////////////////////
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+// //////////////////// Links ////////////////////
+a {
+    color: $dark-gray;
+    font-weight: 400;
+    font-size: $font-normal;
+    text-decoration: none;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+a:hover {
+    color: $primary !important;
+    padding-bottom: 0px;
+    border-bottom: solid 2px $primary !important;
+}
+
+a:visited {
+    color: $dark-gray;
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+// //////////////////// Lists ////////////////////
+ul.no-bullets {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    font-size: $font-normal;
+}
+
+li {
+    color: $dark-gray;
+    line-height: 1.5em;
+}
+
+// //////////////////// Buttons ////////////////////
+button {
+    font-size: $font-normal !important;
+    letter-spacing: 1em !important;
+    font-weight: 300 !important;
+    letter-spacing: 1.3px !important;
 }

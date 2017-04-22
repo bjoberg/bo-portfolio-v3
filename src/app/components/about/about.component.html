@@ -1,1 +1,57 @@
-<h1>About</h1>
+<div class="container">
+  <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+    <!-- Overview -->
+    <div id="overview" class="flex-item overview" fxFlex.xl="25%" fxFlex.lg="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+      <!-- Avatar-->
+      <img id="profile-picture" src="{{avatar}}" alt="Brett Oberg" />
+      <br />
+      
+      <!-- Portfolio -->
+      <br />
+      <button class="component-is-primary full-width" md-raised-button>Portfolio</button>
+
+      <!-- Overview -->
+      <h2>Overview</h2>
+      <ul class="no-bullets">
+        <li><b>Currently</b>: {{currently}}</li>
+        <li><b>Location</b>: {{location}}</li>
+        <li><b>Email</b>: <a href="mailto:{{email}}">{{email}}</a></li>
+      </ul>
+
+      <!-- Social Media -->
+      <h2>Social Media</h2>
+      <ul class="no-bullets">
+        <li *ngFor="let s of social">
+            <a id="{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Details -->
+    <div id="details" class="flex-item details" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
+      <!-- About -->
+      <h1>About</h1>
+      <p id="description-short" class="description-short"><b><i>{{descriptionShort}}</i></b></p>
+      <p id="description-long" class="description-long">{{descriptionLong}}</p>
+
+      <!-- Skills -->
+      <h1>Skills</h1>
+      <div *ngFor="let skill of skills">
+        <h2>{{skill.title}}</h2>
+        <ul class="no-bullets">
+          <li *ngFor="let component of skill.components">
+              <a id="{{component.title}}" class="skill" href="{{component.url}}">{{component.title}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Recognition -->
+      <h1>Recognition</h1>
+        <ul class="no-bullets">
+          <li *ngFor="let r of recognition">
+              <a id="{{r.title}}" class="recognition" href="{{r.url}}">{{r.title}}</a> -  {{r.description}}
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>

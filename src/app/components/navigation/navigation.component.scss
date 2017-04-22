@@ -1,21 +1,32 @@
 /** Color Palette */
+$primary: #3F51B5;
 $black: #000000;
 $white: #ffffff;
-$light-gray: #FAFAFA;
+$gray: #9E9E9E;
 
 /** Content size */
-$breakPoint: 800px;
+$breakPoint: 650px;
 
 /** For all devices */
+.placeholder {
+  min-height: 75px;
+}
+
 .nav-container {
   background-color: $white;
   width: 100%;
+  z-index: 1000;
 }
 
 ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;  
 }
 
 a {
@@ -33,21 +44,20 @@ a:visited {
   color: $black;
 }
 
-
 /** For desktop devices */
 @media (min-width: $breakPoint) {
   .nav-container {
     position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05), 0 2px 2px rgba(0,0,0,.05), 0 4px 4px rgba(0,0,0,.05), 0 0 8px rgba(0,0,0,.05), 0 0 16px rgba(0,0,0,.05);
   }
 
   ul {
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
-    margin-right: 2%;
-    margin-left: 2%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 30px;
+    margin-left: 30px;
     padding: 0;
   }
   
@@ -55,13 +65,36 @@ a:visited {
     display: inline;
   }
 
-  a span.title {
-    font-size: 200%;
+  li.title {
+    font-size: 20px;
+    margin-right: 40px;
+    font-weight: 600;
   }
 
-  a span.normal {
-    float: right;
-    padding-left: 20px;
+  li.normal {
+    padding-right: 30px;
+    font-size: 12px;
+  }
+
+  li.title a {
+    color: $black;
+  }
+
+  li.normal a {
+    color: $gray;
+    font-weight: 400;
+  }
+
+  li.normal a.is-active {
+    padding-bottom: 2px !important;
+    border-bottom: 2px solid $primary;
+    color: $black;
+  }
+
+  li.normal a:hover {
+    padding-bottom: 2px !important;
+    border-bottom: 2px solid $primary;
+    color: $black;
   }
 }
 
@@ -77,17 +110,24 @@ a:visited {
   ul {
     display: table;
     width: 100%;
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   li {
     display: table-cell;
     text-align: center;
-    border-right: 1px solid $light-gray;
   }
 
-  a span.title, a span.normal  {
-    font-size: 15%;
+  li.title a {
+    color: $gray;
+  }
+
+  li.normal a {
+    color: $gray;
+  }
+
+  a.is-active {
+    color: $black !important;
   }
 }

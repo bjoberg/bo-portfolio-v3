@@ -15,7 +15,7 @@ export class NavigationComponent {
   // MARK: Member variables
 
   private navigationItemList;
-  private displayMobile: Boolean = false;
+  private displayDesktop: Boolean = false;
 
   // MARK: Lifecycle methods
 
@@ -61,10 +61,10 @@ export class NavigationComponent {
    * @param width current width of the screen
    */
   private setNavigationState(width: number) {
-    if (width <= 800) {
-      this.displayMobile = true;
+    if (width <= 650) {
+      this.displayDesktop = true;
     } else {
-      this.displayMobile = false;
+      this.displayDesktop = false;
     }
   }
 }

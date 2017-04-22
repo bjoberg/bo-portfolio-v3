@@ -1,10 +1,11 @@
 <div class="nav-container" (window:resize)="onResize($event)">
   <ul>
-    <li *ngFor="let item of navigationItemList">
-      <a routerLink={{item.getRoute()}}>
-        <span [hidden]="!displayMobile"><i class="fa fa-{{item.getIcon()}} fa-2x" aria-hidden="true"></i><br /></span>
-        <span [hidden]="displayMobile"class="{{item.getType()}}">{{item.getTitle()}}</span>
+    <li *ngFor="let item of navigationItemList" class="{{item.getType()}}">
+      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
+        <span [hidden]="!displayDesktop"><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
+        <span [hidden]="displayDesktop">{{item.getTitle()}}</span>
       </a>
     </li>
   </ul>
 </div>
+<div [hidden]="displayDesktop" class="placeholder"></div>

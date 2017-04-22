@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 // Internal
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { ThemeComponent } from './components/theme/theme.component';
 
 const AppRoutes: Routes = [
   {
@@ -14,6 +15,10 @@ const AppRoutes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'theme',
+    component: ThemeComponent
   }
 ];
 
