@@ -31,11 +31,11 @@ export const UserConfig = {
     }
   ],
   social: [
-    { title: '500px', url: 'https://500px.com/bjoberg', icon_small: '', icon_medium: '', icon_large: '' },
-    { title: 'Instagram', url: 'https://www.instagram.com/brett.oberg/', icon_small: '', icon_medium: '', icon_large: '' },
-    { title: 'Github', url: 'https://github.com/bjoberg', icon_small: '', icon_medium: '', icon_large: '' },
-    { title: 'Google+', url: 'https://plus.google.com/114593328028628529895', icon_small: '', icon_medium: '', icon_large: '' },
-    { title: 'LinkedIn', url: 'https://www.linkedin.com/in/brett-oberg-7bb5a594/', icon_small: '', icon_medium: '', icon_large: '' },
+    { title: '500px', url: 'https://500px.com/bjoberg', fa_icon: 'fa-500px' },
+    { title: 'Instagram', url: 'https://www.instagram.com/brett.oberg/', fa_icon: 'fa-instagram' },
+    { title: 'Github', url: 'https://github.com/bjoberg', fa_icon: 'fa-github' },
+    { title: 'Google+', url: 'https://plus.google.com/114593328028628529895', fa_icon: 'fa-google' },
+    { title: 'LinkedIn', url: 'https://www.linkedin.com/in/brett-oberg-7bb5a594/', fa_icon: 'fa-linkedin' },
   ],
   recognition: [
     {title: 'Healing Touch Madison', description: 'Featured background image.', url: "http://www.healingtouchmadison.com/" },

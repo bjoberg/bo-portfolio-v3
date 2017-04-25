@@ -22,7 +22,7 @@
       <h2>Social Media</h2>
       <ul class="no-bullets">
         <li *ngFor="let s of social">
-            <a id="{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
+            <a id="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i>{{s.title}}</a>
         </li>
       </ul>
     </div>
@@ -38,7 +38,7 @@
       <h1>Skills</h1>
       <div *ngFor="let skill of skills">
         <h2>{{skill.title}}</h2>
-        <ul class="no-bullets">
+        <ul>
           <li *ngFor="let component of skill.components">
               <a id="{{component.title}}" class="skill" href="{{component.url}}">{{component.title}}</a>
           </li>

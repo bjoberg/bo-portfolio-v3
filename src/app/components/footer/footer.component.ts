@@ -1,4 +1,8 @@
+// External
 import { Component } from '@angular/core';
+
+// Internal
+import { UserConfig } from '../../config/user.config';
 
 @Component({
   selector: 'footer-component',
@@ -7,5 +11,21 @@ import { Component } from '@angular/core';
 })
 
 export class FooterComponent {
-  
+  // About
+  private email;
+
+  // Social 
+  private social;
+
+  constructor() {
+    // Configure about data
+    this.email = UserConfig.about.email;
+
+    // Configure social data
+    this.social = UserConfig.social;
+  }
+
+  getCurrentYear() {
+    return new Date().getFullYear();
+  }
 }
