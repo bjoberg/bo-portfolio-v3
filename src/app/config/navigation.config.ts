@@ -22,11 +22,11 @@ export const NavigationConfig = {
       icon: "envelope-o"      
     },
     {
-      title: "Development", 
-      route: "/development", 
-      url: "http://www.brettoberg.com/development",
+      title: "Software", 
+      route: "/software", 
+      url: "http://www.brettoberg.com/software",
       type: "normal",  
-      icon: "code"      
+      icon: "code"   
     },  
     {
       title: "Photography", 

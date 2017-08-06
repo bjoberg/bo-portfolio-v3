@@ -30,6 +30,10 @@ body {
     margin-bottom: 10%;
 }
 
+.placeholder {
+    height: 75px;
+}
+
 // //////////////////// Styling ////////////////////
 .component-is-primary {
     color: $white !important;
@@ -38,6 +42,18 @@ body {
 
 .full-width {
     width: 100% !important;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.text-center {
+    text-align: center;
 }
 
 // //////////////////// General text ////////////////////

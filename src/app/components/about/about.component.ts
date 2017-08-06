@@ -46,4 +46,9 @@ export class AboutComponent {
     // Configure recognition data
     this.recognition = UserConfig.recognition;
   }
+
+  ngOnInit() {
+    // Updated the decription-long 
+    document.getElementById('description-long').innerHTML = this.descriptionLong;
+  }
 }

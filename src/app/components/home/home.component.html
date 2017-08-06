@@ -1,25 +1,5 @@
 <div class="container">
   <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-    <div id="profile-picture" fxFlex.xl="40%" fxFlex.lg="40%" fxFlex.md="40%" fxFlex.sm="100%" fxFlex.xs="100%" class="flex-item"><img src="/assets/images/headshot.jpg" alt="Brett Oberg"></div>
-    <div id="profile-content" fxFlex.xl="60%" fxFlex.lg="60%" fxFlex.md="60%" fxFlex.sm="100%" fxFlex.xs="100%" class="flex-item">
-      <h1 class="no-padding no-margin">{{getTitle()}}</h1>
-      <h2>{{getSubTitle()}}</h2>
-      <h3>Software Projects.</h3>
-      <ul class="vertical-list">
-        <li *ngFor="let project of softwareProjects"><a target="_new" href="{{project.getUrl()}}">{{project.getTitle()}}</a></li>
-      </ul>
-      <h3>Photography.</h3>
-      <ul class="vertical-list">
-        <li *ngFor="let project of photographyProjects"><a target="_new" href="{{project.getUrl()}}">{{project.getTitle()}}</a></li>
-      </ul>
-      <h3>Email.</h3>
-      <ul class="vertical-list">
-        <li><a href="mailto:{{getEmail()}}">{{getEmail()}}</a></li>
-      </ul>
-      <h3>Extras.</h3>
-      <ul class="horizontal-list">
-        <li *ngFor="let e of extras"><a target="_new" href="{{e.getUrl()}}" [innerHTML]="e.getIcon()"></a></li>
-      </ul>
-    </div>
+    <h1>Home</h1>
   </div> 
 </div>

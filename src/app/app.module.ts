@@ -13,6 +13,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PhotographyComponent } from './components/photography/photography.component';
+import { SoftwareComponent } from './components/software/software.component';
 import { ThemeComponent } from './components/theme/theme.component';
 
 @NgModule({
@@ -22,6 +25,9 @@ import { ThemeComponent } from './components/theme/theme.component';
     FooterComponent,
     HomeComponent,
     AboutComponent,
+    ContactComponent,
+    PhotographyComponent,
+    SoftwareComponent,
     ThemeComponent
   ],
   imports: [

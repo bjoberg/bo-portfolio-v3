@@ -1,25 +1,38 @@
 export const UserConfig = {
   about: {
-    avatar: 'http://www.brettoberg.com/assets/images/headshot.jpg',
-    description_long: 'Scenester kickstarter fingerstache succulents health goth, flexitarian salvia pour-over. Franzen hexagon seitan, kitsch migas pinterest irony subway tile actually la croix iPhone YOLO disrupt thundercats deep v. Gentrify gastropub ethical deep v, art party mixtape beard shabby chic biodiesel pork belly. Occupy artisan letterpress, messenger bag thundercats scenester yuccie fashion axe sriracha literally small batch hoodie plaid. Celiac yr DIY, artisan fap pickled readymade selvage scenester try-hard organic sustainable. Woke drinking vinegar butcher, master cleanse plaid portland DIY. Edison bulb hexagon poke cornhole lo-fi, photo booth scenester ethical bitters etsy.',
+    avatar: '/assets/images/headshot.jpg',
+    description_long: `<p>My name is Brett Oberg and I am a software engineer specializing in frontend web development.</p><p>Professionally, I am interested in computer programming, UI / UX design, web development, and entrepreurship. I have 6 years of general work experience, and since 2015 have been contributing to and building numerous web applications. Finally, I graduated from the University of Wisconsin - Madison with a degrees in Information Systems, Operations Management, and Computer Science at the University of Wisconsin - Madison.</p><p>Personally, I am a very active person interested in: golf, running, working out, hiking, camping, listening to music, and traveling.</p><p>Thanks for taking the time to visit this site. If you have concerns, advice, or just want someone to discuss design techniques with, please say hello.</p>`,
     description_short: 'Software Engineer by trade. Landscape, travel, and lifestyle photographer by passion.',
     email: 'brett@obergmail.com',
-    location: 'Madison, WI',
-    currently: 'Student @ UW Madison',
+    location: 'Boston, MA',
+    currently: 'Software Engineer @ GE',
   },
   skills: [
     {
-      title: "Computer Programming",
+      title: "Web",
       components: [
         { title: 'Angular 2', url: 'https://angular.io/' },
-        { title: 'React.js', url: 'https://facebook.github.io/react/' },
-        { title: 'Express.js', url: 'https://expressjs.com/' },
-        { title: 'JavaScript', url: 'https://www.w3schools.com/js/' },
         { title: 'CSS 3', url: 'https://www.w3schools.com/css' },
+        { title: 'Express.js', url: 'https://expressjs.com/' },
         { title: 'HTML', url: 'https://www.w3schools.com/html/' },
-        { title: 'Java', url: 'https://www.java.com/en/' },
+        { title: 'React.js', url: 'https://facebook.github.io/react/' },
+        { title: 'JavaScript', url: 'https://www.w3schools.com/js/' },
+        { title: 'Node.js', ul: 'https://nodejs.org/en/' },
+        { title: 'NPM', url: 'https://www.npmjs.com/'},
+      ]
+    },
+    {
+      title: "Mobile",
+      components: [
         { title: 'Swift', url: 'https://developer.apple.com/swift/' },
+        { title: 'Java', url: 'https://www.java.com/en/' },
+      ]
+    },
+    {
+      title: "Database",
+      components: [
         { title: 'MySQL', url: 'https://www.mysql.com/' },
+        { title: 'MongoDb', url: 'https://www.mongodb.com/' },
       ]
     },
     {

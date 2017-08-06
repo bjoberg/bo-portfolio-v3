@@ -8,21 +8,24 @@
       
       <!-- Portfolio -->
       <br />
-      <button class="component-is-primary full-width" md-raised-button>Portfolio</button>
+      <button class="component-is-primary full-width" md-raised-button>Software Portfolio</button>
+      <br />
+      <br />
+      <button class="component-is-primary full-width" md-raised-button>Photography Portfolio</button>
 
       <!-- Overview -->
       <h2>Overview</h2>
       <ul class="no-bullets">
         <li><i class="fa fa-id-card-o" aria-hidden="true"></i> {{currently}}</li>
         <li><i class="fa fa-home" aria-hidden="true"></i> {{location}}</li>
-        <li><a href="mailto:{{email}}"><i class="fa fa-envelope-o" aria-hidden="true"></i>{{email}}</a></li>
+        <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:{{email}}">{{email}}</a></li>
       </ul>
 
       <!-- Social Media -->
       <h2>Social Media</h2>
       <ul class="no-bullets">
         <li *ngFor="let s of social">
-            <a id="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i>{{s.title}}</a>
+            <i class="fa {{s.fa_icon}}" aria-hidden="true"></i><a id="{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
         </li>
       </ul>
     </div>
@@ -31,8 +34,7 @@
     <div id="details" class="flex-item details" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
       <!-- About -->
       <h1>About</h1>
-      <p id="description-short" class="description-short"><b><i>{{descriptionShort}}</i></b></p>
-      <p id="description-long" class="description-long">{{descriptionLong}}</p>
+      <p id="description-long" class="description-long"></p>
 
       <!-- Skills -->
       <h1>Skills</h1>
