@@ -6,7 +6,6 @@ import { async } from '@angular/core/testing';
 
 // Component being tested
 import { AboutComponent } from '../../about/about.component';
-import { UserConfig } from '../../../config/user.config';
 
 describe('AboutComponent', () => {
 

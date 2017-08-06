@@ -1,27 +1,43 @@
-/* tslint:disable:no-unused-variable */
+// // Angular stuff
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { By } from '@angular/platform-browser';
+// import { DebugElement } from '@angular/core';
+// import { async } from '@angular/core/testing';
 
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from '../../app.component';
+// // Component being tested
+// import { AppComponent } from '../../app.component';
 
-describe('AppComponent', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    });
-    TestBed.compileComponents();
-  });
+// describe('AppComponent', () => {
 
-  // it('should create the app', async(() => {
-  //   let fixture = TestBed.createComponent(AppComponent);
-  //   let app = fixture.debugElement.componentInstance;
-  //   expect(app).toBeTruthy();
-  // }));
+//   let comp: AppComponent;
+//   let fixture: ComponentFixture<AppComponent>;
+//   let de: DebugElement;
+//   let el: HTMLElement;
 
-  // it(`should have as title 'Brett Oberg'`, async(() => {
-  //   let fixture = TestBed.createComponent(AppComponent);
-  //   let app = fixture.debugElement.componentInstance;
-  //   expect(app.getTitle()).toEqual('Brett Oberg');
-  // }));
-});
+//   // 1st beforeEach to run: async beforeEach
+//   beforeEach(async(() => {
+//     // Configure the testing module
+//     TestBed.configureTestingModule({
+//       declarations: [ AppComponent ], // declare the test component
+//     })
+//     .compileComponents();  // compile template and css
+//   }));
+
+//   // 2nd beforeEach to run: synchronous beforeEach
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(AppComponent);
+
+//     comp = fixture.componentInstance; // Component test instance
+//   });
+
+//   it(': should contain <navigation-component>', () => {
+//     // Get any changes onf the testing fixture
+//     fixture.detectChanges();
+
+//     // Get the profile-picture
+//     de = fixture.debugElement.query(By.css('#navigation-component'));
+//     el = de.nativeElement;
+  
+//     expect(el).toEqual('navigation-component');
+//   });
+// });
