@@ -35,8 +35,8 @@ import { ThemeComponent } from './components/theme/theme.component';
     Routing,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot()
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
