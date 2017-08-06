@@ -13,7 +13,7 @@ $breakPoint: 650px;
 }
 
 .nav-container {
-  background-color: $white;
+  background-color: $primary;
   width: 100%;
   z-index: 1000;
 }
@@ -31,17 +31,17 @@ li {
 
 a {
   text-decoration: none;
-  color: $black;
+  color: $white;
 }
 
 a:hover {
   text-decoration: none;
-  color: $black;
+  color: $white !important;
 }
 
 a:visited {
   text-decoration: none;
-  color: $black;
+  color: $white;
 }
 
 /** For desktop devices */
@@ -77,24 +77,24 @@ a:visited {
   }
 
   li.title a {
-    color: $black;
+    color: $white;
   }
 
   li.normal a {
-    color: $gray;
+    color: $white;
     font-weight: 400;
   }
 
   li.normal a.is-active {
     padding-bottom: 2px !important;
-    border-bottom: 2px solid $primary;
-    color: $black;
+    border-bottom: 2px solid $white;
+    color: $white;
   }
 
   li.normal a:hover {
     padding-bottom: 2px !important;
-    border-bottom: 2px solid $primary;
-    color: $black;
+    border-bottom: 2px solid $white;
+    color: $white;
   }
 }
 
@@ -120,14 +120,14 @@ a:visited {
   }
 
   li.title a {
-    color: $gray;
+    color: $white;
   }
 
   li.normal a {
-    color: $gray;
+    color: $white;
   }
 
   a.is-active {
-    color: $black !important;
+    color: $white !important;
   }
 }

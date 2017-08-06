@@ -1,20 +1,16 @@
 <div class="container">
   <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-    <!-- Overview -->
-    <div id="overview" class="flex-item overview" fxFlex.xl="25%" fxFlex.lg="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
-      <!-- Avatar-->
+    <!-- Overview Group -->
+    <div id="group-overview" class="flex-item overview" fxFlex.xl="25%" fxFlex.lg="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+      <!-- Avatar -->
       <img id="profile-picture" src="{{avatar}}" alt="Brett Oberg" />
-      <br />
       
-      <!-- Portfolio -->
-      <br />
-      <button class="component-is-primary full-width" md-raised-button>Software Portfolio</button>
-      <br />
-      <br />
-      <button class="component-is-primary full-width" md-raised-button>Photography Portfolio</button>
+      <!-- Portfolio(s) -->
+      <a id="btn-software-portfolio" href="/software" class="component-is-primary full-width" md-raised-button>Software Portfolio</a>
+      <a id="btn-photography-portfolio" href="/photography" class="component-is-primary full-width" md-raised-button>Photography Portfolio</a>
 
       <!-- Overview -->
-      <h2>Overview</h2>
+      <h2 id="title-overview">Overview</h2>
       <ul class="no-bullets">
         <li><i class="fa fa-id-card-o" aria-hidden="true"></i> {{currently}}</li>
         <li><i class="fa fa-home" aria-hidden="true"></i> {{location}}</li>
@@ -30,8 +26,8 @@
       </ul>
     </div>
 
-    <!-- Details -->
-    <div id="details" class="flex-item details" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
+    <!-- Details Group -->
+    <div id="group-details" class="flex-item details" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
       <!-- About -->
       <h1>About</h1>
       <p id="description-long" class="description-long"></p>

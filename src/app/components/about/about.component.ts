@@ -1,5 +1,5 @@
 // External
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Internal
 import { UserConfig } from '../../config/user.config';
@@ -11,6 +11,9 @@ import { UserConfig } from '../../config/user.config';
 })
 
 export class AboutComponent {
+  // Page Information
+  private title = "About";
+
   // About
   private avatar;
   private descriptionLong;
