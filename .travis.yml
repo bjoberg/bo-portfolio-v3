@@ -2,9 +2,8 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '6.9.2'
-  # - '6.9.1'
-  # - '6.9.0'
+  - '8.2.1'
+  - '8.2.0'
 
 branches:
   only:
