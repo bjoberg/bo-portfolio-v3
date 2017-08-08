@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+<div id="container" class="container">
+  <div id="flex-container" class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
     <!-- Overview Group -->
     <div id="group-overview" class="flex-item overview" fxFlex.xl="25%" fxFlex.lg="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
       <!-- Avatar -->
-      <img id="profile-picture" src="{{avatar}}" alt="Brett Oberg" />
+      <img id="img-profile-picture" src="{{avatar}}" alt="Brett Oberg" />
       
       <!-- Portfolio(s) -->
       <a id="btn-software-portfolio" href="/software" class="component-is-primary full-width" md-raised-button>Software Portfolio</a>
@@ -11,17 +11,17 @@
 
       <!-- Overview -->
       <h2 id="title-overview">Overview</h2>
-      <ul class="no-bullets">
-        <li><i class="fa fa-id-card-o" aria-hidden="true"></i> {{currently}}</li>
-        <li><i class="fa fa-home" aria-hidden="true"></i> {{location}}</li>
-        <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:{{email}}">{{email}}</a></li>
+      <ul id="list-overview" class="no-bullets">
+        <li id="content-currently"><i class="fa fa-id-card-o" aria-hidden="true"></i> {{currently}}</li>
+        <li id="content-location"><i class="fa fa-home" aria-hidden="true"></i> {{location}}</li>
+        <li id="content-email"><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:{{email}}">{{email}}</a></li>
       </ul>
 
       <!-- Social Media -->
-      <h2>Social Media</h2>
-      <ul class="no-bullets">
-        <li *ngFor="let s of social">
-            <i class="fa {{s.fa_icon}}" aria-hidden="true"></i><a id="{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
+      <h2 id="title-social-media">Social Media</h2>
+      <ul id="list-social-media" class="no-bullets">
+        <li id="list-item-{{s.title}}" *ngFor="let s of social">
+            <i id="icon-{{s.title}}" class="fa {{s.fa_icon}}" aria-hidden="true"></i><a id="content-{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
         </li>
       </ul>
     </div>
@@ -29,25 +29,27 @@
     <!-- Details Group -->
     <div id="group-details" class="flex-item details" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
       <!-- About -->
-      <h1>About</h1>
-      <p id="description-long" class="description-long"></p>
+      <h1 id="title-about">About</h1>
+      <p id="content-description-long" class="description-long"><!-- NOTE: Do not just inject descriptionLong her, because descriptionLong is stored as html content --></p>
 
       <!-- Skills -->
-      <h1>Skills</h1>
-      <div *ngFor="let skill of skills">
-        <h2>{{skill.title}}</h2>
-        <ul>
-          <li *ngFor="let component of skill.components">
-              <a id="{{component.title}}" class="skill" href="{{component.url}}">{{component.title}}</a>
-          </li>
-        </ul>
+      <h1 id="title-skills">Skills</h1>
+      <div id="group-of-skills">
+        <div id="group-{{skill.title}}" *ngFor="let skill of skills">
+          <h2 id="title-skill-{{skill.title}}">{{skill.title}}</h2>
+          <ul id="list-{{skill.title}}">
+            <li id="list-{{skill.title}}-item-{{component.title}}" *ngFor="let component of skill.components">
+                <a id="content-{{component.title}}" class="skill" href="{{component.url}}">{{component.title}}</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Recognition -->
-      <h1>Recognition</h1>
-        <ul class="no-bullets">
-          <li *ngFor="let r of recognition">
-              <a id="{{r.title}}" class="recognition" href="{{r.url}}">{{r.title}}</a> -  {{r.description}}
+      <h1 id="title-recognition">Recognition</h1>
+        <ul id="list-recognition" class="no-bullets">
+          <li id="list-item-{{r.title}}" *ngFor="let r of recognition">
+            <a id="content-link-{{r.title}}" class="recognition" href="{{r.url}}">{{r.title}}</a> - {{r.description}}
           </li>
         </ul>
     </div>

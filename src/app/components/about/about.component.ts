@@ -52,6 +52,6 @@ export class AboutComponent {
 
   ngOnInit() {
     // Updated the decription-long 
-    document.getElementById('description-long').innerHTML = this.descriptionLong;
+    document.getElementById('content-description-long').innerHTML = this.descriptionLong;
   }
 }

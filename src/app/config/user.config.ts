@@ -17,7 +17,7 @@ export const UserConfig = {
         { title: 'HTML', url: 'https://www.w3schools.com/html/' },
         { title: 'React.js', url: 'https://facebook.github.io/react/' },
         { title: 'JavaScript', url: 'https://www.w3schools.com/js/' },
-        { title: 'Node.js', ul: 'https://nodejs.org/en/' },
+        { title: 'Node.js', url: 'https://nodejs.org/en/' },
         { title: 'NPM', url: 'https://www.npmjs.com/'},
       ]
     },
