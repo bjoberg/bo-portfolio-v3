@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  private title: string = "Brett Oberg";
 
+  constructor() {
+    this.title = "Brett Oberg"
+  }
+
+  public getTitle() : string {
+    return this.title
+  }
 }

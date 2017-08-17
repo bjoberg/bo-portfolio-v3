@@ -1,43 +1,64 @@
-/* Color Palette */
-$primary: #3F51B5;
-//$secondary:
-//$accent:
+/* 
+ * Color Palette
+ *
+ * Using an anagolous color palette: https://www.sessions.edu/color-calculator/ 
+ */
+$primary: #3a76c4;
+$secondary: #58c43a;
 $dark-gray: #424242;
 $light-gray: #FAFAFA;
 $white: #ffffff;
 $black: #000000;
 
-// Font 
-$font-large: 2.5em;
-$font-medium: 1.5em;
-$font-normal: 1.0em;
+// Font sizes
+$font-size--xtra-large: 2.5em;
+$font-size--large: 1.5em;
+$font-size--normal: 1.0em;
+
+// Font weights
+$font-weight--heavy: 600;
+$font-weight--normal: 400;
+$font-weight--light: 300;
+
+// Letter spacing
+$letter-spacing--wide: 1.3px;
+$letter-spacing--normal: 1.2px;
+
+// Line height
+$line-height--tall: 1.5em;
+$line-height--normal: inherit;
 
 head, body {
     font-family: 'Open Sans', sans-serif !important;
 }
 
 body {
-    background-color: $light-gray;
-    margin: 0px;
-    padding: 0px;
+    background-color: $light-gray !important;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 // //////////////////// Layout ////////////////////
 .container {
-    margin-top: 2%;
-    margin-right: 8%;
-    margin-left: 8%;
-    margin-bottom: 10%;
+    margin-top: 2% !important;
+    margin-right: 8% !important;
+    margin-left: 8% !important;
+    margin-bottom: 10% !important;
 }
 
 .placeholder {
-    height: 75px;
+    height: 75px !important;
 }
 
 // //////////////////// Styling ////////////////////
 .component-is-primary {
     color: $white !important;
     background-color: $primary !important;
+}
+
+.component-is-secondary {
+    color: $white !important;
+    background-color: $secondary !important;
 }
 
 .full-width {
@@ -53,35 +74,32 @@ body {
 }
 
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 
 // //////////////////// General text ////////////////////
 h1 {
-    font-size: $font-large;
-    letter-spacing: 1em;
+    font-size: $font-size--xtra-large;
     color: $black;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    line-height: inherit;
+    font-weight: $font-weight--heavy;
+    letter-spacing: $letter-spacing--normal;
+    line-height: $line-height--normal;
 }
 
 h2 {
-    font-size: $font-medium;
-    letter-spacing: 1em;
+    font-size: $font-size--large;
     color: $dark-gray;
-    font-weight: 400;
-    letter-spacing: 1.2px;
-    line-height: inherit;
+    font-weight: $font-weight--normal;
+    letter-spacing: $letter-spacing--normal;
+    line-height: $line-height--normal;
 }
 
 p {
-    font-size: $font-normal;
-    letter-spacing: 1em;
+    font-size: $font-size--normal;
     color: $dark-gray;
-    font-weight: 300;
-    letter-spacing: 1.3px;
-    line-height: 1.5em;
+    font-weight: $font-weight--normal;
+    letter-spacing: $letter-spacing--wide;
+    line-height: $line-height--tall;
 }
 
 // //////////////////// Images ////////////////////
@@ -93,9 +111,10 @@ img {
 
 // //////////////////// Links ////////////////////
 a {
-    color: $dark-gray;
-    font-weight: 300;
-    font-size: $font-normal;
+    color: $primary;
+    font-weight: $font-weight--normal;
+    font-size: $font-size--normal;
+    letter-spacing: $letter-spacing--normal;
     text-decoration: none;
     padding-bottom: 0px;
     border-bottom: none;
@@ -108,9 +127,27 @@ a:hover {
 }
 
 a:visited {
-    color: $dark-gray;
+    color: $primary;
     padding-bottom: 0px;
     border-bottom: none;
+}
+
+// //////////////////// Buttons ////////////////////
+a.btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a.btn:hover {
+    color: $white !important;
+    padding-bottom: 0px !important;
+    border-bottom: none !important;
+}
+
+a.btn:visited {
+    color: $white;
+    padding-bottom: 0px !important;
+    border-bottom: none !important;
 }
 
 // //////////////////// Lists ////////////////////
@@ -118,19 +155,12 @@ ul.no-bullets {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
-    font-size: $font-normal;
+    font-size: $font-size--normal;
 }
 
 li {
     color: $dark-gray;
-    line-height: 1.5em;
-    font-weight: 300;
-}
-
-// //////////////////// Buttons ////////////////////
-button {
-    font-size: $font-normal !important;
-    letter-spacing: 1em !important;
-    font-weight: 300 !important;
-    letter-spacing: 1.3px !important;
+    line-height: $line-height--tall;
+    letter-spacing: $letter-spacing--normal;
+    font-weight: $font-weight--normal;
 }

@@ -12,12 +12,9 @@ import { NavigationConfig } from '../../config/navigation.config';
 })
 
 export class NavigationComponent {
-  // MARK: Member variables
-
   private navigationItemList;
   private displayDesktop: Boolean = false;
-
-  // MARK: Lifecycle methods
+  private breakpoint: Number = 650;
 
   constructor() {
     // Create the navigation items
@@ -27,8 +24,6 @@ export class NavigationComponent {
     let width = window.innerWidth;
     this.setNavigationState(width);
   }
-
-  // MARK: General class methods
 
   /**
    * Process the NavigationConfig and create all of the navigation items.
@@ -61,7 +56,7 @@ export class NavigationComponent {
    * @param width current width of the screen
    */
   private setNavigationState(width: number) {
-    if (width <= 650) {
+    if (width <= this.breakpoint) {
       this.displayDesktop = true;
     } else {
       this.displayDesktop = false;

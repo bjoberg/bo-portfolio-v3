@@ -1,7 +1,7 @@
-<div class="nav-container" (window:resize)="onResize($event)">
+<div class="nav-container component-is-primary" (window:resize)="onResize($event)">
   <ul>
     <li *ngFor="let item of navigationItemList" class="{{item.getType()}}">
-      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
+      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}" md-button>
         <span [hidden]="!displayDesktop"><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
         <span [hidden]="displayDesktop">{{item.getTitle()}}</span>
       </a>
