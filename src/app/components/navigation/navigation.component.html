@@ -1,11 +1,21 @@
-<div class="nav-container component-is-primary" (window:resize)="onResize($event)">
+<!-- Top navigation bar Desktop -->
+<div class="nav-container nav-container--top component-is--primary" (window:resize)="onResize($event)">
   <ul>
     <li *ngFor="let item of navigationItemList" class="{{item.getType()}}">
-      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}" md-button>
-        <span [hidden]="!displayDesktop"><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
-        <span [hidden]="displayDesktop">{{item.getTitle()}}</span>
+      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
+        <span>{{item.getTitle()}}</span>
       </a>
     </li>
   </ul>
 </div>
-<div [hidden]="displayDesktop" class="placeholder"></div>
+
+<!-- Botom navigation bar -->
+<div [hidden]="!displayDesktop" class="nav-container nav-container--bottom component-is--light-gray" (window:resize)="onResize($event)">
+  <ul>
+    <li *ngFor="let item of navigationItemList" class="{{item.getType()}}">
+      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
+        <span><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>

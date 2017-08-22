@@ -51,14 +51,19 @@ body {
 }
 
 // //////////////////// Styling ////////////////////
-.component-is-primary {
+.component-is--primary {
     color: $white !important;
     background-color: $primary !important;
 }
 
-.component-is-secondary {
+.component-is--secondary {
     color: $white !important;
     background-color: $secondary !important;
+}
+
+.component-is--light-gray {
+    color: $dark-gray !important;
+    background-color: $light-gray !important;
 }
 
 .full-width {

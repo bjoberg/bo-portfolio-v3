@@ -12,7 +12,7 @@ import { NavigationConfig } from '../../config/navigation.config';
 })
 
 export class NavigationComponent {
-  private navigationItemList;
+  private navigationItemList: Array<NavigationItem>;
   private displayDesktop: Boolean = false;
   private breakpoint: Number = 650;
 
