@@ -13,16 +13,20 @@ import { NavigationConfig } from '../../config/navigation.config';
 
 export class NavigationComponent {
   private navigationItemList: Array<NavigationItem>;
-  private displayDesktop: Boolean = false;
-  private breakpoint: Number = 650;
+  private mobileNavigationItemList: Array<NavigationItem>;
+  private displayMobileView: Boolean;
+  private breakpoint: number;
+  private width: number;
 
   constructor() {
-    // Create the navigation items
     this.createNavigationItems();
+    this.createMobileNavigationItems();
+    this.displayMobileView = false
+    this.breakpoint = 650;
 
     // Decide what should should be displayed based on screen onResize
-    let width = window.innerWidth;
-    this.setNavigationState(width);
+    this.width = window.innerWidth;
+    this.setNavigationState(this.width);
   }
 
   /**
@@ -38,6 +42,21 @@ export class NavigationComponent {
     NavigationConfig.navigationItems.forEach(element => {
       let navItem = new NavigationItem(element.title, element.route, new URL(element.url), element.type, element.icon);
       this.navigationItemList.push(navItem);
+    });
+  }
+
+  private createMobileNavigationItems() {
+      // If mobile navigation list is empty, initialize it
+      if (this.mobileNavigationItemList === undefined) {
+        this.mobileNavigationItemList = [];
+      } 
+
+    // Process navigation configuration file
+    NavigationConfig.navigationItems.forEach(element => {
+      if (element.mobile === "true") {
+        let navItem = new NavigationItem(element.title, element.route, new URL(element.url), element.type, element.icon);
+        this.mobileNavigationItemList.push(navItem);
+      }
     });
   }
 
@@ -57,9 +76,19 @@ export class NavigationComponent {
    */
   private setNavigationState(width: number) {
     if (width <= this.breakpoint) {
-      this.displayDesktop = true;
+      this.displayMobileView = true;
     } else {
-      this.displayDesktop = false;
+      this.displayMobileView = false;
+    }
+  }
+
+  private validTopNavMobileViewItem(title) {
+    if (title === 'Brett Oberg') {
+      return true;
+    } else if (title === 'About') {
+      return true;
+    } else {
+      return false;
     }
   }
 }

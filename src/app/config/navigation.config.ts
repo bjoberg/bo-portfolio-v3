@@ -4,7 +4,8 @@ export const NavigationConfig = {
       title: "Brett Oberg", 
       route: "/", 
       url: "http://www.brettoberg.com",
-      type: "title",  
+      type: "title",
+      mobile: "true",  
       icon: "home"      
     },
     {
@@ -12,13 +13,15 @@ export const NavigationConfig = {
       route: "/about", 
       url: "http://www.brettoberg.com/about",
       type: "normal", 
+      mobile: "false",  
       icon: "user-circle-o"
     },
     {
       title: "Contact", 
       route: "/contact", 
       url: "http://www.brettoberg.com/contact",
-      type: "normal",  
+      type: "normal",
+      mobile: "true",  
       icon: "envelope-o"      
     },
     {
@@ -26,6 +29,7 @@ export const NavigationConfig = {
       route: "/software", 
       url: "http://www.brettoberg.com/software",
       type: "normal",  
+      mobile: "false",
       icon: "code"   
     },  
     {
@@ -33,6 +37,7 @@ export const NavigationConfig = {
       route: "/photography", 
       url: "http://www.brettoberg.com/photography",
       type: "normal",  
+      mobile: "false",
       icon: "camera-retro"      
     }
   ]

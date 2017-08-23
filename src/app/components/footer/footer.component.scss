@@ -1,25 +1,14 @@
-/* Color Palette */
-$primary: #3F51B5;
-//$secondary:
-//$accent:
-$dark-gray: #424242;
-$medium-gray: #E0E0E0;
-$light-gray: #FAFAFA;
-$white: #ffffff;
-$black: #000000;
-
-/** Content size */
-$breakPoint: 650px;
-
-/** Font */
-$font-large: 2.5em;
-$font-medium: 1.5em;
-$font-normal: 1.0em;
+@import '../../../style-helpers/colors';
+@import '../../../style-helpers/fonts';
+@import '../../../style-helpers/breakpoints';
 
 .footer {
   max-width: 100% !important;
-  padding: 1% 2% 1% 2% !important;
-  background-color: $medium-gray !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 8% !important;
+  padding-left: 8% !important;
+  margin: 0px;
 }
 
 .pull-right {
@@ -30,14 +19,14 @@ $font-normal: 1.0em;
   margin: 0px 5px 0px 5px;
 }
 
-/** For desktop devices */
+// Desktop
 @media (min-width: $breakPoint) {
   .footer {
     margin-bottom: 0px;
   }
 }
 
-/** For mobile devices */
+// Mobile
 @media (max-width: $breakPoint) {
   .footer {
     margin-bottom: 64px;

@@ -1,8 +1,6 @@
-$black: #000000;
-$white: #ffffff;
-
-// Content size 
-$breakPoint: 650px;
+ @import '../../../style-helpers/colors';
+ @import '../../../style-helpers/fonts';
+ @import '../../../style-helpers/breakpoints';
 
 // //////////////////// All devices ////////////////////
 .placeholder {
@@ -10,7 +8,7 @@ $breakPoint: 650px;
 }
 
 .nav-container {
-  width: 100% !important;
+  width: 100vw !important;
   z-index: 1000 !important;
 }
 
@@ -47,66 +45,84 @@ a span {
   padding: 0px !important;
 }
 
-// //////////////////// Desktop ////////////////////
-@media (min-width: $breakPoint) {
-  // Lists
-  .nav-container--top  ul {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 30px;
-    margin-left: 30px;
-    padding: 0;
-  }
-  
-  .nav-container--top  li {
-    display: inline;
-  }
+// //////////////////// Top Navigation ////////////////////
 
-  .nav-container--top  li.title {
-    font-size: 20px;
-    margin-right: 40px;
-    font-weight: 600;
-  }
-
-  .nav-container--top  li.normal {
-    padding-right: 30px;
-    font-size: 12px;
-  }
-
-  // Links
-  .nav-container--top  a {
-    text-decoration: none !important;
-    color: $white !important;
-  }
-
-  .nav-container--top  a:hover {
-    text-decoration: none !important;
-    color: $white !important;
-  }
-
-  .nav-container--top  a:visited {
-    text-decoration: none !important;
-    color: $white !important;
-  }
-
-  .nav-container--top  li.normal a {
-    font-weight: 400;
-  }
-
-  .nav-container--top  li.normal a.is-active {
-    padding-bottom: 2px !important;
-    border-bottom: 2px solid $white !important;
-    color: $white !important;
-  }
-
-  .nav-container--top  li.normal a:hover {
-    padding-bottom: 2px !important;
-    border-bottom: 2px solid $white !important;
-    color: $white !important;
-  }
+.nav-container--top ul,
+.nav-container--top table {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 8% !important;
+  padding-left: 8% !important;
+  margin: 0px;
 }
 
-// //////////////////// Mobile ////////////////////
+.nav-container--top li.title,
+.nav-container--top td.title {
+  font-size: 20px;
+  margin-right: 40px;
+  font-weight: 600;
+}
+
+.nav-container--top li.normal,
+.nav-container--top td.normal {
+  padding-right: 30px;
+  font-size: 12px;
+}
+
+// Links
+.nav-container--top  a {
+  text-decoration: none !important;
+  color: $white !important;
+}
+
+.nav-container--top a:hover {
+  text-decoration: none !important;
+  color: $white !important;
+}
+
+.nav-container--top a:visited {
+  text-decoration: none !important;
+  color: $white !important;
+}
+
+// Lists
+.nav-container--top li {
+  display: inline;
+}
+
+.nav-container--top .list--desktop li.normal a {
+  font-weight: 400;
+}
+
+.nav-container--top .list--desktop li.normal a.is-active {
+  padding-bottom: 2px !important;
+  border-bottom: 2px solid $white !important;
+  color: $white !important;
+}
+
+.nav-container--top .list--desktop li.title a:hover,
+.nav-container--top .table--mobile td.title a:hover {
+  padding-bottom: none !important;
+  border-bottom: none !important;
+  color: $white !important;
+}
+
+.nav-container--top .list--desktop li.normal a:hover {
+  padding-bottom: 2px !important;
+  border-bottom: 2px solid $white !important;
+  color: $white !important;
+}
+
+// Tables
+.nav-container--top table.table--mobile {
+  width: 100vw !important;
+}
+
+.nav-container--top .table--mobile td.normal {
+  text-align: right; 
+}
+
+// //////////////////// Bottom Navigation ////////////////////
 @media (max-width: $breakPoint) {
   .nav-container--bottom {
     position: fixed;
@@ -118,6 +134,7 @@ a span {
   .nav-container--bottom ul {
     display: table;
     width: 100%;
+    padding: 0px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -127,15 +144,23 @@ a span {
     text-align: center;
   }
 
-  // .nav-container--bottom li.title a {
-  //   color: $white;
-  // }
+  .nav-container--bottom td a {
+    color: $light-gray !important;
+  }
 
-  // .nav-container--bottom li.normal a {
-  //   color: $white;
-  // }
+  .nav-container--bottom td a {
+    color: $light-gray !important;
+  }
 
-  // .nav-container--bottom a.is-active {
-  //   color: $white !important;
-  // }
+  .nav-container--bottom td a:visited {
+    color: $light-gray !important;
+  }
+
+  .nav-container--bottom td a:visited {
+    color: $light-gray !important;
+  }
+
+  .nav-container--bottom a.is-active {
+    color: $dark-gray !important;
+  }
 }

@@ -1,9 +1,15 @@
-#group-overview {
-  margin-right: 3%;
-}
+@import '../../../style-helpers/colors';
+@import '../../../style-helpers/fonts';
+@import '../../../style-helpers/breakpoints';
 
-#group-details {
-  margin-left: 3%;
+@media (min-width: $breakPoint) {
+  #group-overview {
+    margin-right: 3%;
+  }
+  
+  #group-details {
+    margin-left: 3%;
+  }
 }
 
 .fa {

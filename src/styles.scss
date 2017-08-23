@@ -1,32 +1,5 @@
-/* 
- * Color Palette
- *
- * Using an anagolous color palette: https://www.sessions.edu/color-calculator/ 
- */
-$primary: #3a76c4;
-$secondary: #58c43a;
-$dark-gray: #424242;
-$light-gray: #FAFAFA;
-$white: #ffffff;
-$black: #000000;
-
-// Font sizes
-$font-size--xtra-large: 2.5em;
-$font-size--large: 1.5em;
-$font-size--normal: 1.0em;
-
-// Font weights
-$font-weight--heavy: 600;
-$font-weight--normal: 400;
-$font-weight--light: 300;
-
-// Letter spacing
-$letter-spacing--wide: 1.3px;
-$letter-spacing--normal: 1.2px;
-
-// Line height
-$line-height--tall: 1.5em;
-$line-height--normal: inherit;
+@import './style-helpers/colors';
+@import './style-helpers/fonts';
 
 head, body {
     font-family: 'Open Sans', sans-serif !important;
@@ -126,9 +99,9 @@ a {
 }
 
 a:hover {
-    color: $primary !important;
+    color: $primary;
     padding-bottom: 0px;
-    border-bottom: solid 2px $primary !important;
+    border-bottom: solid 2px $primary;
 }
 
 a:visited {
