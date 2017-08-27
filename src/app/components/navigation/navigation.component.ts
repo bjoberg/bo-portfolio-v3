@@ -45,6 +45,9 @@ export class NavigationComponent {
     });
   }
 
+  /**
+   * Process the NavigationConfig and create all of the mobile navigation items.
+   */
   private createMobileNavigationItems() {
       // If mobile navigation list is empty, initialize it
       if (this.mobileNavigationItemList === undefined) {
@@ -65,10 +68,6 @@ export class NavigationComponent {
    * 
    * @param event window resize event
    */
-  private onResize(event) {
-    this.setNavigationState(event.target.innerWidth);
-  }
-
   @HostListener('window:resize', ['$event'])
   resize(event) {
     this.setNavigationState(event.target.innerWidth);
@@ -84,16 +83,6 @@ export class NavigationComponent {
       this.displayMobileView = true;
     } else {
       this.displayMobileView = false;
-    }
-  }
-
-  private validTopNavMobileViewItem(title) {
-    if (title === 'Brett Oberg') {
-      return true;
-    } else if (title === 'About') {
-      return true;
-    } else {
-      return false;
     }
   }
 }

@@ -26,7 +26,7 @@ a span {
 // // //////////////////// Top Navigation ////////////////////
 .nav-container--top {
   z-index: 1000 !important;
-  min-width: calc(100vw - 8% - 8%) !important;
+  min-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
   padding-right: $container--padding-right;
   padding-left: $container--padding-left;
   height: $navbar--height;

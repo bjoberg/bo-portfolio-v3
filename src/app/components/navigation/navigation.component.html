@@ -1,23 +1,4 @@
 <!-- Top navigation bar Desktop -->
-<!-- <div class="nav-container nav-container--top component-is--primary" (window:resize)="onResize($event)">
-  <ul class="list--desktop" [hidden]="displayMobileView">
-    <li *ngFor="let item of navigationItemList" class="{{item.getType()}}">
-      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
-        <span>{{item.getTitle()}}</span>
-      </a>
-    </li>
-  </ul>
-  <table class="table--mobile" [hidden]="!displayMobileView">
-    <tr>
-      <td *ngFor="let item of mobileNavigationItemList" class="{{item.getType()}}">
-        <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
-            {{item.getTitle()}}
-          </a>          
-      </td>
-    </tr>
-  </table>
-</div> -->
-
 <div class="nav-container--top component-is--primary">
   <div [hidden]="displayMobileView" *ngFor="let item of navigationItemList" class="{{item.getType()}} desktop">
     <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
@@ -32,7 +13,7 @@
 </div>
 
 <!-- Botom navigation bar -->
-<div [hidden]="!displayMobileView" class="nav-container--bottom component-is--light-gray" (window:resize)="onResize($event)">
+<div [hidden]="!displayMobileView" class="nav-container--bottom component-is--light-gray">
   <div *ngFor="let item of navigationItemList" class="{{item.getType()}} mobile">
     <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
       <span><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>

@@ -22,7 +22,7 @@ body {
 
 // //////////////////// Layout ////////////////////
 .container {
-    padding-top: $navbar--height;
+    padding-top: calc(#{$navbar--height} + 30px);
     padding-right: $container--padding-right;
     padding-left: $container--padding-left;
     padding-bottom: $navbar--height;

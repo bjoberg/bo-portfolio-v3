@@ -2,16 +2,6 @@
 @import '../../../style-helpers/fonts';
 @import '../../../style-helpers/viewports-helper';
 
-@media (min-width: $breakPoint) {
-  #group-overview {
-    margin-right: 3%;
-  }
-  
-  #group-details {
-    margin-left: 3%;
-  }
-}
-
 .fa {
   padding-right:10px;
 }
@@ -20,4 +10,14 @@ img {
   width: 100%;
   height: auto;
   border-radius: 4px;
+}
+
+@media (min-width: $breakPoint) {
+  #group-overview {
+    margin-right: 3%;
+  }
+  
+  #group-details {
+    margin-left: 3%;
+  }
 }
