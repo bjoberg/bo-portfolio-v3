@@ -27,6 +27,7 @@ a span {
 .nav-container--top {
   z-index: 1000 !important;
   min-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
+  max-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
   padding-right: $container--padding-right;
   padding-left: $container--padding-left;
   height: $navbar--height;
@@ -148,7 +149,7 @@ a span {
   }
 
   .nav-container--bottom a.is-active {
-    color: $primary !important;
+    color: map-get($primary, 500) !important;
     border-bottom: none !important;
   }
 }

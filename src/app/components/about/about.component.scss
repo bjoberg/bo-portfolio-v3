@@ -15,6 +15,7 @@ img {
 @media (min-width: $breakPoint) {
   #group-overview {
     margin-right: 3%;
+    min-width: 300px;
   }
   
   #group-details {

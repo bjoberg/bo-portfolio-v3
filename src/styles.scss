@@ -1,5 +1,5 @@
 // A theme is required for @angular/material
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./style-helpers/material-theme";
 
 // Local
 @import './style-helpers/colors';
@@ -31,12 +31,12 @@ body {
 // //////////////////// Styling ////////////////////
 .component-is--primary {
     color: $white !important;
-    background-color: $primary !important;
+    background-color: map-get($primary, 500)  !important;
 }
 
 .component-is--secondary {
     color: $white !important;
-    background-color: $secondary !important;
+    background-color: map-get($accent, 500)!important;
 }
 
 .component-is--light-gray {
@@ -87,7 +87,7 @@ p {
 
 // //////////////////// Links ////////////////////
 a {
-    color: $primary;
+    color: map-get($primary, 500);
     font-weight: $font-weight--normal;
     font-size: $font-size--normal;
     letter-spacing: $letter-spacing--normal;
@@ -97,13 +97,13 @@ a {
 }
 
 a:hover {
-    color: $primary;
+    color: map-get($primary, 500);
     padding-bottom: 0px;
-    border-bottom: solid 2px $primary;
+    border-bottom: solid 2px map-get($primary, 500);
 }
 
 a:visited {
-    color: $primary;
+    color: map-get($primary, 500);
     padding-bottom: 0px;
     border-bottom: none;
 }
