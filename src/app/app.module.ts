@@ -1,9 +1,9 @@
 // External
+import 'hammerjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 // Local
@@ -17,6 +17,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PhotographyComponent } from './components/photography/photography.component';
 import { SoftwareComponent } from './components/software/software.component';
 import { ThemeComponent } from './components/theme/theme.component';
+
+// Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdGridListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -35,8 +39,10 @@ import { ThemeComponent } from './components/theme/theme.component';
     Routing,
     FormsModule,
     HttpModule,
-    MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MdButtonModule, 
+    MdGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

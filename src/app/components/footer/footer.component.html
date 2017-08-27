@@ -1,14 +1,13 @@
 <div class="footer">
-  <p>
-    <!-- Contact information -->
-    <b>Brett Oberg</b> - <a href="mailto:{{email}}">{{email}}</a>
-
-    <!-- Copyright information -->
-    <span id="copyright-information" class="copyright-information pull-right"> | <i class="fa fa-copyright" aria-hidden="true"></i> {{getCurrentYear()}}</span>
-
-    <!-- Social media information -->
-    <span *ngFor="let s of social" class="pull-right">
-      <a id="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i></a>
-    </span>
-  <p>
+  <div id="items-left">
+    <p><b>Brett Oberg</b> - <a href="mailto:{{email}}">{{email}}</a></p>    
+  </div>
+  <div id="items-right">
+    <p>
+      <span *ngFor="let s of social" id="item--social-media">
+        <a id="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i></a>
+      </span>
+      <span id="copyright-information" class="copyright-information"> | <i class="fa fa-copyright" aria-hidden="true"></i> {{getCurrentYear()}}</span>
+    <p>
+  </div>
 </div>

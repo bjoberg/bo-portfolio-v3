@@ -1,15 +1,16 @@
  @import '../../../style-helpers/colors';
  @import '../../../style-helpers/fonts';
- @import '../../../style-helpers/breakpoints';
+ @import '../../../style-helpers/viewports-helper';
 
 // //////////////////// All devices ////////////////////
-.placeholder {
-  min-height: 75px;
-}
-
 .nav-container {
-  width: 100vw !important;
   z-index: 1000 !important;
+  width: 100vw !important;
+  height: $navbar--height !important;
+  padding-right: $container--padding-right;
+  padding-left: $container--padding-left;
+  display: flex;
+  align-items: center;
 }
 
 .nav-container--top {
@@ -22,6 +23,8 @@
 // Lists
 ul {
   list-style-type: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 // Links
@@ -51,8 +54,6 @@ a span {
 .nav-container--top table {
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-right: 8% !important;
-  padding-left: 8% !important;
   margin: 0px;
 }
 

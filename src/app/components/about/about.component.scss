@@ -1,6 +1,6 @@
 @import '../../../style-helpers/colors';
 @import '../../../style-helpers/fonts';
-@import '../../../style-helpers/breakpoints';
+@import '../../../style-helpers/viewports-helper';
 
 @media (min-width: $breakPoint) {
   #group-overview {
@@ -14,4 +14,10 @@
 
 .fa {
   padding-right:10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
 }

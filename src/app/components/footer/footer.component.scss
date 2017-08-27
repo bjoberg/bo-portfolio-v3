@@ -1,18 +1,25 @@
 @import '../../../style-helpers/colors';
 @import '../../../style-helpers/fonts';
-@import '../../../style-helpers/breakpoints';
+@import '../../../style-helpers/viewports-helper';
 
 .footer {
-  max-width: 100% !important;
+  max-width: 100vw !important;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-right: 8% !important;
-  padding-left: 8% !important;
-  margin: 0px;
+  padding-right: $container--padding-right;
+  padding-left: $container--padding-left;
+  height: $footer--height;
+  display: flex;
+  align-items: center;
 }
 
-.pull-right {
-  float: right;
+#items-left {
+  flex: 1;
+}
+
+#items-right {
+  flex: 1;
+  text-align: right;
 }
 
 .social-media {

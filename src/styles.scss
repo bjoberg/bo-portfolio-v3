@@ -1,5 +1,10 @@
+// A theme is required for @angular/material
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Local
 @import './style-helpers/colors';
 @import './style-helpers/fonts';
+@import './style-helpers/viewports-helper';
 
 head, body {
     font-family: 'Open Sans', sans-serif !important;
@@ -13,14 +18,10 @@ body {
 
 // //////////////////// Layout ////////////////////
 .container {
-    margin-top: 2% !important;
-    margin-right: 8% !important;
-    margin-left: 8% !important;
-    margin-bottom: 10% !important;
-}
-
-.placeholder {
-    height: 75px !important;
+    padding-top: $navbar--height;
+    padding-right: $container--padding-right;
+    padding-left: $container--padding-left;
+    padding-bottom: $navbar--height;
 }
 
 // //////////////////// Styling ////////////////////
@@ -78,13 +79,6 @@ p {
     font-weight: $font-weight--normal;
     letter-spacing: $letter-spacing--wide;
     line-height: $line-height--tall;
-}
-
-// //////////////////// Images ////////////////////
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
 }
 
 // //////////////////// Links ////////////////////
