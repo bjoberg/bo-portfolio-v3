@@ -2,31 +2,6 @@
  @import '../../../style-helpers/fonts';
  @import '../../../style-helpers/viewports-helper';
 
-// //////////////////// All devices ////////////////////
-.nav-container {
-  z-index: 1000 !important;
-  width: 100vw !important;
-  height: $navbar--height !important;
-  padding-right: $container--padding-right;
-  padding-left: $container--padding-left;
-  display: flex;
-  align-items: center;
-}
-
-.nav-container--top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 0 1px 1px rgba(0,0,0,.05), 0 2px 2px rgba(0,0,0,.05), 0 4px 4px rgba(0,0,0,.05), 0 0 8px rgba(0,0,0,.05), 0 0 16px rgba(0,0,0,.05);
-}
-
-// Lists
-ul {
-  list-style-type: none !important;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
 // Links
 a {
   margin: 0px !important;
@@ -48,26 +23,19 @@ a span {
   padding: 0px !important;
 }
 
-// //////////////////// Top Navigation ////////////////////
-
-.nav-container--top ul,
-.nav-container--top table {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin: 0px;
-}
-
-.nav-container--top li.title,
-.nav-container--top td.title {
-  font-size: 20px;
-  margin-right: 40px;
-  font-weight: 600;
-}
-
-.nav-container--top li.normal,
-.nav-container--top td.normal {
-  padding-right: 30px;
-  font-size: 12px;
+// // //////////////////// Top Navigation ////////////////////
+.nav-container--top {
+  z-index: 1000 !important;
+  min-width: calc(100vw - 8% - 8%) !important;
+  padding-right: $container--padding-right;
+  padding-left: $container--padding-left;
+  height: $navbar--height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05), 0 2px 2px rgba(0,0,0,.05), 0 4px 4px rgba(0,0,0,.05), 0 0 8px rgba(0,0,0,.05), 0 0 16px rgba(0,0,0,.05);
+  display: flex;
+  align-items: center;
 }
 
 // Links
@@ -86,82 +54,101 @@ a span {
   color: $white !important;
 }
 
-// Lists
-.nav-container--top li {
-  display: inline;
-}
-
-.nav-container--top .list--desktop li.normal a {
+.nav-container--top .normal a {
   font-weight: 400;
 }
 
-.nav-container--top .list--desktop li.normal a.is-active {
+.nav-container--top .normal a.is-active {
   padding-bottom: 2px !important;
   border-bottom: 2px solid $white !important;
   color: $white !important;
 }
 
-.nav-container--top .list--desktop li.title a:hover,
-.nav-container--top .table--mobile td.title a:hover {
+.nav-container--top .title a:hover {
   padding-bottom: none !important;
   border-bottom: none !important;
   color: $white !important;
 }
 
-.nav-container--top .list--desktop li.normal a:hover {
+.nav-container--top .normal a:hover {
   padding-bottom: 2px !important;
   border-bottom: 2px solid $white !important;
   color: $white !important;
 }
 
-// Tables
-.nav-container--top table.table--mobile {
-  width: 100vw !important;
+// Desktop
+.nav-container--top .desktop.title {
+  font-size: 20px;
+  margin-right: 40px;
+  font-weight: 600;
 }
 
-.nav-container--top .table--mobile td.normal {
-  text-align: right; 
+.nav-container--top .desktop.normal {
+  padding-right: 30px;
+  font-size: 12px;
+}
+
+// Mobile
+
+.nav-container--top .mobile.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-container--top .mobile.normal {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
 }
 
 // //////////////////// Bottom Navigation ////////////////////
 @media (max-width: $breakPoint) {
   .nav-container--bottom {
+    z-index: 1000 !important;
+    min-width: calc(100vw - 8% - 8%) !important;
+    padding-right: $container--padding-right;
+    padding-left: $container--padding-left;
+    height: $navbar--height;
     position: fixed;
     bottom: 0 !important;
     left: 0 !important;
     box-shadow: 0 -1px 1px rgba(0,0,0,.05), 0 -2px 2px rgba(0,0,0,.05), 0 -4px 4px rgba(0,0,0,.05), 0 0 8px rgba(0,0,0,.05), 0 0 16px rgba(0,0,0,.05);
+    display: flex;
+    align-items: center;
   }
 
-  .nav-container--bottom ul {
-    display: table;
-    width: 100%;
-    padding: 0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .nav-container--bottom li {
-    display: table-cell;
-    text-align: center;
-  }
-
-  .nav-container--bottom td a {
+  .nav-container--bottom .mobile {
+    flex: 1;
     color: $light-gray !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .nav-container--bottom td a {
+  .nav-container--bottom .mobile.a {
     color: $light-gray !important;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
   }
 
-  .nav-container--bottom td a:visited {
-    color: $light-gray !important;
+  .nav-container--bottom a {
+    color: $dark-gray !important;
   }
 
-  .nav-container--bottom td a:visited {
-    color: $light-gray !important;
+  .nav-container--bottom a:hover {
+    color: $dark-gray !important;
+    border-bottom: none !important;
+  }
+
+  .nav-container--bottom a:visited {
+    color: $dark-gray !important;
+    border-bottom: none !important;
   }
 
   .nav-container--bottom a.is-active {
-    color: $dark-gray !important;
+    color: $primary !important;
+    border-bottom: none !important;
   }
 }

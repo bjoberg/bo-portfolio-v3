@@ -1,11 +1,17 @@
-#item--img {
-    flex: 1;
-}
 img {
-    width: 200px;
-    height: 200px;
+    background-size: cover; 
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
 }
 
-md-grid-tile {
-    background: lightblue;
+md-grid-title {
+    box-shadow: 0px;
+}
+md-grid-tile:hover {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    -webkit-transition: box-shadow 0.25s ease;
+    -moz-transition: box-shadow 0.25s ease;
+    -o-transition: box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease;
 }

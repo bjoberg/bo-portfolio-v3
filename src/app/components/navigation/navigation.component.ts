@@ -1,5 +1,5 @@
 // External
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 // Local
 import { NavigationItem } from '../../models/NavigationItem.model';
@@ -22,7 +22,7 @@ export class NavigationComponent {
     this.createNavigationItems();
     this.createMobileNavigationItems();
     this.displayMobileView = false
-    this.breakpoint = 650;
+    this.breakpoint = 960;
 
     // Decide what should should be displayed based on screen onResize
     this.width = window.innerWidth;
@@ -66,6 +66,11 @@ export class NavigationComponent {
    * @param event window resize event
    */
   private onResize(event) {
+    this.setNavigationState(event.target.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  resize(event) {
     this.setNavigationState(event.target.innerWidth);
   }
 

@@ -16,6 +16,10 @@ body {
     padding: 0px !important;
 }
 
+[hidden] { 
+    display: none !important;
+}
+
 // //////////////////// Layout ////////////////////
 .container {
     padding-top: $navbar--height;
