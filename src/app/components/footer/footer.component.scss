@@ -8,18 +8,19 @@
   padding-bottom: 15px;
   padding-right: $container--padding-right;
   padding-left: $container--padding-left;
-  height: $footer--height;
+  min-height: $footer--height;
   display: flex;
   align-items: center;
 }
 
-#items-left {
+.items-left {
   flex: 1;
 }
 
-#items-right {
+.items-right {
   flex: 1;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end !important;
 }
 
 .social-media {
