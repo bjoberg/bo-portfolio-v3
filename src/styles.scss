@@ -1,8 +1,12 @@
-// ONLY IMPORT THIS ONCE!!
-// A theme is required for @angular/material
+// ****************************************************************************
+// Note: ONLY IMPORT THIS HERE!!
+// @angular/material custom theme
+// ****************************************************************************
 @import "./style-helpers/material-theme";
 
-// Local
+// ****************************************************************************
+// Local styles
+// ****************************************************************************
 @import './style-helpers/colors';
 @import './style-helpers/fonts';
 @import './style-helpers/viewports-helper';
@@ -17,19 +21,29 @@ body {
     padding: 0px !important;
 }
 
+// ****************************************************************************
+// This is very important. Needed for hidding navigation components depending 
+// on screen size
+// ****************************************************************************
 [hidden] { 
     display: none !important;
 }
 
-// //////////////////// Layout ////////////////////
+// ****************************************************************************
+// Container
+// ****************************************************************************
 .container {
-    padding-top: calc(#{$navbar--height} + 30px);
+    padding-top: calc(#{$navbar--height} + #{$toolbar--height} + 30px);
+    // min-height == [window height - (padding-top + padding-bottom) - toolbar-height - (extra padding + footer padding) - footer height]
+    min-height: calc(100vh - (2*#{$navbar--height}) - #{$toolbar--height} - (2*30px) - #{$footer--height});
     padding-right: $container--padding-right;
     padding-left: $container--padding-left;
     padding-bottom: $navbar--height;
 }
 
-// //////////////////// Styling ////////////////////
+// ****************************************************************************
+// Component styling
+// ****************************************************************************
 .component-is--primary {
     color: $white !important;
     background-color: map-get($primary, 500)  !important;
@@ -61,7 +75,9 @@ body {
     text-align: center !important;
 }
 
-// //////////////////// General text ////////////////////
+// ****************************************************************************
+// General text
+// ****************************************************************************
 h1 {
     font-size: $font-size--xtra-large;
     color: $black;
@@ -86,7 +102,9 @@ p {
     line-height: $line-height--tall;
 }
 
-// //////////////////// Links ////////////////////
+// ****************************************************************************
+// Links
+// ****************************************************************************
 a {
     color: map-get($primary, 500);
     font-weight: $font-weight--normal;
@@ -109,7 +127,9 @@ a:visited {
     border-bottom: none;
 }
 
-// //////////////////// Buttons ////////////////////
+// ****************************************************************************
+// Buttons
+// ****************************************************************************
 a.btn {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -127,7 +147,9 @@ a.btn:visited {
     border-bottom: none !important;
 }
 
-// //////////////////// Lists ////////////////////
+// ****************************************************************************
+// Lists
+// ****************************************************************************
 ul.no-bullets {
     list-style-type: none;
     padding: 0px;
