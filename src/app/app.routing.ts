@@ -9,6 +9,11 @@ import { SoftwareComponent } from './components/software/software.component';
 import { ThemeComponent } from './components/theme/theme.component';
 
 const AppRoutes: Routes = [
+  { 
+    path: '',
+    redirectTo: "/about",
+    pathMatch: 'full'
+  },
   {
     path: 'about',
     component: AboutComponent
