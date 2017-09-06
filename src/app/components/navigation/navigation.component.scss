@@ -64,39 +64,44 @@ a span {
 // ****************************************************************************
 .nav-container--top  a {
   text-decoration: none !important;
-  color: $white !important;
+  color: $dark-gray !important;
 }
 
 .nav-container--top a:hover {
   text-decoration: none !important;
-  color: $white !important;
+  color: $dark-gray !important;
 }
 
 .nav-container--top a:visited {
   text-decoration: none !important;
-  color: $white !important;
+  color: $dark-gray !important;
+}
+
+.nav-container--top .title a {
+  font-weight: $font-weight--heavy;
 }
 
 .nav-container--top .normal a {
-  font-weight: 400;
+  font-weight: $font-weight--normal;
 }
 
 .nav-container--top .normal a.is-active {
   padding-bottom: 2px !important;
-  border-bottom: 2px solid $white !important;
-  color: $white !important;
+  border-bottom: 2px solid $dark-gray !important;
+  color: $dark-gray !important;
 }
 
 .nav-container--top .title a:hover {
   padding-bottom: none !important;
   border-bottom: none !important;
-  color: $white !important;
+  font-weight: $font-weight--heavy;
+  color: $dark-gray !important;
 }
 
 .nav-container--top .normal a:hover {
   padding-bottom: 2px !important;
-  border-bottom: 2px solid $white !important;
-  color: $white !important;
+  border-bottom: 2px solid $dark-gray !important;
+  color: $dark-gray !important;
 }
 
 // ****************************************************************************
@@ -105,7 +110,7 @@ a span {
 .nav-container--top .desktop.title {
   font-size: 20px;
   margin-right: 40px;
-  font-weight: 600;
+  font-weight: $font-weight--heavy;
 }
 
 .nav-container--top .desktop.normal {
@@ -118,7 +123,7 @@ a span {
 // ****************************************************************************
 .nav-container--top .mobile.title {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: $font-weight--heavy;
 }
 
 .nav-container--top .mobile.normal {

@@ -2,7 +2,7 @@
 <div class="toolbar"></div>
 
 <!-- Top navigation bar Desktop -->
-<div class="nav-container--top component-is--primary">
+<div class="nav-container--top component-is--light-gray">
   <div [hidden]="displayMobileView" *ngFor="let item of navigationItemList" class="{{item.getType()}} desktop">
     <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
       <span>{{item.getTitle()}}</span>
