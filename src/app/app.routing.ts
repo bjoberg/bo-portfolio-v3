@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { PhotographyComponent } from './components/photography/photography.component';
 import { SoftwareComponent } from './components/software/software.component';
-import { ThemeComponent } from './components/theme/theme.component';
 
 const AppRoutes: Routes = [
   { 
@@ -25,10 +24,6 @@ const AppRoutes: Routes = [
   {
     path: 'software',
     component: SoftwareComponent
-  },
-  {
-    path: 'theme',
-    component: ThemeComponent
   }
 ];
 

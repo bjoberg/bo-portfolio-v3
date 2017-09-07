@@ -14,7 +14,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { PhotographyComponent } from './components/photography/photography.component';
 import { SoftwareComponent } from './components/software/software.component';
-import { ThemeComponent } from './components/theme/theme.component';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,8 +26,7 @@ import { MdButtonModule, MdGridListModule } from '@angular/material';
     FooterComponent,
     AboutComponent,
     PhotographyComponent,
-    SoftwareComponent,
-    ThemeComponent
+    SoftwareComponent
   ],
   imports: [
     BrowserModule,
