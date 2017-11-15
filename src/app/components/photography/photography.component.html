@@ -1,13 +1,21 @@
 <div class="container">
-  <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-    <h1>Photography</h1>
-  </div> 
-  <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-  </div> 
-  <md-grid-list cols="3" gutterSize="15px" rowHeight="4:3">
-    <md-grid-tile><img src="../../../assets/images/IMG_0010.jpg" /></md-grid-tile>
-    <md-grid-tile><img src="../../../assets/images/IMG_0011.jpg" /></md-grid-tile>
-    <md-grid-tile><img src="../../../assets/images/IMG_0016.jpg" /></md-grid-tile>
-    <md-grid-tile><img src="../../../assets/images/IMG_0017.jpg" /></md-grid-tile>
-  </md-grid-list>
+  <!-- STATE: Page is loading -->
+  <div *ngIf="isLoading; else isNotLoading">
+    <p>Page is loading...</p>
+  </div>
+
+  <!-- STATE: Page is not loading -->
+  <ng-template #isNotLoading>
+    <!-- Context browser -->
+    <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+      <p>photography > portfolios > test 1</p>
+    </div>
+
+    <!-- Image list -->
+    <md-grid-list cols="3" gutterSize="15px" rowHeight="4:3">
+      <md-grid-tile *ngFor="let item of portfolio">
+        <img src="{{item.imageUrl}}" />
+      </md-grid-tile>
+    </md-grid-list>  
+  </ng-template>
 </div>
