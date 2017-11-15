@@ -6,15 +6,17 @@
 
   <!-- STATE: Page is not loading -->
   <ng-template #isNotLoading>
-    <!-- Context browser -->
+
+    <!-- Page title -->
     <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-      <p>photography > portfolios > test 1</p>
+      <h1>Photography</h1>
     </div>
 
     <!-- Image list -->
-    <md-grid-list cols="3" gutterSize="15px" rowHeight="4:3">
-      <md-grid-tile *ngFor="let item of portfolio">
-        <img src="{{item.imageUrl}}" />
+    <md-grid-list cols="2" gutterSize="15px" rowHeight="4:3">
+      <md-grid-tile *ngFor="let item of portfolioGroups">
+          <a routerLink="/photography/{{item.route}}"><img src="{{item.imageUrl}}" /></a> 
+        <md-grid-tile-footer>{{item.title}}</md-grid-tile-footer>
       </md-grid-tile>
     </md-grid-list>  
   </ng-template>
