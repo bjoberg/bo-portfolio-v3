@@ -11,14 +11,14 @@ export const PhotographyPortfolios = [
         title: 'item 1',
         description: '',
         imageUrl: '../../../assets/images/IMG_0016.jpg',
-        route: ''
+        route: 'item-1'
       },
       {
         id: 12,
         title: 'item 2',
         description: '',
         imageUrl: '../../../assets/images/IMG_0017.jpg',
-        route: ''
+        route: 'item-2'
       }
     ]   
   },
@@ -35,7 +35,7 @@ export const PhotographyPortfolios = [
         description: '',
         date: '',
         imageUrl: '../../../assets/images/IMG_0023.jpg',
-        route: ''
+        route: 'item-3'
       },
       {
         id: 22,
@@ -43,7 +43,7 @@ export const PhotographyPortfolios = [
         description: '',
         date: '',
         imageUrl: '../../../assets/images/IMG_0034.jpg',
-        route: ''
+        route: 'item-4'
       }
     ]   
   },  

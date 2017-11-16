@@ -7,7 +7,7 @@ import { PortfolioItem } from '../../../models/PortfolioItem.model';
 import { PhotographyPortfolios } from '../../../config/photographyPortfolios.config';
 
 @Component({
-  selector: 'portfolio-group',
+  selector: 'portfolio-group-component',
   templateUrl: './portfolioGroup.component.html',
   styleUrls: ['./portfolioGroup.component.scss']
 })

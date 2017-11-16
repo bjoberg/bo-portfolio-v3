@@ -9,15 +9,11 @@
 
     <!-- Page title -->
     <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-      <h1>Photography</h1>
+      <h1>{{portfolioItem.title}}</h1>
     </div>
-
-    <!-- Image list -->
-    <md-grid-list cols="2" gutterSize="15px" rowHeight="4:3">
-      <md-grid-tile *ngFor="let item of portfolioGroups">
-          <img routerLink="/photography/{{item.route}}" src="{{item.imageUrl}}" />
-        <md-grid-tile-footer>{{item.title}}</md-grid-tile-footer>
-      </md-grid-tile>
-    </md-grid-list>  
+    <!-- Item -->
+    <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+      <img src="{{portfolioItem.imageUrl}}" />
+    </div>
   </ng-template>
 </div>
