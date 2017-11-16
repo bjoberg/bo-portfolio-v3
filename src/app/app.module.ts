@@ -23,7 +23,7 @@ import { SoftwareComponent } from './components/software/software.component';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdGridListModule, MdMenuModule } from '@angular/material';
+import { MdButtonModule, MdGridListModule, MdMenuModule, MdProgressBarModule, MdIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,9 @@ import { MdButtonModule, MdGridListModule, MdMenuModule } from '@angular/materia
     BrowserAnimationsModule,
     MdButtonModule, 
     MdGridListModule,
-    MdMenuModule
+    MdMenuModule,
+    MdProgressBarModule,
+    MdIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

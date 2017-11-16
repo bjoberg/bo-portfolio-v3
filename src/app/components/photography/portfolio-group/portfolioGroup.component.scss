@@ -1,0 +1,31 @@
+// ****************************************************************************
+// Local styles
+// ****************************************************************************
+@import '../../../../style-helpers/colors';
+@import '../../../../style-helpers/fonts';
+@import '../../../../style-helpers/viewports-helper';
+
+// ****************************************************************************
+// Context Browser
+// ****************************************************************************
+[role=context-browser] {
+  padding: 10px 0px 10px 0px;
+  font-size: $font-size--small;
+
+  a {
+    cursor: pointer;
+  }
+
+  .container--context-browser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// ****************************************************************************
+// Photo grid
+// ****************************************************************************
+md-grid-tile:hover {
+  cursor: pointer;
+}

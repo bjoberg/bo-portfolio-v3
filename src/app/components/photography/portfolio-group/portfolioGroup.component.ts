@@ -13,31 +13,29 @@ import { PhotographyPortfolios } from '../../../config/photographyPortfolios.con
 })
 
 export class PortfolioGroupComponent {
-  // Member variables
-  public isLoading: Boolean = true;
+  private isLoading: Boolean;
   private portfolioGroupRoute: string;
   private portfolioGroupTitle: string;
   private portfolioGroupItems: Array<PortfolioItem>;
+  private portfolioGroups: Array<Object>;
 
-  // Lifecycle methods
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) {
+    this.isLoading = true;
+  }
 
   ngOnInit() {
     // Get the portfolio group's route
     this.route.params.subscribe((params) => this.portfolioGroupRoute = params.portfolioGroup);
 
-    // Get the portfolio group's title
+    // Build the view
     this.getPortfolioGroupTitle(this.portfolioGroupRoute);
-
-    // Get the portgolio group's items
     this.getPortfolioGroupItems(this.portfolioGroupRoute);
+    this.getPortfolioGroups();
 
     // Stop loading the page
     this.isLoading = false;
   }
-
-  // General class methods  
-
+  
   private getPortfolioGroupTitle(portfolioGroupRoute: string) {
     for (var i = 0; i < PhotographyPortfolios.length; i++) {
       var element = PhotographyPortfolios[i];
@@ -62,6 +60,10 @@ export class PortfolioGroupComponent {
   }
 
   private getPortfolioGroups() {
-    
+    this.portfolioGroups = [];
+    for (var i = 0; i < PhotographyPortfolios.length; i++) {
+      var element = PhotographyPortfolios[i];
+      this.portfolioGroups.push({title: element.title, route: element.route});
+    }
   }
 }

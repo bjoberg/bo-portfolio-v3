@@ -1,7 +1,4 @@
-// External
 import { Component } from '@angular/core';
-
-// Local
 import { PortfolioGroup } from '../../models/PortfolioGroup.model';
 import { PhotographyPortfolios } from '../../config/photographyPortfolios.config';
 
@@ -12,11 +9,9 @@ import { PhotographyPortfolios } from '../../config/photographyPortfolios.config
 })
 
 export class PhotographyComponent {
-  // Member variables
   private portfolioGroups: Array<PortfolioGroup>;
   private isLoading: Boolean = true;
 
-  // Lifecycle methods
   constructor() {
     this.loadPortfolioGroups();
   }

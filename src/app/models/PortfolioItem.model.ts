@@ -4,9 +4,9 @@ class PortfolioItem {
   private imageUrl: string;
   private route: string;
 
-  constructor(title: string, image: string, route: string) {
+  constructor(title: string, imageUrl: string, route: string) {
       this.title = title;
-      this.imageUrl = image;
+      this.imageUrl = imageUrl;
       this.route = route;
   }
 
