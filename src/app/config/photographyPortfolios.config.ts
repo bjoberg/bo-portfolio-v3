@@ -31,7 +31,7 @@ export const PhotographyPortfolios = [
     items: [
       {
         id: 21,
-        title: 'item 1',
+        title: 'item 3',
         description: '',
         date: '',
         imageUrl: '../../../assets/images/IMG_0023.jpg',
@@ -39,7 +39,7 @@ export const PhotographyPortfolios = [
       },
       {
         id: 22,
-        title: 'item 2',
+        title: 'item 4',
         description: '',
         date: '',
         imageUrl: '../../../assets/images/IMG_0034.jpg',

@@ -9,14 +9,10 @@
 // Context Browser
 // ****************************************************************************
 [role=context-browser] {
-  padding: 10px 0px 10px 0px;
-  font-size: $font-size--small;
-
-  a {
-    cursor: pointer;
-  }
+  padding: 10px 0px 0px 0px;
 
   .container--context-browser {
+    font-size: $font-size--small;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,6 +22,8 @@
 // ****************************************************************************
 // Photo grid
 // ****************************************************************************
-md-grid-tile:hover {
-  cursor: pointer;
+[role=photo-grid] {
+  md-grid-tile:hover {
+    cursor: pointer;
+  }
 }

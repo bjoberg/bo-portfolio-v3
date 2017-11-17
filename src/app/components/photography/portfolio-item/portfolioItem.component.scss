@@ -1,3 +1,36 @@
+// ****************************************************************************
+// Local styles
+// ****************************************************************************
+@import '../../../../style-helpers/colors';
+@import '../../../../style-helpers/fonts';
+@import '../../../../style-helpers/viewports-helper';
+
+// ****************************************************************************
+// Context Browser
+// ****************************************************************************
+[role=context-browser] {
+  padding: 10px 0px 0px 0px;
+  display: flex;
+
+  .container--context-browser {
+    flex: 1;
+    font-size: $font-size--small;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .container--photo-options {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+// ****************************************************************************
+// Image  
+// ****************************************************************************
 img {
   max-width: 100%;
 }

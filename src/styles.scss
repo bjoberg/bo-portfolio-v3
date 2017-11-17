@@ -33,7 +33,7 @@ body {
 // Container
 // ****************************************************************************
 .container {
-    padding-top: calc(#{$navbar--height} + #{$toolbar--height} + 30px);
+    padding-top: calc(#{$navbar--height} + #{$toolbar--height} + 0px);
     // min-height == [window height - (padding-top + padding-bottom) - toolbar-height - (extra padding + footer padding) - footer height]
     min-height: calc(100vh - (2*#{$navbar--height}) - #{$toolbar--height} - (2*30px) - #{$footer--height});
     padding-right: $container--padding-right;
