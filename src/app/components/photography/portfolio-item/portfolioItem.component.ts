@@ -53,7 +53,10 @@ export class PortfolioItemComponent implements OnInit {
         break;
       case "ArrowLeft":
         window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.prevPortfolioItemRoute);
-        break;   
+        break; 
+      case "Escape":
+        window.location.replace('/photography/' + this.portfolioGroupRoute);
+        break;  
       default:
         break;
     }

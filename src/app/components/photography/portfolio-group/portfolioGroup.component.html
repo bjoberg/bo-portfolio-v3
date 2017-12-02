@@ -17,7 +17,7 @@
 
     <!-- Image list -->
     <div role="photo-grid">
-      <md-grid-list cols="2" gutterSize="15px" rowHeight="6:4">
+      <md-grid-list cols="2" gutterSize="5px" rowHeight="6:4">
         <md-grid-tile routerLink="/photography/{{portfolioGroupRoute}}/{{item.id}}" *ngFor="let item of portfolioGroupItems">
           <img src="{{item.imageUrl}}" />
         </md-grid-tile>
