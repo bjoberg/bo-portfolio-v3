@@ -1,5 +1,5 @@
 // External
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // Local
@@ -22,6 +22,11 @@ export class PortfolioItemComponent {
 
   constructor(private route: ActivatedRoute) { 
     this.isLoading = true;
+    this.portfolioGroupRoute = "";
+    this.portfolioItemRoute = "";
+    this.portfolioItem = null;
+    this.nextPortfolioItemRoute = "";
+    this.prevPortfolioItemRoute = "";
   }
 
   ngOnInit() {
@@ -36,6 +41,20 @@ export class PortfolioItemComponent {
 
     // Stop loading the page
     this.isLoading = false;
+  }
+
+  @HostListener('window:keyup', ['$event'])
+  onKey(event: KeyboardEvent) {
+    switch (event.key) {
+      case "ArrowRight":
+        window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.nextPortfolioItemRoute);
+        break;
+      case "ArrowLeft":
+        window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.prevPortfolioItemRoute);
+        break;   
+      default:
+        break;
+    }
   }
 
   private loadPortfolioItem(groupRoute, itemRoute) {

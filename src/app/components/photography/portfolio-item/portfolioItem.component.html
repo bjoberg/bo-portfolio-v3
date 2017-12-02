@@ -8,7 +8,9 @@
   <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item">
     <!-- Nav left -->
     <div class="container--nav-left" id="container--nav-left" routerLink="/photography/{{portfolioGroupRoute}}/{{prevPortfolioItemRoute}}">
-      <i class="material-icons">keyboard_arrow_left </i>
+      <a href="/photography/{{portfolioGroupRoute}}/{{prevPortfolioItemRoute}}">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </a>
     </div>
 
     <!-- Image -->
@@ -17,8 +19,13 @@
     </div>
     
     <!-- Nav right -->
-    <div class="container--nav-right" id="container--nav-right" routerLink="/photography/{{portfolioGroupRoute}}/{{nextPortfolioItemRoute}}">
-      <i class="material-icons">keyboard_arrow_right</i>
+    <div class="container--nav-right" id="container--nav-right">
+        <a class="close" href="/photography/{{portfolioGroupRoute}}/">
+          <i class="material-icons">close</i>
+        </a>
+        <a class="nav-right" href="/photography/{{portfolioGroupRoute}}/{{nextPortfolioItemRoute}}">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </a>
     </div>
   </div>
 </ng-template>
