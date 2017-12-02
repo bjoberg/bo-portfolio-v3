@@ -53,7 +53,7 @@ export class PortfolioGroupComponent {
         this.portfolioGroupItems = [];
         for (var n = 0; n < element.items.length; n++) {
           var item = element.items[n];
-          this.portfolioGroupItems.push(new PortfolioItem(item.title, item.imageUrl, item.route));
+          this.portfolioGroupItems.push(new PortfolioItem(item.id, item.title, item.imageUrl));
         } 
       }
     }  

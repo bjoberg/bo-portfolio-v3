@@ -14,24 +14,19 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 
 export class PortfolioItemComponent implements OnInit {
-  private isLoading: Boolean;
+  private isLoading: Boolean = true;
   private portfolioGroupRoute: String;
   private portfolioItemRoute: String;
   private portfolioItem: PortfolioItem;
-  private nextPortfolioItemRoute: String;
-  private prevPortfolioItemRoute: String;
+  private nextPortfolioItemRoute: number;
+  private prevPortfolioItemRoute: number;
 
-  constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef) {
-    //this.isLoading = true;
-   }
+  constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    //this.isLoading = true;
     this.portfolioGroupRoute = "";
     this.portfolioItemRoute = "";
     this.portfolioItem = null;
-    this.nextPortfolioItemRoute = "";
-    this.prevPortfolioItemRoute = "";
 
     // Get the route parameters
     this.route.params.subscribe((params) => this.portfolioGroupRoute = params.portfolioGroup);
@@ -70,8 +65,8 @@ export class PortfolioItemComponent implements OnInit {
       if (group.route == groupRoute) {
         for (var n = 0; n < group.items.length; n++) {
           var item = group.items[n]; 
-          if (item.route == itemRoute) {
-            this.portfolioItem = new PortfolioItem(item.title, item.imageUrl, item.route);
+          if (item.id == itemRoute) {
+            this.portfolioItem = new PortfolioItem(item.id, item.title, item.imageUrl);
           }
         }
       }
@@ -84,9 +79,9 @@ export class PortfolioItemComponent implements OnInit {
       if (group.route == groupRoute) {
         for (var n = 0; n < group.items.length; n++) {
           var item = group.items[n]; 
-          if (item.route == currItem) {
+          if (item.id == currItem) {
             if (n != (group.items.length - 1)) {
-              this.nextPortfolioItemRoute = group.items[n+1].route;
+              this.nextPortfolioItemRoute = group.items[n+1].id;
             }
           }
         }
@@ -100,9 +95,9 @@ export class PortfolioItemComponent implements OnInit {
       if (group.route == groupRoute) {
         for (var n = 0; n < group.items.length; n++) {
           var item = group.items[n]; 
-          if (item.route == currItem) {
+          if (item.id == currItem) {
             if (n != 0) {
-              this.prevPortfolioItemRoute = group.items[n-1].route;
+              this.prevPortfolioItemRoute = group.items[n-1].id;
             }
           }
         }
