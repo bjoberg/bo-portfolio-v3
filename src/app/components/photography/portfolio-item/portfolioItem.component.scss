@@ -37,7 +37,7 @@
     .close {
       align-self: flex-start;
       right: 10px;
-      top: 10px;
+      top: 0px;
       position: absolute;
     }
   }
@@ -50,4 +50,9 @@
 a {
   border-bottom: none;
   color: $dark-gray;
+
+  &.disabled {
+    color: $medium-gray;
+    cursor: default;
+  }
 }

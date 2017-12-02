@@ -1,14 +1,14 @@
 <!-- STATE: Page is loading -->
-<div *ngIf="isLoading; else isNotLoading">
+<div *ngIf="isLoading">
   <md-progress-bar color="primary" mode="indeterminate"></md-progress-bar>
 </div>
 
 <!-- STATE: Page is not loading -->
-<ng-template #isNotLoading>
+<div *ngIf="!isLoading">
   <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item">
     <!-- Nav left -->
     <div class="container--nav-left" id="container--nav-left" routerLink="/photography/{{portfolioGroupRoute}}/{{prevPortfolioItemRoute}}">
-      <a href="/photography/{{portfolioGroupRoute}}/{{prevPortfolioItemRoute}}">
+      <a id="nav-left" href="/photography/{{portfolioGroupRoute}}/{{prevPortfolioItemRoute}}">
         <i class="material-icons">keyboard_arrow_left</i>
       </a>
     </div>
@@ -23,9 +23,9 @@
         <a class="close" href="/photography/{{portfolioGroupRoute}}/">
           <i class="material-icons">close</i>
         </a>
-        <a class="nav-right" href="/photography/{{portfolioGroupRoute}}/{{nextPortfolioItemRoute}}">
+        <a class="nav-right" id="nav-right" href="/photography/{{portfolioGroupRoute}}/{{nextPortfolioItemRoute}}">
           <i class="material-icons">keyboard_arrow_right</i>
         </a>
     </div>
   </div>
-</ng-template>
+</div>

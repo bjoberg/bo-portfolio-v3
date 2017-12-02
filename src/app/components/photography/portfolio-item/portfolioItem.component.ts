@@ -1,10 +1,11 @@
 // External
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener,ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // Local
 import { PortfolioItem } from '../../../models/PortfolioItem.model';
 import { PhotographyPortfolios } from '../../../config/photographyPortfolios.config';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'portfolio-item-component',
@@ -12,7 +13,7 @@ import { PhotographyPortfolios } from '../../../config/photographyPortfolios.con
   styleUrls: ['./portfolioItem.component.scss']
 })
 
-export class PortfolioItemComponent {
+export class PortfolioItemComponent implements OnInit {
   private isLoading: Boolean;
   private portfolioGroupRoute: String;
   private portfolioItemRoute: String;
@@ -20,27 +21,33 @@ export class PortfolioItemComponent {
   private nextPortfolioItemRoute: String;
   private prevPortfolioItemRoute: String;
 
-  constructor(private route: ActivatedRoute) { 
-    this.isLoading = true;
+  constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef) {
+    //this.isLoading = true;
+   }
+
+  ngOnInit(): void {
+    //this.isLoading = true;
     this.portfolioGroupRoute = "";
     this.portfolioItemRoute = "";
     this.portfolioItem = null;
     this.nextPortfolioItemRoute = "";
     this.prevPortfolioItemRoute = "";
-  }
 
-  ngOnInit() {
     // Get the route parameters
     this.route.params.subscribe((params) => this.portfolioGroupRoute = params.portfolioGroup);
     this.route.params.subscribe((params) => this.portfolioItemRoute = params.portfolioItem);
 
     // Build the view
     this.loadPortfolioItem(this.portfolioGroupRoute, this.portfolioItemRoute);
+  }
+
+  ngAfterViewInit(): void {
     this.getNextPortfolioItemRoute(this.portfolioGroupRoute, this.portfolioItemRoute);
     this.getPrevPortfolioItemRoute(this.portfolioGroupRoute, this.portfolioItemRoute);
 
     // Stop loading the page
     this.isLoading = false;
+    this.cdRef.detectChanges();
   }
 
   @HostListener('window:keyup', ['$event'])
