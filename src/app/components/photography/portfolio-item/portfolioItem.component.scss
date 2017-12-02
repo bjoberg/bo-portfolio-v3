@@ -2,8 +2,6 @@
 // Local styles
 // ****************************************************************************
 @import '../../../../style-helpers/colors';
-@import '../../../../style-helpers/fonts';
-@import '../../../../style-helpers/viewports-helper';
 
 // ****************************************************************************
 // Container
@@ -15,7 +13,11 @@
   .container--nav-left {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .container--image {
@@ -32,7 +34,11 @@
   .container--nav-right {
     display: flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
+    
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .material-icons {

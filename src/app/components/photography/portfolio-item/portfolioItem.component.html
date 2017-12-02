@@ -7,7 +7,7 @@
 <ng-template #isNotLoading>
   <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item">
     <!-- Nav left -->
-    <div class="container--nav-left" id="container--nav-left">
+    <div class="container--nav-left" id="container--nav-left" routerLink="/photography/{{portfolioGroupRoute}}/{{prevPortfolioItemRoute}}">
       <i class="material-icons">keyboard_arrow_left </i>
     </div>
 
@@ -17,7 +17,7 @@
     </div>
     
     <!-- Nav right -->
-    <div class="container--nav-right" id="container--nav-right">
+    <div class="container--nav-right" id="container--nav-right" routerLink="/photography/{{portfolioGroupRoute}}/{{nextPortfolioItemRoute}}">
       <i class="material-icons">keyboard_arrow_right</i>
     </div>
   </div>
