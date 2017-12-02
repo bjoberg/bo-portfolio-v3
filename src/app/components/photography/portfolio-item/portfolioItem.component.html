@@ -1,30 +1,24 @@
-<div class="container">
-  <!-- STATE: Page is loading -->
-  <div *ngIf="isLoading; else isNotLoading">
-    <md-progress-bar color="primary" mode="indeterminate"></md-progress-bar>
-  </div>
+<!-- STATE: Page is loading -->
+<div *ngIf="isLoading; else isNotLoading">
+  <md-progress-bar color="primary" mode="indeterminate"></md-progress-bar>
+</div>
 
-  <!-- STATE: Page is not loading -->
-  <ng-template #isNotLoading>
-    <!-- Context browser -->
-    <div role="context-browser" class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-      <div class="container--context-browser">
-        <a routerLink="/photography">Photography</a> 
-        <i class="material-icons">keyboard_arrow_right</i>
-        <a routerLink="/photography">todo</a>
-        <i class="material-icons">keyboard_arrow_right</i>
-        <p>{{portfolioItem.title}}</p>
-      </div>
-      <div class="container--photo-options">
-        <i class="material-icons">fullscreen </i>
-        <i class="material-icons"> keyboard_arrow_left </i>
-        <i class="material-icons"> keyboard_arrow_right</i>
-      </div>
+<!-- STATE: Page is not loading -->
+<ng-template #isNotLoading>
+  <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item">
+    <!-- Nav left -->
+    <div class="container--nav-left" id="container--nav-left">
+      <i class="material-icons">keyboard_arrow_left </i>
     </div>
 
-    <!-- Item -->
-    <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+    <!-- Image -->
+    <div class="container--image flex-container">
       <img src="{{portfolioItem.imageUrl}}" />
     </div>
-  </ng-template>
-</div>
+    
+    <!-- Nav right -->
+    <div class="container--nav-right" id="container--nav-right">
+      <i class="material-icons">keyboard_arrow_right</i>
+    </div>
+  </div>
+</ng-template>
