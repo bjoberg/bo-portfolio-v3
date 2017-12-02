@@ -2,7 +2,7 @@ export const PhotographyPortfolios = [
   {
     id: 1,
     title: 'Natural Landscape',
-    imageUrl: '../../../assets/images/IMG_0010.jpg',
+    imageUrl: '../../../assets/images/natural-landscape/EchoLake_10-2017.jpg',
     route: 'natural-landscape',
     childGroups: null,
     items: [
@@ -31,30 +31,5 @@ export const PhotographyPortfolios = [
       { id: 123, title: 'Waning Gibbous, February 2017', description: '', imageUrl: '../../../assets/images/natural-landscape/WaningGibbous_02-2017.jpg' },
       { id: 124, title: 'White Horse Ledge, October 2017', description: '', imageUrl: '../../../assets/images/natural-landscape/WhiteHorseLedge_10-2017.jpg' },
     ]   
-  },
-  {
-    id: 2,
-    title: 'Urban Landscape',
-    imageUrl: '../../../assets/images/IMG_0011.jpg',
-    route: 'urban-landscape',
-    childGroups: null,
-    items: [
-      {
-        id: 21,
-        title: 'item 3',
-        description: '',
-        date: '',
-        imageUrl: '../../../assets/images/IMG_0023.jpg',
-        route: 'item-3'
-      },
-      {
-        id: 22,
-        title: 'item 4',
-        description: '',
-        date: '',
-        imageUrl: '../../../assets/images/IMG_0034.jpg',
-        route: 'item-4'
-      }
-    ]   
-  },  
+  } 
 ];
