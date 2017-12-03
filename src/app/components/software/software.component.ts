@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'software-component',
@@ -6,11 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./software.component.scss']
 })
 
-export class SoftwareComponent {
+export class SoftwareComponent implements OnInit {
   // Member variables
 
   // Lifecycle methods
-  constructor() {}
+  constructor(private titleService: Title) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle("Software - Brett Oberg");
+  }
 
   // Accessor methods
 

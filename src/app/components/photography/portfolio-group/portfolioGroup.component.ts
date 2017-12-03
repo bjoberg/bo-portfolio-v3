@@ -1,5 +1,6 @@
 // External
-import { Component, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 // Local
@@ -12,7 +13,7 @@ import { PhotographyPortfolios } from '../../../config/photographyPortfolios.con
   styleUrls: ['./portfolioGroup.component.scss']
 })
 
-export class PortfolioGroupComponent {
+export class PortfolioGroupComponent implements OnInit {
   private isLoading: Boolean;
   private portfolioGroupRoute: string;
   private portfolioGroupTitle: string;
@@ -20,11 +21,11 @@ export class PortfolioGroupComponent {
   private portfolioGroups: Array<Object>;
   private gridCols: number;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private titleService: Title) {
     this.isLoading = true;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.calculateGridCols(window.innerWidth);
 
     // Get the portfolio group's route
@@ -34,6 +35,8 @@ export class PortfolioGroupComponent {
     this.getPortfolioGroupTitle(this.portfolioGroupRoute);
     this.getPortfolioGroupItems(this.portfolioGroupRoute);
     this.getPortfolioGroups();
+
+    this.titleService.setTitle(this.portfolioGroupTitle + " - Brett Oberg");
 
     // Stop loading the page
     this.isLoading = false;

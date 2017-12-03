@@ -1,5 +1,6 @@
 // External
 import { Component, HostListener,ChangeDetectorRef } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 // Local
@@ -23,7 +24,7 @@ export class PortfolioItemComponent implements OnInit {
   private hasPrev: Boolean;
   private hasNext: Boolean;
 
-  constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef, private titleService: Title) { }
 
   ngOnInit(): void {
     this.portfolioGroupRoute = "";
@@ -36,6 +37,7 @@ export class PortfolioItemComponent implements OnInit {
 
     // Build the view
     this.loadPortfolioItem(this.portfolioGroupRoute, this.portfolioItemRoute);
+    this.titleService.setTitle(this.portfolioItem.getTitle() + " - Brett Oberg");
   }
 
   ngAfterViewInit(): void {

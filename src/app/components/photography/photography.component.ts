@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { PortfolioGroup } from '../../models/PortfolioGroup.model';
 import { PhotographyPortfolios } from '../../config/photographyPortfolios.config';
 
@@ -13,12 +14,13 @@ export class PhotographyComponent {
   private isLoading: Boolean = true;
   private gridCols: number;
 
-  constructor() {
+  constructor(private titleService: Title) {
     this.loadPortfolioGroups();
   }
 
   ngOnInit() {
     this.calculateGridCols(window.innerWidth);
+    this.titleService.setTitle("Photography - Brett Oberg");
     this.isLoading = false;
   }
 

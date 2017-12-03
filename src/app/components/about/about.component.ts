@@ -1,5 +1,6 @@
 // External
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 // Internal
 import { UserConfig } from '../../config/user.config';
@@ -10,7 +11,7 @@ import { UserConfig } from '../../config/user.config';
   styleUrls: ['./about.component.scss']
 })
 
-export class AboutComponent {
+export class AboutComponent implements OnInit {
   // Page Information
   private title = "About";
 
@@ -31,7 +32,7 @@ export class AboutComponent {
   // Recognition
   private recognition;
 
-  constructor() {
+  constructor(private titleService: Title) {
     // Configure about data
     this.avatar = UserConfig.about.avatar;
     this.descriptionLong = UserConfig.about.description_long;
@@ -50,8 +51,9 @@ export class AboutComponent {
     this.recognition = UserConfig.recognition;
   }
 
-  ngOnInit() {
+  ngOnInit():void  {
     // Updated the decription-long 
     document.getElementById('content-description-long').innerHTML = this.descriptionLong;
+    this.titleService.setTitle("About - Brett Oberg");
   }
 }
