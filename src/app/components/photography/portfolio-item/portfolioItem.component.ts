@@ -20,6 +20,8 @@ export class PortfolioItemComponent implements OnInit {
   private portfolioItem: PortfolioItem;
   private nextPortfolioItemRoute: number;
   private prevPortfolioItemRoute: number;
+  private hasPrev: Boolean;
+  private hasNext: Boolean;
 
   constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef) { }
 
@@ -47,16 +49,22 @@ export class PortfolioItemComponent implements OnInit {
 
   @HostListener('window:keyup', ['$event'])
   onKey(event: KeyboardEvent) {
-    switch (event.key) {
-      case "ArrowRight":
-        window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.nextPortfolioItemRoute);
+    event.preventDefault();
+    console.log("Default Prevented? " + event.defaultPrevented);
+    switch (event.keyCode) {
+      case 39: // Right
+        if (this.nextPortfolioItemRoute !== undefined) {
+          window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.nextPortfolioItemRoute);
+        }
         break;
-      case "ArrowLeft":
-        window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.prevPortfolioItemRoute);
+      case 37: // Left
+        if (this.prevPortfolioItemRoute !== undefined) {
+          window.location.replace('/photography/' + this.portfolioGroupRoute + '/' + this.prevPortfolioItemRoute);
+        }
         break; 
-      case "Escape":
+      case 27: // Escape
         window.location.replace('/photography/' + this.portfolioGroupRoute);
-        break;  
+        break;
       default:
         break;
     }
@@ -84,7 +92,10 @@ export class PortfolioItemComponent implements OnInit {
           var item = group.items[n]; 
           if (item.id == currItem) {
             if (n != (group.items.length - 1)) {
+              this.hasNext = true;
               this.nextPortfolioItemRoute = group.items[n+1].id;
+            } else {
+              this.hasNext = false;
             }
           }
         }
@@ -100,7 +111,10 @@ export class PortfolioItemComponent implements OnInit {
           var item = group.items[n]; 
           if (item.id == currItem) {
             if (n != 0) {
+              this.hasPrev = true;
               this.prevPortfolioItemRoute = group.items[n-1].id;
+            } else {
+              this.hasPrev = false;
             }
           }
         }

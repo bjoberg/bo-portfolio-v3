@@ -6,7 +6,21 @@
 @import '../../../../style-helpers/viewports-helper';
 
 // ****************************************************************************
-// All Devices
+// Override <a></a> tags
+// ****************************************************************************
+a {
+  border-bottom: none;
+  color: $dark-gray;
+
+  &.disabled {
+    color: $medium-gray;
+    cursor: default;
+    font-size: 48px;
+  }
+}
+
+// ****************************************************************************
+// Portfolio Item
 // ****************************************************************************
 [role=container--portfolio-item] {  
   
@@ -44,7 +58,6 @@
     justify-content: center;
     min-height: 100vh !important;
     padding: 0px 10px 0px 0px;
-    right: 10px;
 
     .close {
       align-self: flex-start;
@@ -56,119 +69,6 @@
 
   .material-icons {
     font-size: 48px;
-    color: $white;
-    text-shadow: 1px 1px 6px $dark-gray;
+    color: $dark-gray;
   }
 }
-a {
-  border-bottom: none;
-  color: $dark-gray;
-
-  &.disabled {
-    color: $medium-gray;
-    cursor: default;
-    font-size: 48px;
-  }
-}
-
-// // ****************************************************************************
-// // Small Devices
-// // ****************************************************************************
-// @media (max-width: $breakPoint--small) {
-//   [role=container--portfolio-item] {  
-    
-//     .container--nav-left {
-//       position: absolute;
-//       z-index: 100 !important;
-//       display: flex;
-//       align-items: center;
-//       min-height: 100vh !important;
-//       padding: 0px 0px 0px 10px;
-//     }
-
-//     .container--image {
-//       position: absolute;
-//       z-index: 1;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       width: 100%;
-
-//       img {
-//         max-width: 100vw !important;
-//         max-height: 100vh !important;
-//         align-self: center;
-//       }
-//     }
-
-//     .container--nav-right {
-//       position: absolute;
-//       z-index: 100 !important;
-//       right: 0;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       min-height: 100vh !important;
-//       padding: 0px 10px 0px 0px;
-//       right: 10px;
-
-//       .close {
-//         align-self: flex-start;
-//         right: 10px;
-//         top: 10px;
-//         position: absolute;
-//       }
-//     }
-
-//     .material-icons {
-//       color: $white;
-//       text-shadow: 1px 1px 6px $dark-gray;
-//     }
-//   }
-// }
-
-// // ****************************************************************************
-// // Medium, large, and extra large devices
-// // ****************************************************************************
-// @media (min-width: $breakPoint--small) {
-//   [role=container--portfolio-item] {
-//     display: flex;
-
-//     .container--nav-left {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       padding: 0px 10px 0px 0px;
-//     }
-
-//     .container--image {
-//       flex: 1;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;   
-
-//       img {
-//         max-height: 100vh;
-//       }
-//     }
-
-//     .container--nav-right {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       padding: 0px 10px 0px 0px;
-
-//       .close {
-//         align-self: flex-start;
-//         right: 10px;
-//         top: 0px;
-//         position: absolute;
-//       }
-//     }
-
-//     .material-icons {
-//       color: $dark-gray;
-//       font-size: 48px;
-//     }
-//   }
-// }
