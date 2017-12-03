@@ -1,10 +1,26 @@
-img {
-    background-size: cover; 
-    height: 100%; 
-    width: 100%;
-    object-fit: cover;
-}
+// ****************************************************************************
+// Local styles
+// ****************************************************************************
+@import '../../../style-helpers/colors';
+@import '../../../style-helpers/fonts';
+@import '../../../style-helpers/viewports-helper';
 
-md-grid-tile:hover {
+// ****************************************************************************
+// Photo grid
+// ****************************************************************************
+[role=photo-grid] { 
+  md-grid-tile-header {
+		min-height: 100%;
+		font-size: $font-size--xtra-large;
+		justify-content: center !important;
+	}
+	
+  md-grid-tile:hover {
     cursor: pointer;
+	}
+
+  img {
+    max-width:100%;
+    height:100%;
+  }
 }
