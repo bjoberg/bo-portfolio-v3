@@ -136,7 +136,7 @@ a span {
 // ****************************************************************************
 // Bottom navigation
 // ****************************************************************************
-@media (max-width: $breakPoint) {
+@media (max-width: $breakPoint--small) {
   .nav-container--bottom {
     z-index: 1000 !important;
     min-width: calc(100vw - 8% - 8%) !important;

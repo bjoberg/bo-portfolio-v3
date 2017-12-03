@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { PortfolioGroup } from '../../models/PortfolioGroup.model';
 import { PhotographyPortfolios } from '../../config/photographyPortfolios.config';
 
@@ -11,13 +11,21 @@ import { PhotographyPortfolios } from '../../config/photographyPortfolios.config
 export class PhotographyComponent {
   private portfolioGroups: Array<PortfolioGroup>;
   private isLoading: Boolean = true;
+  private gridCols: number;
 
   constructor() {
     this.loadPortfolioGroups();
   }
 
   ngOnInit() {
+    this.calculateGridCols(window.innerWidth);
     this.isLoading = false;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  resize(event) {
+    console.log(event.target.innerWidth);
+    this.calculateGridCols(event.target.innerWidth);
   }
 
   // General class methods  
@@ -34,6 +42,20 @@ export class PhotographyComponent {
 
       // Add the group
       this.portfolioGroups.push(newPortfolioGroup);
+    }
+  }
+
+  private calculateGridCols(width) {
+    if (width < 960) {
+      this.gridCols = 1;
+    } else if (width >= 960 &&  width < 1700) {
+      this.gridCols = 2;
+    } else if (width >= 1700 && width < 2400 ) {
+      this.gridCols = 3;
+    } else if (width >= 2400 ) {
+      this.gridCols = 4;
+    } else {
+      this.gridCols = 1;
     }
   }
 }

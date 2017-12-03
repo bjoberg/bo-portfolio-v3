@@ -1,5 +1,43 @@
 // Breakpoint
-$breakPoint: 960px;
+// 0 -- 960 -- 1700 -- 2400 -- 3000
+// // ****************************************************************************
+// // Small Devices
+// // ****************************************************************************
+// @media (max-width: $breakPoint--small) {
+//   .container--context-browser {
+//     background-color: purple;
+//   }
+// }
+
+// // ****************************************************************************
+// // Medium Devices
+// // ****************************************************************************
+// @media (min-width: $breakPoint--small) and (max-width: $breakPoint--medium) {
+//   .container--context-browser {
+//     background-color: yellow;
+//   }
+// }
+
+// // ****************************************************************************
+// // Large Devices
+// // ****************************************************************************
+// @media (min-width: $breakPoint--medium) and (max-width: $breakPoint--large) {
+//   .container--context-browser {
+//     background-color: pink;
+//   }
+// }
+
+// // ****************************************************************************
+// // Extra Large Devices
+// // ****************************************************************************
+// @media (min-width: $breakPoint--large) {
+//   .container--context-browser {
+//     background-color: gold;
+//   }
+// }
+$breakPoint--small: 960px;
+$breakPoint--medium: 1700px;
+$breakPoint--large: 2400px;
 
 // Navbar
 $toolbar--height: 5px;

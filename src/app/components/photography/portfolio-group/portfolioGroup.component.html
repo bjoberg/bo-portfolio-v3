@@ -11,11 +11,11 @@
   <!-- STATE: Page is not loading -->
   <ng-template #isNotLoading>
     <!-- Page title -->
-    <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+    <div>
       <h1>{{portfolioGroupTitle}}</h1>
     </div>
     <!-- Context browser -->
-    <div role="context-browser" class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+    <div role="context-browser">
       <div class="container--context-browser">
         <a routerLink="/photography">Photography</a> 
         <i class="material-icons">keyboard_arrow_right</i>
@@ -25,7 +25,7 @@
  
     <!-- Image list -->
     <div role="photo-grid">
-      <md-grid-list cols="2" gutterSize="5px" rowHeight="6:4">
+      <md-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
         <md-grid-tile routerLink="/photography/{{portfolioGroupRoute}}/{{item.id}}" *ngFor="let item of portfolioGroupItems">
           <img alt="{{item.title}}" src="{{item.imageUrl}}" />
         </md-grid-tile>
