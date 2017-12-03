@@ -139,7 +139,7 @@ a span {
 @media (max-width: $breakPoint--small) {
   .nav-container--bottom {
     z-index: 1000 !important;
-    min-width: calc(100vw - 8% - 8%) !important;
+    min-width: 100vw;
     padding-right: $container--padding-right;
     padding-left: $container--padding-left;
     height: $navbar--height;

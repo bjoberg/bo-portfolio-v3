@@ -1,8 +1,8 @@
-<div class="footer">
-  <div id="flex-container" class="items-left flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-    <p><b>Brett Oberg</b> - <a href="mailto:{{email}}">{{email}}</a></p>    
+<div role="footer">
+  <div class="items-left">
+    <p><b>Brett Oberg</b> - <a href="mailto:{{email}}">{{email}}</a></p>
   </div>
-  <div id="flex-container" class="items-right flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+  <div class="items-right">
     <p>
       <span *ngFor="let s of social" id="item--social-media">
         <a id="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i></a>
