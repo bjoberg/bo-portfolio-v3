@@ -14,12 +14,12 @@ import { PhotographyPortfolios } from '../../../config/photographyPortfolios.con
 })
 
 export class PortfolioGroupComponent implements OnInit {
-  private isLoading: Boolean;
-  private portfolioGroupRoute: string;
-  private portfolioGroupTitle: string;
-  private portfolioGroupItems: Array<PortfolioItem>;
-  private portfolioGroups: Array<Object>;
-  private gridCols: number;
+  isLoading: Boolean;
+  portfolioGroupRoute: string;
+  portfolioGroupTitle: string;
+  portfolioGroupItems: Array<PortfolioItem>;
+  portfolioGroups: Array<Object>;
+  gridCols: number;
 
   constructor(private route: ActivatedRoute, private titleService: Title) {
     this.isLoading = true;

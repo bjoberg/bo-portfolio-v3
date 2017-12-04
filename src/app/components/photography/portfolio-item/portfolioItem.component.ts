@@ -15,14 +15,14 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 
 export class PortfolioItemComponent implements OnInit {
-  private isLoading: Boolean = true;
-  private portfolioGroupRoute: String;
-  private portfolioItemRoute: String;
-  private portfolioItem: PortfolioItem;
-  private nextPortfolioItemRoute: number;
-  private prevPortfolioItemRoute: number;
-  private hasPrev: Boolean;
-  private hasNext: Boolean;
+  isLoading: Boolean = true;
+  portfolioGroupRoute: String;
+  portfolioItemRoute: String;
+  portfolioItem: PortfolioItem;
+  nextPortfolioItemRoute: number;
+  prevPortfolioItemRoute: number;
+  hasPrev: Boolean;
+  hasNext: Boolean;
 
   constructor(private route: ActivatedRoute, private cdRef:ChangeDetectorRef, private titleService: Title) { }
 

@@ -10,9 +10,9 @@ import { PhotographyPortfolios } from '../../config/photographyPortfolios.config
 })
 
 export class PhotographyComponent {
-  private portfolioGroups: Array<PortfolioGroup>;
-  private isLoading: Boolean = true;
-  private gridCols: number;
+  portfolioGroups: Array<PortfolioGroup>;
+  isLoading: Boolean = true;
+  gridCols: number;
 
   constructor(private titleService: Title) {
     this.loadPortfolioGroups();

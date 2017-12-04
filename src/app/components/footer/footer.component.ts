@@ -12,10 +12,10 @@ import { UserConfig } from '../../config/user.config';
 
 export class FooterComponent {
   // About
-  private email;
+  email;
 
   // Social 
-  private social;
+  social;
 
   constructor() {
     // Configure about data

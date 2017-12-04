@@ -13,24 +13,24 @@ import { UserConfig } from '../../config/user.config';
 
 export class AboutComponent implements OnInit {
   // Page Information
-  private title = "About";
+  title = "About";
 
   // About
-  private avatar;
-  private descriptionLong;
-  private descriptionShort;
-  private email;
-  private location;
-  private currently;
+  avatar;
+  descriptionLong;
+  descriptionShort;
+  email;
+  location;
+  currently;
 
   // Social media
-  private social;
+  social;
 
   // Skills
-  private skills;
+  skills;
 
   // Recognition
-  private recognition;
+  recognition;
 
   constructor(private titleService: Title) {
     // Configure about data

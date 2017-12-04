@@ -12,11 +12,11 @@ import { NavigationConfig } from '../../config/navigation.config';
 })
 
 export class NavigationComponent {
-  private navigationItemList: Array<NavigationItem>;
-  private mobileNavigationItemList: Array<NavigationItem>;
-  private displayMobileView: Boolean;
-  private breakpoint: number;
-  private width: number;
+  navigationItemList: Array<NavigationItem>;
+  mobileNavigationItemList: Array<NavigationItem>;
+  displayMobileView: Boolean;
+  breakpoint: number;
+  width: number;
 
   constructor() {
     this.createNavigationItems();
