@@ -51,8 +51,6 @@ export class PortfolioItemComponent implements OnInit {
 
   @HostListener('window:keyup', ['$event'])
   onKey(event: KeyboardEvent) {
-    event.preventDefault();
-    console.log("Default Prevented? " + event.defaultPrevented);
     switch (event.keyCode) {
       case 39: // Right
         if (this.nextPortfolioItemRoute !== undefined) {

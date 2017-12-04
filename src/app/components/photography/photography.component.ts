@@ -26,7 +26,6 @@ export class PhotographyComponent {
 
   @HostListener('window:resize', ['$event'])
   resize(event) {
-    console.log(event.target.innerWidth);
     this.calculateGridCols(event.target.innerWidth);
   }
 
