@@ -1,12 +1,11 @@
 // External
-import { Component, HostListener,ChangeDetectorRef } from '@angular/core';
+import { Component, HostListener, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 // Local
 import { PortfolioItem } from '../../../models/PortfolioItem.model';
 import { PhotographyPortfolios } from '../../../config/photographyPortfolios.config';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'portfolio-item-component',

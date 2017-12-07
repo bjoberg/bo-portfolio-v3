@@ -1,5 +1,5 @@
 // External
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit  } from '@angular/core';
 
 // Local
 import { NavigationItem } from '../../models/NavigationItem.model';
@@ -11,14 +11,16 @@ import { NavigationConfig } from '../../config/navigation.config';
   styleUrls: ['./navigation.component.scss']
 })
 
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   navigationItemList: Array<NavigationItem>;
   mobileNavigationItemList: Array<NavigationItem>;
   displayMobileView: Boolean;
   breakpoint: number;
   width: number;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit(): void {
     this.createNavigationItems();
     this.createMobileNavigationItems();
     this.displayMobileView = false

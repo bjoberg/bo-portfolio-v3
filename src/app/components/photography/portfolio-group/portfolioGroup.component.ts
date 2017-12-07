@@ -21,11 +21,10 @@ export class PortfolioGroupComponent implements OnInit {
   portfolioGroups: Array<Object>;
   gridCols: number;
 
-  constructor(private route: ActivatedRoute, private titleService: Title) {
-    this.isLoading = true;
-  }
+  constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.calculateGridCols(window.innerWidth);
 
     // Get the portfolio group's route

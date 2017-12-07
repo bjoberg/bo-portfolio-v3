@@ -1,5 +1,4 @@
 // External
-import 'hammerjs';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +22,7 @@ import { SoftwareComponent } from './components/software/software.component';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdGridListModule, MdMenuModule, MdProgressBarModule, MdIconModule } from '@angular/material';
+import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule, MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -43,16 +42,15 @@ import { MdButtonModule, MdGridListModule, MdMenuModule, MdProgressBarModule, Md
     HttpModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    MdButtonModule, 
-    MdGridListModule,
-    MdMenuModule,
-    MdProgressBarModule,
-    MdIconModule
+    MatButtonModule, 
+    MatGridListModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatIconModule
   ],
   providers: [
     Title
   ],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { PortfolioGroup } from '../../models/PortfolioGroup.model';
 import { PhotographyPortfolios } from '../../config/photographyPortfolios.config';
@@ -9,16 +9,15 @@ import { PhotographyPortfolios } from '../../config/photographyPortfolios.config
   styleUrls: ['./photography.component.scss']
 })
 
-export class PhotographyComponent {
+export class PhotographyComponent implements OnInit {
   portfolioGroups: Array<PortfolioGroup>;
   isLoading: Boolean = true;
   gridCols: number;
 
-  constructor(private titleService: Title) {
-    this.loadPortfolioGroups();
-  }
+  constructor(private titleService: Title) {}
 
   ngOnInit() {
+    this.loadPortfolioGroups();
     this.calculateGridCols(window.innerWidth);
     this.titleService.setTitle("Photography - Brett Oberg");
     this.isLoading = false;

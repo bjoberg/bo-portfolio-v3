@@ -32,7 +32,9 @@ export class AboutComponent implements OnInit {
   // Recognition
   recognition;
 
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title) {}
+
+  ngOnInit():void  {
     // Configure about data
     this.avatar = UserConfig.about.avatar;
     this.descriptionLong = UserConfig.about.description_long;
@@ -49,9 +51,7 @@ export class AboutComponent implements OnInit {
     
     // Configure recognition data
     this.recognition = UserConfig.recognition;
-  }
 
-  ngOnInit():void  {
     // Updated the decription-long 
     document.getElementById('content-description-long').innerHTML = this.descriptionLong;
     this.titleService.setTitle("About - Brett Oberg");

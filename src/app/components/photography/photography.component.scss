@@ -9,13 +9,13 @@
 // Photo grid
 // ****************************************************************************
 [role=photo-grid] { 
-  md-grid-tile-header {
+  mat-grid-tile-header {
 		min-height: 100%;
 		font-size: $font-size--xtra-large;
 		justify-content: center !important;
 	}
 	
-  md-grid-tile:hover {
+  mat-grid-tile:hover {
     cursor: pointer;
 	}
 

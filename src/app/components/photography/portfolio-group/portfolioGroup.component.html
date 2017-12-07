@@ -5,7 +5,7 @@
 <div class="container">
   <!-- STATE: Page is loading -->
   <div *ngIf="isLoading; else isNotLoading">
-    <md-progress-bar color="primary" mode="indeterminate"></md-progress-bar>
+    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
 
   <!-- STATE: Page is not loading -->
@@ -25,11 +25,11 @@
  
     <!-- Image list -->
     <div role="photo-grid">
-      <md-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-        <md-grid-tile routerLink="/photography/{{portfolioGroupRoute}}/{{item.id}}" *ngFor="let item of portfolioGroupItems">
+      <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
+        <mat-grid-tile routerLink="/photography/{{portfolioGroupRoute}}/{{item.id}}" *ngFor="let item of portfolioGroupItems">
           <img alt="{{item.title}}" src="{{item.imageUrl}}" />
-        </md-grid-tile>
-      </md-grid-list>  
+        </mat-grid-tile>
+      </mat-grid-list>  
     </div>
   </ng-template>
 </div>
