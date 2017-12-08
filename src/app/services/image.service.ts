@@ -14,6 +14,23 @@ export class ImageService {
   constructor() { }
 
   /**
+   * Get all of the photography portfolios
+   */
+  public async getPhotographyPortfolios(): Promise<Array<ImageGroup>> {
+    let portfolioGroups: Array<ImageGroup> = null;
+
+    if(PhotographyPortfolios.length >= 0) {
+      for(let i = 0; i < PhotographyPortfolios.length; i++) {
+        portfolioGroups = [];
+        let group = PhotographyPortfolios[i];
+        portfolioGroups.push(new ImageGroup(group.id, group.title, group.imageUrl, group.route));
+      }  
+    }  
+
+    return portfolioGroups;
+  }
+
+  /**
    * Get an image group made up of a specific photography portfolio.
    * 
    * @param route a specific photography portfolio route
@@ -26,7 +43,8 @@ export class ImageService {
       if (PhotographyPortfolios[i].route === route) {
         let group = PhotographyPortfolios[i];
         let images = this.getPhotographyPortfolioImages(route);
-        portfolio = new ImageGroup(group.id, group.title, group.imageUrl, group.route, images);
+        portfolio = new ImageGroup(group.id, group.title, group.imageUrl, group.route);
+        portfolio.setImages(images);
       }
     }
 
@@ -121,7 +139,7 @@ export class ImageService {
         for (var n = 0; n < group.items.length; n++) {
           var item = group.items[n]; 
           if (item.id === imageId) {
-            if (n !== 0 && n !== group.items.length - 1) {
+            if (n !== 0) {
               route = group.items[n-1].id;
             }
           }

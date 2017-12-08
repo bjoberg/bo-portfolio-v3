@@ -7,12 +7,11 @@ export class ImageGroup {
   private route: string;
   private images: Array<Image>;
 
-  constructor(id: number, title: string, imageUrl: string, route: string, images: Array<Image>) {
+  constructor(id: number, title: string, imageUrl: string, route: string) {
     this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
     this.route = route;
-    this.images = images;
   }
 
   public getId(): number {

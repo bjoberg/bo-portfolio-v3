@@ -1,7 +1,10 @@
+// External
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { PortfolioGroup } from '../../models/PortfolioGroup.model';
-import { PhotographyPortfolios } from '../../config/photographyPortfolios.config';
+
+// Local
+import { ImageService } from '../../services/image.service';
+import { ImageGroup } from '../../classes/image-group';
 
 @Component({
   selector: 'photography-component',
@@ -10,39 +13,33 @@ import { PhotographyPortfolios } from '../../config/photographyPortfolios.config
 })
 
 export class PhotographyComponent implements OnInit {
-  portfolioGroups: Array<PortfolioGroup>;
-  isLoading: Boolean = true;
-  gridCols: number;
+  pageIsLoading: boolean = true;
+  portfoliosReceived: boolean = false;
+  portfolios: Array<ImageGroup> = null;
+  gridCols: number = 2;
 
-  constructor(private titleService: Title) {}
+  constructor(private titleService: Title, private imageService: ImageService) {}
 
   ngOnInit() {
-    this.loadPortfolioGroups();
-    this.calculateGridCols(window.innerWidth);
-    this.titleService.setTitle("Photography - Brett Oberg");
-    this.isLoading = false;
+    // Get the portfolios
+    this.imageService.getPhotographyPortfolios().then(data => {
+      this.portfolios = data;
+      this.titleService.setTitle("Photography - Brett Oberg");
+      this.portfoliosReceived = true;
+      this.loadPage();
+    });
+  }
+
+  public loadPage():void {
+    if(this.portfoliosReceived === true) {
+      this.calculateGridCols(window.innerWidth);
+      this.pageIsLoading = false;
+    }
   }
 
   @HostListener('window:resize', ['$event'])
   resize(event) {
     this.calculateGridCols(event.target.innerWidth);
-  }
-
-  // General class methods  
-  private loadPortfolioGroups() {
-    // create an empty portfolio
-    this.portfolioGroups = [];
-
-    // build the portfolio
-    for (var i = 0; i < PhotographyPortfolios.length; i++) {
-      var element = PhotographyPortfolios[i];
-
-      // Get the portfolio group
-      var newPortfolioGroup = new PortfolioGroup(element.title, element.imageUrl, element.route);
-
-      // Add the group
-      this.portfolioGroups.push(newPortfolioGroup);
-    }
   }
 
   private calculateGridCols(width) {

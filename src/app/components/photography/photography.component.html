@@ -19,7 +19,7 @@
     <!-- Image list -->
     <div role="photo-grid">
       <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-        <mat-grid-tile routerLink="/photography/{{item.route}}" *ngFor="let item of portfolioGroups">
+        <mat-grid-tile routerLink="/photography/{{item.route}}" *ngFor="let item of portfolios">
             <img alt="{{item.title}}" src="{{item.imageUrl}}" />
           <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
         </mat-grid-tile>

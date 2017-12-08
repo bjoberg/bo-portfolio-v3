@@ -1,12 +1,11 @@
 // External
-import { Component, HostListener, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 // Local
 import { ImageService } from '../../../services/image.service';
 import { Image } from '../../../classes/image';
-import { PortfolioItem } from '../../../models/PortfolioItem.model';
 
 @Component({
   selector: 'photography-portfolio-item',
@@ -27,7 +26,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
   nextPortfolioItemRoute: number = null;
   prevPortfolioItemRoute: number = null;
 
-  constructor(private route: ActivatedRoute, private cdRef: ChangeDetectorRef, private titleService: Title, private imageService: ImageService) { }
+  constructor(private route: ActivatedRoute, private titleService: Title, private imageService: ImageService) { }
 
   ngOnInit(): void {
     // Get the routes
