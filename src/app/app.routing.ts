@@ -7,8 +7,8 @@ import { AboutComponent } from './components/about/about.component';
 
 // Photography
 import { PhotographyComponent } from './components/photography/photography.component';
-import { PortfolioGroupComponent } from './components/photography/portfolio-group/portfolioGroup.component';
-import { PortfolioItemComponent } from './components/photography/portfolio-item/portfolioItem.component';
+import { PhotographyPortfolioComponent } from './components/photography/photography-portfolio/photography-portfolio.component';
+import { PhotographyPortfolioItemComponent } from './components/photography/photography-portfolio-item/photography-portfolio-item.component';
 
 // Software
 import { SoftwareComponent } from './components/software/software.component';
@@ -29,12 +29,12 @@ const AppRoutes: Routes = [
     component: PhotographyComponent
   },
   {
-    path: 'photography/:portfolioGroup',
-    component: PortfolioGroupComponent
+    path: 'photography/:portfolio',
+    component: PhotographyPortfolioComponent
   },
   {
-    path: 'photography/:portfolioGroup/:portfolioItem',
-    component: PortfolioItemComponent
+    path: 'photography/:portfolio/:portfolioItem',
+    component: PhotographyPortfolioItemComponent
   },
   {
     path: 'software',

@@ -4,7 +4,7 @@
 <!-- Main Content -->
 <div class="container">
   <!-- STATE: Page is loading -->
-  <div *ngIf="isLoading; else isNotLoading">
+  <div *ngIf="pageIsLoading; else isNotLoading">
     <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
 
@@ -12,21 +12,21 @@
   <ng-template #isNotLoading>
     <!-- Page title -->
     <div>
-      <h1>{{portfolioGroupTitle}}</h1>
+      <h1>{{portfolio.title}}</h1>
     </div>
     <!-- Context browser -->
     <div role="context-browser">
       <div class="container--context-browser">
         <a routerLink="/photography">Photography</a> 
         <i class="material-icons">keyboard_arrow_right</i>
-        <p>{{portfolioGroupTitle}}</p>
+        <p>{{portfolio.title}}</p>
       </div>
     </div>
  
     <!-- Image list -->
     <div role="photo-grid">
       <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-        <mat-grid-tile routerLink="/photography/{{portfolioGroupRoute}}/{{item.id}}" *ngFor="let item of portfolioGroupItems">
+        <mat-grid-tile routerLink="/photography/{{portfolio.route}}/{{item.id}}" *ngFor="let item of portfolio.images">
           <img alt="{{item.title}}" src="{{item.imageUrl}}" />
         </mat-grid-tile>
       </mat-grid-list>  

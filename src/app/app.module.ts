@@ -5,20 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
-// Local
-import { AppComponent } from './app.component';
+// Routing
 import { Routing } from './app.routing';
+
+// Components
+import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
-
-// Photography
 import { PhotographyComponent } from './components/photography/photography.component';
-import { PortfolioGroupComponent } from './components/photography/portfolio-group/portfolioGroup.component';
-import { PortfolioItemComponent } from './components/photography/portfolio-item/portfolioItem.component';
-
-// Software
+import { PhotographyPortfolioComponent } from './components/photography/photography-portfolio/photography-portfolio.component';
+import { PhotographyPortfolioItemComponent } from './components/photography/photography-portfolio-item/photography-portfolio-item.component';
 import { SoftwareComponent } from './components/software/software.component';
+
+// Services
+import { ImageService } from './services/image.service';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,8 +32,8 @@ import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule
     FooterComponent,
     AboutComponent,
     PhotographyComponent,
-    PortfolioGroupComponent,
-    PortfolioItemComponent,
+    PhotographyPortfolioComponent,
+    PhotographyPortfolioItemComponent,
     SoftwareComponent
   ],
   imports: [
@@ -49,7 +50,8 @@ import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule
     MatIconModule
   ],
   providers: [
-    Title
+    Title,
+    ImageService
   ],
   bootstrap: [AppComponent]
 })
