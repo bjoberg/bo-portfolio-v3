@@ -2,7 +2,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// Internal
+// About
 import { AboutComponent } from './components/about/about.component';
 
 // Photography
@@ -29,11 +29,11 @@ const AppRoutes: Routes = [
     component: PhotographyComponent
   },
   {
-    path: 'photography/:portfolio',
+    path: 'photography/:imageGroup',
     component: PhotographyPortfolioComponent
   },
   {
-    path: 'photography/:portfolio/:portfolioItem',
+    path: 'photography/:imageGroup/:image',
     component: PhotographyPortfolioItemComponent
   },
   {

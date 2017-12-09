@@ -6,17 +6,15 @@
 @import '../../../../style-helpers/viewports-helper';
 
 // ****************************************************************************
-// Override <a></a> tags
+// Loading image
 // ****************************************************************************
-a {
-  border-bottom: none;
-  color: $dark-gray;
-
-  &.disabled {
-    color: $medium-gray;
-    cursor: default;
-    font-size: 48px;
-  }
+[role=loading-image] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
 
 // ****************************************************************************
@@ -31,6 +29,22 @@ a {
     align-items: center;
     min-height: 100vh !important;
     padding: 0px 0px 0px 10px;
+
+    .nav-left:focus {
+      outline: 0 !important;
+    }
+  }
+
+  .container--loading-image {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;   
   }
 
   .container--image {
@@ -64,11 +78,20 @@ a {
       right: 10px;
       top: 10px;
       position: absolute;
+
+      &:focus {
+        outline: 0 !important;
+      }
+    }
+
+    .nav-right:focus {
+      outline: 0 !important;
     }
   }
 
   .material-icons {
     font-size: 48px;
     color: $dark-gray;
+    cursor: pointer;
   }
 }

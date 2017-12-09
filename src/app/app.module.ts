@@ -23,7 +23,7 @@ import { ImageService } from './services/image.service';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule
     MatGridListModule,
     MatMenuModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     Title,

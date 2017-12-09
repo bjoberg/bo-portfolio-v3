@@ -7,25 +7,31 @@
 <div *ngIf="!pageIsLoading">
   <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item">
     <!-- Nav left -->
-    <div class="container--nav-left" id="container--nav-left" routerLink="/photography/{{portfolioRoute}}/{{prevPortfolioItemRoute}}">
-      <a [hidden]="!hasPrev" id="nav-left" href="/photography/{{portfolioRoute}}/{{prevPortfolioItemRoute}}">
+    <div class="container--nav-left" id="container--nav-left">
+      <div [hidden]="!hasPrev" class="nav-left" id="nav-left" (click)="navPrev()">
         <i class="material-icons">keyboard_arrow_left</i>
-      </a>
+      </div>
     </div>
 
-    <!-- Image -->
-    <div class="container--image flex-container">
-      <img alt="{{portfolioItem.title}}" src="{{portfolioItem.imageUrl}}" />
+    <!-- STATE: Loading the image -->
+    <div *ngIf="loadingImage" class="container--loading-image">
+      <p>Loading image...</p>
+      <mat-progress-spinner color="primary" mode="indeterminate" diameter="30"></mat-progress-spinner>
+    </div>
+    
+    <!-- STATE: Not loading the image -->
+    <div *ngIf="!loadingImage" class="container--image">
+      <img alt="{{image.title}}" src="{{image.imageUrl}}" />
     </div>
     
     <!-- Nav right -->
     <div class="container--nav-right" id="container--nav-right">
-        <a class="close" href="/photography/{{portfolioRoute}}/">
-          <i class="material-icons">close</i>
-        </a>
-        <a [hidden]="!hasNext" class="nav-right" id="nav-right" href="/photography/{{portfolioRoute}}/{{nextPortfolioItemRoute}}">
-          <i class="material-icons">keyboard_arrow_right</i>
-        </a>
+      <div class="close" (click)="navClose()">
+        <i class="material-icons">close</i>
+      </div>
+      <div [hidden]="!hasNext" class="nav-right" id="nav-right" (click)="navNext()">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
     </div>
   </div>
 </div>

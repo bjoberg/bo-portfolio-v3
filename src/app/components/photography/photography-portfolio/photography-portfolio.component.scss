@@ -14,7 +14,7 @@
   .container--context-browser {
     font-size: $font-size--small;
     display: flex;
-    align-items: center;
+    align-items: center !important;
   }
 }
 

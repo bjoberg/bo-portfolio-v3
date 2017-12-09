@@ -25,7 +25,7 @@ export class PhotographyPortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     // Get the route
-    this.route.params.subscribe((params) => this.portfolioRoute = params.portfolio);
+    this.route.params.subscribe((params) => this.portfolioRoute = params.imageGroup);
 
     // Get the portfolio
     this.imageService.getImageGroup(this.portfolioRoute).then(data => {
