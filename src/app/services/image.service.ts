@@ -16,7 +16,7 @@ export class ImageService {
   /**
    * Get all of the photography portfolios
    */
-  public async getPhotographyPortfolios(): Promise<Array<ImageGroup>> {
+  public async getAllImageGroups(): Promise<Array<ImageGroup>> {
     let portfolioGroups: Array<ImageGroup> = null;
 
     if(PhotographyPortfolios.length >= 0) {
@@ -36,13 +36,13 @@ export class ImageService {
    * @param route a specific photography portfolio route
    * @return a promise with and ImageGroup if the route exists; otherwise null
    */
-  public async getPhotographyPortfolio(route: string): Promise<ImageGroup> {
+  public async getImageGroup(route: string): Promise<ImageGroup> {
     let portfolio: ImageGroup = null;
 
     for(let i = 0; i < PhotographyPortfolios.length; i++) {
       if (PhotographyPortfolios[i].route === route) {
         let group = PhotographyPortfolios[i];
-        let images = this.getPhotographyPortfolioImages(route);
+        let images = this.getImageGroupImages(route);
         portfolio = new ImageGroup(group.id, group.title, group.imageUrl, group.route);
         portfolio.setImages(images);
       }
@@ -57,7 +57,7 @@ export class ImageService {
    * @param route a specific photography portfolio route
    * @return an array of Images if the route exists; otherwise null
    */
-  public getPhotographyPortfolioImages(route: string): Array<Image> {
+  public getImageGroupImages(route: string): Array<Image> {
     let images = null;
 
     for(let i = 0; i < PhotographyPortfolios.length; i++) {
@@ -80,7 +80,7 @@ export class ImageService {
    * @param portfolioRoute a route for a specific photography portfolio
    * @param imageId the id of a specific image
    */
-  public async getPhotographyPortfolioImage(portfolioRoute: string, imageId: number): Promise<Image> {
+  public async getImage(portfolioRoute: string, imageId: number): Promise<Image> {
     let image = null;
 
     for(let i = 0; i < PhotographyPortfolios.length; i++) {
@@ -104,7 +104,7 @@ export class ImageService {
    * @param portfolioRoute a route for a specific photogrpahy portfolio
    * @param imageId the id of a specific image
    */
-  public async getNextPhotographyPortfolioImageRoute(portfolioRoute: string, imageId: number): Promise<number> {
+  public async getNextImageRoute(portfolioRoute: string, imageId: number): Promise<number> {
     let route = null;
     
     for (var i = 0; i < PhotographyPortfolios.length; i++) {
@@ -130,7 +130,7 @@ export class ImageService {
    * @param portfolioRoute a route for a specific photography portfolio
    * @param imageId the id of a specific image
    */
-  public async getPrevPhotographyPortfolioImageRoute(portfolioRoute: string, imageId: number): Promise<number> {
+  public async getPrevImageRoute(portfolioRoute: string, imageId: number): Promise<number> {
     let route = null;
 
     for (var i = 0; i < PhotographyPortfolios.length; i++) {

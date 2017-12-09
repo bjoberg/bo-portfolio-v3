@@ -35,7 +35,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
 
     // Get the portfolio item
     // TODO: Add error checking
-    this.imageService.getPhotographyPortfolioImage(this.portfolioRoute, parseInt(this.portfolioItemRoute)).then(data => {
+    this.imageService.getImage(this.portfolioRoute, parseInt(this.portfolioItemRoute)).then(data => {
       // TODO: What if data is null
       this.portfolioItem = data;
       this.titleService.setTitle(this.portfolioItem.getTitle() + " - Brett Oberg");
@@ -43,7 +43,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
       this.loadPage();
     });
 
-    this.imageService.getNextPhotographyPortfolioImageRoute(this.portfolioRoute, parseInt(this.portfolioItemRoute)).then(data => {
+    this.imageService.getNextImageRoute(this.portfolioRoute, parseInt(this.portfolioItemRoute)).then(data => {
       // TODO: What if data is null
       this.nextPortfolioItemRoute = data;
       this.nextItemReceived = true;
@@ -53,7 +53,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
       this.loadPage();
     });
 
-    this.imageService.getPrevPhotographyPortfolioImageRoute(this.portfolioRoute, parseInt(this.portfolioItemRoute)).then(data => {
+    this.imageService.getPrevImageRoute(this.portfolioRoute, parseInt(this.portfolioItemRoute)).then(data => {
       // TODO: What if data is null
       this.prevPortfolioItemRoute = data;
       this.prevItemReceived = true;

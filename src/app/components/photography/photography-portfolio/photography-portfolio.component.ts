@@ -28,7 +28,7 @@ export class PhotographyPortfolioComponent implements OnInit {
     this.route.params.subscribe((params) => this.portfolioRoute = params.portfolio);
 
     // Get the portfolio
-    this.imageService.getPhotographyPortfolio(this.portfolioRoute).then(data => {
+    this.imageService.getImageGroup(this.portfolioRoute).then(data => {
       this.portfolio = data;
       this.titleService.setTitle(this.portfolio.getTitle() + " - Brett Oberg");
       this.portfolioReceived = true;

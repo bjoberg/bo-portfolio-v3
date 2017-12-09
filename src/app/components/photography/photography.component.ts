@@ -22,7 +22,7 @@ export class PhotographyComponent implements OnInit {
 
   ngOnInit() {
     // Get the portfolios
-    this.imageService.getPhotographyPortfolios().then(data => {
+    this.imageService.getAllImageGroups().then(data => {
       this.portfolios = data;
       this.titleService.setTitle("Photography - Brett Oberg");
       this.portfoliosReceived = true;
