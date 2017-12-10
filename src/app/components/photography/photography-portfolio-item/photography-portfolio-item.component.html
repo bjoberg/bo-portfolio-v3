@@ -5,7 +5,7 @@
 
 <!-- STATE: Page is not loading -->
 <div *ngIf="!pageIsLoading">
-  <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item">
+  <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
     <!-- Nav left -->
     <div class="container--nav-left" id="container--nav-left">
       <div [hidden]="!hasPrev" class="nav-left" id="nav-left" (click)="navPrev()">
