@@ -1,25 +1,33 @@
 <!-- Toolbar -->
 <div class="toolbar"></div>
 
-<!-- Top navigation bar Desktop -->
-<div class="nav-container--top component-is--light-gray">
-  <div [hidden]="displayMobileView" *ngFor="let item of navigationItemList" class="{{item.getType()}} desktop">
+<!-- STATE: Navigation if the application is not mobile -->
+<div *ngIf="!displayMobileView" class="container--app-header">
+  <!-- App Header -->
+  <div *ngFor="let item of navigationItemList" class="{{item.getType()}} desktop">
     <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
       <span>{{item.getTitle()}}</span>
     </a>
-  </div>
-  <div [hidden]="!displayMobileView" *ngFor="let item of mobileNavigationItemList" class="{{item.getType()}} mobile">
-    <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
-      <span>{{item.getTitle()}}</span>
-    </a>          
   </div>
 </div>
 
-<!-- Botom navigation bar -->
-<div [hidden]="!displayMobileView" class="nav-container--bottom component-is--light-gray">
-  <div *ngFor="let item of navigationItemList" class="{{item.getType()}} mobile">
-    <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
-      <span><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
-    </a>
+<!-- STATE: Navigation if the application is mobile -->
+<div *ngIf="displayMobileView">
+  <!-- App Header -->
+  <div class="container--app-header">
+    <div *ngFor="let item of mobileNavigationItemList" class="{{item.getType()}} mobile">
+      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
+        <span>{{item.getTitle()}}</span>
+      </a>    
+    </div>
+  </div>
+
+  <!-- Bottom Tabs -->
+  <div class="container--bottom-tabs">
+    <div *ngFor="let item of navigationItemList" class="{{item.getType()}} nav-item">
+      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">
+        <span><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
+      </a>
+    </div>
   </div>
 </div>
