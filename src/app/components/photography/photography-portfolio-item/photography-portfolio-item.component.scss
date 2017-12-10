@@ -5,6 +5,10 @@
 @import '../../../../style-helpers/fonts';
 @import '../../../../style-helpers/viewports-helper';
 
+#navigation-component {
+  visibility: hidden !important;
+}
+
 // ****************************************************************************
 // Loading image
 // ****************************************************************************

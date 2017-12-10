@@ -12,7 +12,8 @@
   mat-grid-tile-header {
 		min-height: 100%;
 		font-size: $font-size--xtra-large;
-		justify-content: center !important;
+    justify-content: center !important;
+    text-align: center;
 	}
 	
   mat-grid-tile:hover {

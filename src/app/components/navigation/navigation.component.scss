@@ -35,7 +35,8 @@ a span {
 .container--app-header {
   z-index: 1000 !important;
   position: fixed;
-  top: $toolbar--height !important;
+  // top: $toolbar--height !important;
+  top: 0;
   left: 0px;
   height: $navbar--height;
   min-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;

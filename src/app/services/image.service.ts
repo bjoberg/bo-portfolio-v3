@@ -13,8 +13,22 @@ export class ImageService {
 
   constructor() { }
 
+  public async getAllImageGroupRoutes(): Promise<Array<string>> {
+    let imageGroupRoutes = null;
+
+    if(PhotographyPortfolios.length >= 0) {
+      for(let i = 0; i < PhotographyPortfolios.length; i++) {
+        imageGroupRoutes = [];
+        let group = PhotographyPortfolios[i];
+        imageGroupRoutes.push(group.route);
+      }  
+    }      
+
+    return imageGroupRoutes;
+  }
+
   /**
-   * Get all of the photography portfolios
+   * Get all of the photography portfolio image groups
    */
   public async getAllImageGroups(): Promise<Array<ImageGroup>> {
     let portfolioGroups: Array<ImageGroup> = null;

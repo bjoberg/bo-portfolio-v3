@@ -2,7 +2,7 @@
 import { Component, HostListener, OnInit  } from '@angular/core';
 
 // Local
-import { NavigationItem } from '../../models/NavigationItem.model';
+import { NavigationItem } from '../../classes/navigation-item';
 import { NavigationConfig } from '../../config/navigation.config';
 
 @Component({

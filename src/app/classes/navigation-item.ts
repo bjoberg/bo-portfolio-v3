@@ -1,12 +1,10 @@
-class NavigationItem {
-  // Member variables
+export class NavigationItem {
   private title: string;
   private route: string;
   private url: URL;
   private type: string;
   private icon: string;
 
-  // NavigationItem constructor
   constructor(title: string, route: string, url: URL, type: string, icon: string) {
     this.title = title;
     this.route = route;
@@ -15,7 +13,6 @@ class NavigationItem {
     this.icon = icon;
   }
 
-  // Accessor methods
   public getTitle(): string {
     return this.title;
   }
@@ -54,7 +51,5 @@ class NavigationItem {
 
   public setIcon(icon: string) {
     this.icon = icon;
-  }
+  }  
 }
-
-export { NavigationItem };

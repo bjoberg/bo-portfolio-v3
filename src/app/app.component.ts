@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ImageService } from './services/image.service';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +9,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   private title: string = "Brett Oberg";
+  imageGroupRoutes: Array<string>;
 
-  constructor() {
-    this.title = "Brett Oberg"
+  constructor(private router: Router, private imageService: ImageService) {}
+
+  ngOnInit() {
+    this.imageService.getAllImageGroupRoutes().then(data => {
+      this.imageGroupRoutes = data;
+      console.log(this.imageGroupRoutes);
+    });
   }
 
   public getTitle() : string {
     return this.title
+  }
+
+  public hide() {
+    let urlComponents = this.router.url.split('/');
+    if (this.imageGroupRoutes !== null && this.imageGroupRoutes !== undefined) {
+      for(let i = 0; i < this.imageGroupRoutes.length; i++) {
+        let item = this.imageGroupRoutes[i];
+        if (this.router.url.includes("/photography/" + item)) {
+          if (urlComponents.length === 4) {
+            return true;
+          }
+        }
+      }
+    }
   }
 }
