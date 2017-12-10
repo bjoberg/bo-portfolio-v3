@@ -35,6 +35,9 @@ export class AboutComponent implements OnInit {
   constructor(private titleService: Title) {}
 
   ngOnInit():void  {
+    // Scroll to the top of the page every time a user navigates to this page
+    window.scrollTo(0, 0);
+
     // Configure about data
     this.avatar = UserConfig.about.avatar;
     this.descriptionLong = UserConfig.about.description_long;

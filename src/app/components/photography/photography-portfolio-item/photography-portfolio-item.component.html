@@ -21,7 +21,7 @@
     
     <!-- STATE: Not loading the image -->
     <div *ngIf="!loadingImage" class="container--image">
-      <img alt="{{image.title}}" src="{{image.imageUrl}}" />
+      <img alt="{{image.title}}" src="{{image.imageUrl}}" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)" />
     </div>
     
     <!-- Nav right -->

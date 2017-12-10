@@ -24,6 +24,9 @@ export class PhotographyPortfolioComponent implements OnInit {
   constructor(private route: ActivatedRoute, private titleService: Title, private imageService: ImageService) {}
 
   ngOnInit(): void {
+    // Scroll to the top of the page every time a user navigates to this page
+    window.scrollTo(0, 0);
+
     // Get the route
     this.route.params.subscribe((params) => this.portfolioRoute = params.imageGroup);
 

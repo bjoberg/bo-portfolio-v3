@@ -21,6 +21,9 @@ export class PhotographyComponent implements OnInit {
   constructor(private titleService: Title, private imageService: ImageService) {}
 
   ngOnInit() {
+    // Scroll to the top of the page every time a user navigates to this page
+    window.scrollTo(0, 0);
+    
     // Get the portfolios
     this.imageService.getAllImageGroups().then(data => {
       this.portfolios = data;

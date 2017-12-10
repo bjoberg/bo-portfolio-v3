@@ -27,10 +27,14 @@ export class PhotographyPortfolioItemComponent implements OnInit {
   image: Image = null;
   nextImageRoute: number = null;
   prevImageRoute: number = null;
+  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
   constructor(private router: Router, private route: ActivatedRoute, private titleService: Title, private imageService: ImageService) { }
 
   ngOnInit(): void {
+    // Scroll to the top of the page every time a user navigates to this page
+    window.scrollTo(0, 0);
+
     // Get the routes
     this.getRoutes();
 
@@ -103,14 +107,10 @@ export class PhotographyPortfolioItemComponent implements OnInit {
     event.returnValue = false;
     switch (event.keyCode) {
       case 39: // Right
-        if (this.nextImageRoute !== null) {
-          this.navNext();
-        }
+        this.navNext();
         break;
       case 37: // Left
-        if (this.prevImageRoute !== null) {
-          this.navPrev();
-        }
+        this.navPrev();
         break; 
       case 27: // Escape
         this.navClose();
@@ -120,20 +120,37 @@ export class PhotographyPortfolioItemComponent implements OnInit {
     }
   }
 
+  public swipe(action) {
+    switch (action) {
+      case this.SWIPE_ACTION.LEFT:
+        this.navNext();      
+        break;
+      case this.SWIPE_ACTION.RIGHT:
+        this.navPrev();      
+        break;    
+      default:
+        break;
+    }
+  }
+
   public navNext(): void {
-    this.loadingImage = true;
-    this.setRoute(this.imageGroupRoute, this.nextImageRoute.toString());
-    this.getImage(this.imageGroupRoute, this.nextImageRoute.toString());
-    this.getNextImageRoute(this.imageGroupRoute, this.nextImageRoute.toString());
-    this.getPrevImageRoute(this.imageGroupRoute, this.nextImageRoute.toString());
+    if (this.nextImageRoute !== null) {
+      this.loadingImage = true;
+      this.setRoute(this.imageGroupRoute, this.nextImageRoute.toString());
+      this.getImage(this.imageGroupRoute, this.nextImageRoute.toString());
+      this.getNextImageRoute(this.imageGroupRoute, this.nextImageRoute.toString());
+      this.getPrevImageRoute(this.imageGroupRoute, this.nextImageRoute.toString());
+    }
   }
 
   public navPrev(): void {
-    this.loadingImage = true;
-    this.setRoute(this.imageGroupRoute, this.prevImageRoute.toString());
-    this.getImage(this.imageGroupRoute, this.prevImageRoute.toString());
-    this.getNextImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());
-    this.getPrevImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());    
+    if (this.prevImageRoute !== null) {
+      this.loadingImage = true;
+      this.setRoute(this.imageGroupRoute, this.prevImageRoute.toString());
+      this.getImage(this.imageGroupRoute, this.prevImageRoute.toString());
+      this.getNextImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());
+      this.getPrevImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());
+    }    
   }
 
   public navClose(): void {
