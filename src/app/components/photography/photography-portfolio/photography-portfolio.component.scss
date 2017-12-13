@@ -11,7 +11,8 @@
 [role=progress-bar] {
   z-index: 2000;
   position:absolute;
-  top: 100px;
+  width: 100vw;
+  top: $navbar--height;
 }
 
 // ****************************************************************************

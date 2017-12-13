@@ -10,20 +10,28 @@ import { ImageService } from './services/image.service';
 })
 
 export class AppComponent implements OnInit {
-  private title: string = "Brett Oberg";
+  pageIsLoading: boolean = true;
+  routeDataReceived: boolean = false;
   imageGroupRoutes: Array<string>;
 
   constructor(private router: Router, private imageService: ImageService) {}
 
-  ngOnInit() {
-    this.imageService.getAllImageGroupRoutes().then(data => {
-      this.imageGroupRoutes = data;
-      console.log(this.imageGroupRoutes);
-    });
+  ngOnInit(): void {
+    this.getImageRoutes();
   }
 
-  public getTitle() : string {
-    return this.title
+  public getImageRoutes(): void {
+    this.imageService.getAllImageGroupRoutes().then(data => {
+      this.imageGroupRoutes = data;
+      this.routeDataReceived = true;
+      this.loadPage();
+    });    
+  }
+
+  public loadPage(): void {
+    if (this.routeDataReceived === true) {
+      this.pageIsLoading = false;
+    }
   }
 
   public hide() {
@@ -37,6 +45,7 @@ export class AppComponent implements OnInit {
           }
         }
       }
+      return false;
     }
   }
 }

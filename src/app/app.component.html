@@ -1,8 +1,18 @@
-<!-- Navigation -->
-<navigation-component [hidden]="hide()" id="navigation-component"></navigation-component>
+<!-- STATE: Page is loading -->
+<ng-template [ngIf]="pageIsLoading">
+  <div role="progress-bar">
+    <mat-progress-bar color="primary" mode="indeterminate" value="75" bufferValue="50"></mat-progress-bar>
+  </div>
+</ng-template>
 
-<!-- Main Content -->
-<router-outlet id="router-component"></router-outlet>
+<!-- STATE: Page is loading -->
+<ng-template [ngIf]="!pageIsLoading">
+  <!-- Navigation -->
+  <navigation-component [hidden]="hide()" id="navigation-component"></navigation-component>
+  
+  <!-- Main Content -->
+  <router-outlet id="router-component"></router-outlet>
 
-<!-- Footer -->
-<footer-component [hidden]="hide()" id="footer-component"></footer-component>
+  <!-- Footer -->
+  <footer-component [hidden]="hide()" id="footer-component"></footer-component> 
+</ng-template>
