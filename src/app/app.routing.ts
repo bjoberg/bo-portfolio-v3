@@ -29,15 +29,20 @@ const AppRoutes: Routes = [
   },
   {
     path: 'photography',
-    component: PhotographyComponent
-  },
-  {
-    path: 'photography/:imageGroup',
-    component: PhotographyPortfolioComponent
-  },
-  {
-    path: 'photography/:imageGroup/:image',
-    component: PhotographyPortfolioItemComponent
+    children: [
+      {
+        path: '',
+        component: PhotographyComponent
+      },
+      {
+        path: ':imageGroup',
+        component: PhotographyPortfolioComponent
+      },
+      {
+        path: ':imageGroup/:image',
+        component: PhotographyPortfolioItemComponent
+      },
+    ]
   },
   {
     path: 'software',
@@ -47,7 +52,10 @@ const AppRoutes: Routes = [
     path: '404', 
     component: PageNotFoundComponent
   },
-  { path: '**', redirectTo: '404' }
+  { 
+    path: '**', 
+    redirectTo: '404' 
+  }
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(AppRoutes);
