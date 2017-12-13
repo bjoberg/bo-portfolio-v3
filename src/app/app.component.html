@@ -1,18 +1,27 @@
 <!-- STATE: Page is loading -->
 <ng-template [ngIf]="pageIsLoading">
   <div role="progress-bar">
-    <mat-progress-bar color="primary" mode="indeterminate" value="75" bufferValue="50"></mat-progress-bar>
+    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
 </ng-template>
 
-<!-- STATE: Page is loading -->
+<!-- STATE: Page is not loading -->
 <ng-template [ngIf]="!pageIsLoading">
-  <!-- Navigation -->
-  <navigation-component [hidden]="hide()" id="navigation-component"></navigation-component>
-  
-  <!-- Main Content -->
-  <router-outlet id="router-component"></router-outlet>
 
-  <!-- Footer -->
-  <footer-component [hidden]="hide()" id="footer-component"></footer-component> 
+  <!-- Page is not loading but has an error -->
+  <ng-template [ngIf]="pageHasError">
+      <error-component [error]="error"></error-component>
+  </ng-template>
+
+  <!-- Page is not loading and does not have an error -->
+  <ng-template [ngIf]="!pageHasError">
+    <!-- Navigation -->
+    <navigation-component [hidden]="hide()" id="navigation-component"></navigation-component>
+    
+    <!-- Main Content -->
+    <router-outlet id="router-component"></router-outlet>
+
+    <!-- Footer -->
+    <footer-component [hidden]="hide()" id="footer-component"></footer-component> 
+  </ng-template>  
 </ng-template>

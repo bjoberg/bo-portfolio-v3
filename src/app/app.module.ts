@@ -17,6 +17,8 @@ import { PhotographyComponent } from './components/photography/photography.compo
 import { PhotographyPortfolioComponent } from './components/photography/photography-portfolio/photography-portfolio.component';
 import { PhotographyPortfolioItemComponent } from './components/photography/photography-portfolio-item/photography-portfolio-item.component';
 import { SoftwareComponent } from './components/software/software.component';
+import { ErrorComponent } from './components/error/error.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 // Services
 import { ImageService } from './services/image.service';
@@ -34,7 +36,9 @@ import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule
     PhotographyComponent,
     PhotographyPortfolioComponent,
     PhotographyPortfolioItemComponent,
-    SoftwareComponent
+    SoftwareComponent,
+    ErrorComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

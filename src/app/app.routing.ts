@@ -13,6 +13,9 @@ import { PhotographyPortfolioItemComponent } from './components/photography/phot
 // Software
 import { SoftwareComponent } from './components/software/software.component';
 
+// Error
+import { ErrorComponent } from './components/error/error.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const AppRoutes: Routes = [
   { 
@@ -39,7 +42,12 @@ const AppRoutes: Routes = [
   {
     path: 'software',
     component: SoftwareComponent
-  }
+  },
+  {
+    path: '404', 
+    component: PageNotFoundComponent
+  },
+  { path: '**', redirectTo: '404' }
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(AppRoutes);

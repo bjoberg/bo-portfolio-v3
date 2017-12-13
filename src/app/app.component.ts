@@ -11,7 +11,10 @@ import { ImageService } from './services/image.service';
 
 export class AppComponent implements OnInit {
   pageIsLoading: boolean = true;
+  pageHasError: boolean = false;
   routeDataReceived: boolean = false;
+  errReceivingRouteData: boolean = false;
+  error: Error = null;
   imageGroupRoutes: Array<string>;
 
   constructor(private router: Router, private imageService: ImageService) {}
@@ -24,13 +27,21 @@ export class AppComponent implements OnInit {
     this.imageService.getAllImageGroupRoutes().then(data => {
       this.imageGroupRoutes = data;
       this.routeDataReceived = true;
-      this.loadPage();
+      this.loadModule();
+    }).catch(err => {
+      this.errReceivingRouteData = true;
+      this.error = err;
+      this.loadModule();
     });    
   }
 
-  public loadPage(): void {
+  public loadModule(): void {
     if (this.routeDataReceived === true) {
       this.pageIsLoading = false;
+      this.pageHasError = false;
+    } else if (this.errReceivingRouteData === true) {
+      this.pageIsLoading = false;
+      this.pageHasError = true;
     }
   }
 
