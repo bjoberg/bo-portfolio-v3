@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   public loadComponent(): void {
     if (this.routeDataReceived === true) {
       this.componentIsLoading = false;
-      this.componentHasError = false;
+      this.componentHasError = true;
     } else if (this.errReceivingRouteData === true) {
       this.componentIsLoading = false;
       this.componentHasError = true;
