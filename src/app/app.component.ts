@@ -10,8 +10,8 @@ import { ImageService } from './services/image.service';
 })
 
 export class AppComponent implements OnInit {
-  pageIsLoading: boolean = true;
-  pageHasError: boolean = false;
+  componentIsLoading: boolean = true;
+  componentHasError: boolean = false;
   routeDataReceived: boolean = false;
   errReceivingRouteData: boolean = false;
   error: Error = null;
@@ -27,21 +27,21 @@ export class AppComponent implements OnInit {
     this.imageService.getAllImageGroupRoutes().then(data => {
       this.imageGroupRoutes = data;
       this.routeDataReceived = true;
-      this.loadModule();
+      this.loadComponent();
     }).catch(err => {
       this.errReceivingRouteData = true;
       this.error = err;
-      this.loadModule();
+      this.loadComponent();
     });    
   }
 
-  public loadModule(): void {
+  public loadComponent(): void {
     if (this.routeDataReceived === true) {
-      this.pageIsLoading = false;
-      this.pageHasError = false;
+      this.componentIsLoading = false;
+      this.componentHasError = false;
     } else if (this.errReceivingRouteData === true) {
-      this.pageIsLoading = false;
-      this.pageHasError = true;
+      this.componentIsLoading = false;
+      this.componentHasError = true;
     }
   }
 

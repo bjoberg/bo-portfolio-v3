@@ -1,25 +1,35 @@
-<div class="container">
-  <!-- STATE: Page is loading -->
-  <div *ngIf="pageIsLoading; else isNotLoading">
+<!-- STATE: Component is loading -->
+<ng-template [ngIf]="componentIsLoading">
+  <div id="progress-bar--photography-component" class="progress-bar margin-for-navbar">
     <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
+</ng-template>
 
-  <!-- STATE: Page is not loading -->
-  <ng-template #isNotLoading>
+<!-- STATE: Component is not loading -->
+<ng-template [ngIf]="!componentIsLoading">
 
-    <!-- Page title -->
-    <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-      <h1>Photography</h1>
-    </div>
-
-    <!-- Image list -->
-    <div role="photo-grid">
-      <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-        <mat-grid-tile routerLink="/photography/{{item.route}}" *ngFor="let item of portfolios">
-            <img alt="{{item.title}}" src="{{item.imageUrl}}" />
-          <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
-        </mat-grid-tile>
-      </mat-grid-list>  
-    </div>
+  <!-- STATE: Component is not loading but has an error -->
+  <ng-template [ngIf]="componentHasError">
+    <error-component id="error-component" [error]="error"></error-component>
   </ng-template>
-</div>
+
+  <!-- STATE: Component is not loading and does not have an error -->
+  <ng-template [ngIf]="!componentHasError">
+    <div class="container">
+      <!-- Page title -->
+      <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+        <h1>Photography</h1>
+      </div>
+  
+      <!-- Image list -->
+      <div role="photo-grid">
+        <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
+          <mat-grid-tile routerLink="/photography/{{item.route}}" *ngFor="let item of portfolios">
+            <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
+            <img alt="{{item.title}}" src="{{item.imageUrl}}" />
+          </mat-grid-tile>
+        </mat-grid-list>  
+      </div>
+    </div>
+  </ng-template>  
+</ng-template>

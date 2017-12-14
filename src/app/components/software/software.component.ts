@@ -8,9 +8,7 @@ import { Title } from '@angular/platform-browser';
 })
 
 export class SoftwareComponent implements OnInit {
-  // Member variables
-
-  // Lifecycle methods
+  
   constructor(private titleService: Title) {}
 
   ngOnInit(): void {
@@ -18,8 +16,4 @@ export class SoftwareComponent implements OnInit {
     window.scrollTo(0, 0);
     this.titleService.setTitle("Software - Brett Oberg");
   }
-
-  // Accessor methods
-
-  // General class methods  
 }

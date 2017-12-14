@@ -30,7 +30,7 @@ body {
 }
 
 // ****************************************************************************
-// Container
+// Container (s)
 // ****************************************************************************
 .container {
     padding-top: calc(#{$navbar--height} + #{$toolbar--height} + 0px);
@@ -45,6 +45,10 @@ body {
 // ****************************************************************************
 // Component styling
 // ****************************************************************************
+.margin-for-navbar {
+    margin-top: calc(#{$navbar--height} + #{$toolbar--height} + 0px);
+}
+
 .component-is--primary {
     color: $white !important;
     background-color: map-get($primary, 500)  !important;
@@ -101,6 +105,14 @@ p {
     font-weight: $font-weight--normal;
     letter-spacing: $letter-spacing--wide;
     line-height: $line-height--tall;
+}
+
+// ****************************************************************************
+// Progress bar
+// ****************************************************************************
+.progress-bar {
+    z-index: 2000;
+    width: 100vw;    
 }
 
 // ****************************************************************************

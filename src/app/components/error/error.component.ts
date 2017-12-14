@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'error-component',
@@ -8,8 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ErrorComponent implements OnInit {
   @Input() error: Error;
 
-  constructor() { }
+  constructor(private titleService: Title) {  }
 
   ngOnInit() {
+    this.titleService.setTitle("Error");
   }
 }

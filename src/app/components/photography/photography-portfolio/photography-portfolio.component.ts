@@ -15,8 +15,11 @@ import { ImageGroup } from '../../../classes/image-group';
 })
 
 export class PhotographyPortfolioComponent implements OnInit {
-  pageIsLoading: boolean = true;
+  componentIsLoading: boolean = true;
+  componentHasError: boolean = false;
+  error: string = null;
   portfolioReceived: boolean = false;
+  errReceivingPortfolio: boolean = false;
   portfolioRoute: string = "";
   portfolio: ImageGroup = null;
   gridCols: number = 0;
@@ -31,19 +34,31 @@ export class PhotographyPortfolioComponent implements OnInit {
     this.route.params.subscribe((params) => this.portfolioRoute = params.imageGroup);
 
     // Get the portfolio
+    this.getImageGroup();
+  }
+
+  public loadComponent(): void {
+    if (this.portfolioReceived === true) {
+      this.calculateGridCols(window.innerWidth);
+      this.componentIsLoading = false;
+      this.componentHasError = false;
+    } else if (this.errReceivingPortfolio === true) {
+      this.componentIsLoading = false;
+      this.componentHasError = true;
+    }
+  }
+
+  public getImageGroup(): void {
     this.imageService.getImageGroup(this.portfolioRoute).then(data => {
       this.portfolio = data;
       this.titleService.setTitle(this.portfolio.getTitle() + " - Brett Oberg");
       this.portfolioReceived = true;
-      this.loadPage();
-    });
-  }
-
-  public loadPage(): void {
-    if (this.portfolioReceived === true) {
-      this.calculateGridCols(window.innerWidth);
-      this.pageIsLoading = false;
-    }
+      this.loadComponent();
+    }).catch(err => {
+      this.errReceivingPortfolio = true;
+      this.error = err;
+      this.loadComponent();
+    });    
   }
   
   @HostListener('window:resize', ['$event'])

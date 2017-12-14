@@ -1,37 +1,42 @@
-<!-- STATE: Page is loading -->
-<div *ngIf="pageIsLoading">
-  <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
-</div>
-
-<!-- STATE: Page is not loading -->
-<div *ngIf="!pageIsLoading">
-  <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
-    <!-- Nav left -->
-    <div class="container--nav-left" id="container--nav-left">
-      <div [hidden]="!hasPrev" class="nav-left" id="nav-left" (click)="navPrev()">
-        <i class="material-icons">keyboard_arrow_left</i>
-      </div>
-    </div>
-
-    <!-- STATE: Loading the image -->
-    <div *ngIf="loadingImage" class="container--loading-image">
-      <p>Loading image...</p>
-      <mat-progress-spinner color="primary" mode="indeterminate" diameter="30"></mat-progress-spinner>
-    </div>
-    
-    <!-- STATE: Not loading the image -->
-    <div *ngIf="!loadingImage" class="container--image">
-      <img alt="{{image.title}}" src="{{image.imageUrl}}" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)" />
-    </div>
-    
-    <!-- Nav right -->
-    <div class="container--nav-right" id="container--nav-right">
-      <div class="close" (click)="navClose()">
-        <i class="material-icons">close</i>
-      </div>
-      <div [hidden]="!hasNext" class="nav-right" id="nav-right" (click)="navNext()">
-        <i class="material-icons">keyboard_arrow_right</i>
-      </div>
-    </div>
+<!-- STATE: Component is loading -->
+<ng-template [ngIf]="componentIsLoading">
+  <div id="progress-bar--photography-portfolio-item-component" class="progress-bar">
+    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
-</div>
+</ng-template>
+
+<!-- STATE: Component is not loading -->
+<ng-template [ngIf]="!componentIsLoading">
+
+  <!-- STATE: Component is not loading but has an error -->
+  <ng-template [ngIf]="componentHasError">
+    <error-component id="error-component" [error]="error"></error-component>
+  </ng-template>
+
+  <!-- STATE: Component is not loading and does not have an error -->
+  <ng-template [ngIf]="!componentHasError">
+    <div role="container--portfolio-item" class="container--portfolio-item" id="container--portfolio-item" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+      <!-- Nav left -->
+      <div class="container--nav-left" id="container--nav-left">
+        <div [hidden]="!hasPrev" class="nav-left" id="nav-left" (click)="navPrev()">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>
+      </div>
+      
+      <!-- Image -->
+      <div class="container--image">
+        <img alt="{{image.title}}" src="{{image.imageUrl}}" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)" />
+      </div>
+      
+      <!-- Nav right -->
+      <div class="container--nav-right" id="container--nav-right">
+        <div class="close" (click)="navClose()">
+          <i class="material-icons">close</i>
+        </div>
+        <div [hidden]="!hasNext" class="nav-right" id="nav-right" (click)="navNext()">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </div>
+    </div>
+  </ng-template>  
+</ng-template>

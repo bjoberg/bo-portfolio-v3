@@ -13,8 +13,11 @@ import { ImageGroup } from '../../classes/image-group';
 })
 
 export class PhotographyComponent implements OnInit {
-  pageIsLoading: boolean = true;
+  componentIsLoading: boolean = true;
+  componentHasError: boolean = false;
+  error: string = null;
   portfoliosReceived: boolean = false;
+  errReceivingPortfolios: boolean = false;
   portfolios: Array<ImageGroup> = null;
   gridCols: number = 2;
 
@@ -25,19 +28,31 @@ export class PhotographyComponent implements OnInit {
     window.scrollTo(0, 0);
     
     // Get the portfolios
+    this.getImageGroups();
+  }
+
+  public loadComponent():void {
+    if (this.portfoliosReceived === true) {
+      this.calculateGridCols(window.innerWidth);
+      this.componentIsLoading = false;
+      this.componentHasError = false;
+    } else if (this.errReceivingPortfolios === true) {
+      this.componentIsLoading = false;
+      this.componentHasError = true;
+    }
+  }
+
+  public getImageGroups(): void {
     this.imageService.getAllImageGroups().then(data => {
       this.portfolios = data;
       this.titleService.setTitle("Photography - Brett Oberg");
       this.portfoliosReceived = true;
-      this.loadPage();
+      this.loadComponent();
+    }).catch(err => {
+      this.errReceivingPortfolios = true;
+      this.error = err;
+      this.loadComponent();
     });
-  }
-
-  public loadPage():void {
-    if(this.portfoliosReceived === true) {
-      this.calculateGridCols(window.innerWidth);
-      this.pageIsLoading = false;
-    }
   }
 
   @HostListener('window:resize', ['$event'])

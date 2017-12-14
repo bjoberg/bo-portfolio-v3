@@ -12,51 +12,53 @@ import { UserConfig } from '../../config/user.config';
 })
 
 export class AboutComponent implements OnInit {
+  // Page state
+  componentIsLoading: boolean = true;
+  componentHasError: boolean = false;
+  error: string = null;
+
   // Page Information
   title = "About";
-
-  // About
-  avatar;
-  descriptionLong;
-  descriptionShort;
-  email;
-  location;
-  currently;
-
-  // Social media
-  social;
-
-  // Skills
-  skills;
-
-  // Recognition
-  recognition;
+  avatar: string = "";
+  descriptionLong: string = "";
+  descriptionShort: string = "";
+  email: string = "";
+  location: string = "";
+  currently: string = "";
+  social: Array<Object> = [];
+  skills: Array<Object> = [];
+  recognition: Array<Object> = [];
 
   constructor(private titleService: Title) {}
 
   ngOnInit():void  {
-    // Scroll to the top of the page every time a user navigates to this page
     window.scrollTo(0, 0);
+    this.titleService.setTitle("About - Brett Oberg");
+    this.getUserInformation();
+  }
+  
+  ngAfterViewChecked(): void {
+    let el  = document.getElementById('content-description-long');
 
-    // Configure about data
+    if (el !== null && el !== undefined) {
+      el.innerHTML = this.descriptionLong;
+    }
+  }
+
+  public getUserInformation(): void {
+    // Get the data
     this.avatar = UserConfig.about.avatar;
     this.descriptionLong = UserConfig.about.description_long;
     this.descriptionShort = UserConfig.about.description_short;
     this.email = UserConfig.about.email;
     this.location = UserConfig.about.location;
     this.currently = UserConfig.about.currently;
-
-    // Configure social data
     this.social = UserConfig.social;
-
-    // Configure skills data
     this.skills = UserConfig.skills;
-    
-    // Configure recognition data
     this.recognition = UserConfig.recognition;
 
-    // Updated the decription-long 
-    document.getElementById('content-description-long').innerHTML = this.descriptionLong;
-    this.titleService.setTitle("About - Brett Oberg");
+    // Load the page
+    this.componentIsLoading = false;
+    this.componentHasError = false;
   }
 }

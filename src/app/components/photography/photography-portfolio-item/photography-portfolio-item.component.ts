@@ -15,11 +15,24 @@ import { browser } from 'protractor';
 })
 
 export class PhotographyPortfolioItemComponent implements OnInit {
-  pageIsLoading: boolean = true;
+  // Page state
+  componentIsLoading: boolean = true;
+  componentHasError: boolean = false;
+  error: string = null;
+
+  // Image state
   imageReceived: boolean = false;
+  errReceivingImage: boolean = false;
+
+  // Next item state
   nextItemReceived: boolean = false;
+  errReceivingNextItem: boolean = false;
+
+  // Previous item state
   prevItemReceived: boolean = false;
-  loadingImage: boolean = true;
+  errReceivingPrevItem: boolean = false;
+
+  // Other
   hasNext: boolean = false;
   hasPrev: boolean = false;
   imageGroupRoute: string = "";
@@ -44,6 +57,16 @@ export class PhotographyPortfolioItemComponent implements OnInit {
     this.getPrevImageRoute(this.imageGroupRoute, this.imageRoute);
   }
 
+  public loadComponent(): void {
+    if (this.imageReceived === true && this.nextItemReceived === true && this.prevItemReceived === true) {
+      this.componentIsLoading = false;
+      this.componentHasError = false;
+    } else if (this.errReceivingImage === true || this.errReceivingNextItem === true || this.errReceivingPrevItem === true) {
+      this.componentIsLoading = false;
+      this.componentHasError = true;
+    }
+  }
+
   public getRoutes(): void {
     this.route.params.subscribe((params) => this.imageGroupRoute = params.imageGroup);
     this.route.params.subscribe((params) => this.imageRoute = params.image);
@@ -54,20 +77,26 @@ export class PhotographyPortfolioItemComponent implements OnInit {
   }
 
   public getImage(imageGroupRoute: string, imageRoute: string): void {
-    // TODO: Add error checking
     this.imageService.getImage(imageGroupRoute, parseInt(imageRoute)).then(data => {
-      // TODO: What if data is null
-      this.image = data;
-      this.titleService.setTitle(this.image.getTitle() + " - Brett Oberg");
-      this.imageReceived = true;
-      this.loadPage();
+      if (data !== null && data !== undefined) {
+        this.image = data;
+        this.titleService.setTitle(this.image.getTitle() + " - Brett Oberg");
+        this.imageReceived = true;
+        this.loadComponent();
+      } else {
+        this.errReceivingImage = true;
+        this.error = "getImage data === null";
+        this.loadComponent();          
+      }
+    }).catch(err => {
+      this.errReceivingImage = true;
+      this.error = err;
+      this.loadComponent();      
     });
   }
 
   public getNextImageRoute(imageGroupRoute: string, imageRoute: string): void {
-    // TODO: Add error checking
     this.imageService.getNextImageRoute(imageGroupRoute, parseInt(imageRoute)).then(data => {
-      // TODO: What if data is null
       this.nextImageRoute = data;
       this.nextItemReceived = true;
       if (data !== null) {
@@ -75,14 +104,16 @@ export class PhotographyPortfolioItemComponent implements OnInit {
       } else {
         this.hasNext = false;
       }
-      this.loadPage();
+      this.loadComponent();
+    }).catch(err => {
+      this.errReceivingNextItem = true;
+      this.error = err;
+      this.loadComponent();         
     });
   }
 
   public getPrevImageRoute(imageGroupRoute: string, imageRoute: string): void {
-    // TODO: Add error checking
     this.imageService.getPrevImageRoute(imageGroupRoute, parseInt(imageRoute)).then(data => {
-      // TODO: What if data is null
       this.prevImageRoute = data;
       this.prevItemReceived = true;
       if (data !== null) {
@@ -90,15 +121,12 @@ export class PhotographyPortfolioItemComponent implements OnInit {
       } else {
         this.hasPrev = false;
       }
-      this.loadPage();
+      this.loadComponent();
+    }).catch(err => {
+      this.errReceivingPrevItem = true;
+      this.error = err;
+      this.loadComponent();       
     });
-  }
-
-  public loadPage(): void {
-    if (this.imageReceived === true && this.nextItemReceived === true && this.prevItemReceived === true) {
-      this.pageIsLoading = false;
-      this.loadingImage = false;
-    }
   }
 
   @HostListener('window:keydown', ['$event'])
@@ -135,7 +163,6 @@ export class PhotographyPortfolioItemComponent implements OnInit {
 
   public navNext(): void {
     if (this.nextImageRoute !== null) {
-      this.loadingImage = true;
       this.setRoute(this.imageGroupRoute, this.nextImageRoute.toString());
       this.getImage(this.imageGroupRoute, this.nextImageRoute.toString());
       this.getNextImageRoute(this.imageGroupRoute, this.nextImageRoute.toString());
@@ -145,7 +172,6 @@ export class PhotographyPortfolioItemComponent implements OnInit {
 
   public navPrev(): void {
     if (this.prevImageRoute !== null) {
-      this.loadingImage = true;
       this.setRoute(this.imageGroupRoute, this.prevImageRoute.toString());
       this.getImage(this.imageGroupRoute, this.prevImageRoute.toString());
       this.getNextImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());

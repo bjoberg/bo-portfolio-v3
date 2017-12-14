@@ -1,34 +1,43 @@
-<!-- STATE: Page is loading -->
-<ng-template [ngIf]="pageIsLoading">
-  <div role="progress-bar">
-    <mat-progress-bar color="primary" mode="indeterminate" value="75" bufferValue="50"></mat-progress-bar>
+<!-- STATE: Component is loading -->
+<ng-template [ngIf]="componentIsLoading">
+  <div id="progress-bar--photography-portfolio-component" class="progress-bar margin-for-navbar">
+    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
   </div>
 </ng-template>
+  
+<!-- STATE: Component is not loading -->
+<ng-template [ngIf]="!componentIsLoading">
+  
+  <!-- STATE: Component is not loading but has an error -->
+  <ng-template [ngIf]="componentHasError">
+    <error-component id="error-component" [error]="error"></error-component>
+  </ng-template>
 
-<!-- STATE: Page is not loading -->
-<ng-template [ngIf]="!pageIsLoading">
-  <!-- Main Content -->
-  <div class="container">
-    <!-- Page title -->
-    <div>
-      <h1>{{portfolio.title}}</h1>
-    </div>
-    <!-- Context browser -->
-    <div role="context-browser">
-      <div class="container--context-browser">
-        <a routerLink="/photography">Photography</a> 
-        <i class="material-icons">keyboard_arrow_right</i>
-        <p>{{portfolio.title}}</p>
+  <!-- STATE: Component is not loading and does not have an error -->
+  <ng-template [ngIf]="!componentHasError">
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Page title -->
+      <div>
+        <h1>{{portfolio.title}}</h1>
+      </div>
+      <!-- Context browser -->
+      <div role="context-browser">
+        <div class="container--context-browser">
+          <a routerLink="/photography">Photography</a> 
+          <i class="material-icons">keyboard_arrow_right</i>
+          <p>{{portfolio.title}}</p>
+        </div>
+      </div>
+      
+      <!-- Image list -->
+      <div role="photo-grid">
+        <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
+          <mat-grid-tile routerLink="/photography/{{portfolio.route}}/{{item.id}}" *ngFor="let item of portfolio.images">
+            <img alt="{{item.title}}" src="{{item.imageUrl}}" />
+          </mat-grid-tile>
+        </mat-grid-list>  
       </div>
     </div>
-    
-    <!-- Image list -->
-    <div role="photo-grid">
-      <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-        <mat-grid-tile routerLink="/photography/{{portfolio.route}}/{{item.id}}" *ngFor="let item of portfolio.images">
-          <img alt="{{item.title}}" src="{{item.imageUrl}}" />
-        </mat-grid-tile>
-      </mat-grid-list>  
-    </div>
-  </div>
+  </ng-template>  
 </ng-template>
