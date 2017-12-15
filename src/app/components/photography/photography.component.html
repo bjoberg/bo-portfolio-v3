@@ -26,7 +26,8 @@
         <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
           <mat-grid-tile routerLink="/photography/{{item.route}}" *ngFor="let item of portfolios">
             <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
-            <img alt="{{item.title}}" src="{{item.imageUrl}}" />
+            <img [hidden]=false class="placeholder" src="{{item.placeholderImageUrl}}"/>
+            <!-- <img [hidden]=true alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event)"/> -->
           </mat-grid-tile>
         </mat-grid-list>  
       </div>

@@ -3,6 +3,7 @@ export const PhotographyPortfolios = [
     id: 1,
     title: 'Natural Landscape',
     imageUrl: '/assets/images/natural-landscape/EchoLake_10-2017.jpg',
+    placeholderImageUrl: '/assets/placeholders/natural-landscape/EchoLake_10-2017.jpg',
     route: 'natural-landscape',
     children: [],
     items: [

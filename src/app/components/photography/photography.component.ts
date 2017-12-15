@@ -1,5 +1,5 @@
 // External
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 // Local
@@ -30,6 +30,10 @@ export class PhotographyComponent implements OnInit {
     // Get the portfolios
     this.getImageGroups();
   }
+
+  ngAfterViewInit(): void {
+    // console.log(this.placeholder);
+}
 
   public loadComponent():void {
     if (this.portfoliosReceived === true) {
@@ -72,5 +76,11 @@ export class PhotographyComponent implements OnInit {
     } else {
       this.gridCols = 1;
     }
+  }
+
+  public loadImage(data) {
+    console.log(data);
+    data.target.hidden = false;
+    console.log(data.target.hidden);
   }
 }

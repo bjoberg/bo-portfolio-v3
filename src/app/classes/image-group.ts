@@ -4,13 +4,15 @@ export class ImageGroup {
   private id: number;
   private title: string;
   private imageUrl: string;
+  private placeholderImageUrl: string;
   private route: string;
   private images: Array<Image>;
 
-  constructor(id: number, title: string, imageUrl: string, route: string) {
+  constructor(id: number, title: string, imageUrl: string, placeholderImageUrl: string, route: string) {
     this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
+    this.placeholderImageUrl = placeholderImageUrl;
     this.route = route;
   }
 
@@ -32,6 +34,14 @@ export class ImageGroup {
 
   public setPhotoUrl(imageUrl: string) {
       this.imageUrl = imageUrl;
+  }
+
+  public getPlaceholderImageUrl(): string {
+    return this.placeholderImageUrl;
+  }
+
+  public setPlaceholderImageUrl(placeholderImageUrl: string) {
+      this.placeholderImageUrl = placeholderImageUrl;
   }
 
   public getRoute(): string {
