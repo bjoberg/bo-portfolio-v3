@@ -80,7 +80,7 @@ export class ImageService {
         images = [];
         for(let n = 0; n < group.items.length; n++) {
           let image = group.items[n];
-          images.push(new Image(image.id, image.title, image.imageUrl));
+          images.push(new Image(image.id, image.title, image.imageUrl, image.placeholderImageUrl));
         }
       }
     }
@@ -103,7 +103,7 @@ export class ImageService {
         for(let n = 0; n < group.items.length; n++) {
           let item = group.items[n];
           if(item.id === imageId) {
-            image = new Image(item.id, item.title, item.imageUrl);
+            image = new Image(item.id, item.title, item.imageUrl, item.placeholderImageUrl);
           }
         }
       }

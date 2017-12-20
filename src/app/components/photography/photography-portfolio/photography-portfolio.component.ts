@@ -79,4 +79,8 @@ export class PhotographyPortfolioComponent implements OnInit {
       this.gridCols = 1;
     }
   }
+
+  public loadImage(data) {
+    data.target.hidden = false;
+  }
 }

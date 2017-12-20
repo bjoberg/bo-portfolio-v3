@@ -79,8 +79,6 @@ export class PhotographyComponent implements OnInit {
   }
 
   public loadImage(data) {
-    console.log(data);
     data.target.hidden = false;
-    console.log(data.target.hidden);
   }
 }
