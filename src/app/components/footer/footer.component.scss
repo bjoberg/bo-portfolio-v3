@@ -2,7 +2,7 @@
 @import '../../../style-helpers/fonts';
 @import '../../../style-helpers/viewports-helper';
 
-[role=footer] {
+.footer {
   max-width: 100vw !important;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -29,7 +29,7 @@
 
 // Desktop
 @media (min-width: $breakPoint--small) {
-  [role=footer] {
+  .footer {
     flex-direction: row;
     margin-bottom: 0px;
   }
@@ -37,7 +37,7 @@
 
 // Mobile
 @media (max-width: $breakPoint--small) {
-  [role=footer] {
+  .footer {
     flex-direction: column;
     margin-bottom: 120px;
   }

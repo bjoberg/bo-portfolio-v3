@@ -54,12 +54,12 @@ body {
 
 .component-is--primary {
   color: $white !important;
-  background-color: map-get($primary, 500)  !important;
+  background-color: map-get($primary, 700)  !important;
 }
 
 .component-is--secondary {
   color: $white !important;
-  background-color: map-get($accent, 500)!important;
+  background-color: map-get($accent, 700)!important;
 }
 
 .component-is--light-gray {
@@ -177,7 +177,7 @@ img.progressive-placeholder {
 // Links
 // ****************************************************************************
 a {
-  color: map-get($primary, 500);
+  color: map-get($primary, 700);
   font-weight: $font-weight--normal;
   font-size: $font-size--normal;
   letter-spacing: $letter-spacing--normal;
@@ -187,13 +187,13 @@ a {
 }
 
 a:hover {
-  color: map-get($primary, 500);
+  color: map-get($primary, 700);
   padding-bottom: 0px;
-  border-bottom: solid 2px map-get($primary, 500);
+  border-bottom: solid 2px map-get($primary, 700);
 }
 
 a:visited {
-  color: map-get($primary, 500);
+  color: map-get($primary, 700);
   padding-bottom: 0px;
   border-bottom: none;
 }

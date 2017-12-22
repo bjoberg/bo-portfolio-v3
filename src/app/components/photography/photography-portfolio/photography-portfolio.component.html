@@ -22,7 +22,7 @@
         <h1>{{portfolio.title}}</h1>
       </div>
       <!-- Context browser -->
-      <div role="context-browser">
+      <div class="context-browser">
         <div class="container--context-browser">
           <a routerLink="/photography">Photography</a> 
           <i class="material-icons">keyboard_arrow_right</i>
@@ -31,7 +31,7 @@
       </div>
       
       <!-- Image list -->
-      <div role="photo-grid">
+      <div class="photo-grid">
         <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
           <mat-grid-tile routerLink="/photography/{{portfolio.route}}/{{item.id}}" *ngFor="let item of portfolio.images">
             <img [hidden]=false class="progressive-placeholder" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>

@@ -1,11 +1,11 @@
-<div role="footer">
+<div class="footer">
   <div class="items-left">
     <p><b>Brett Oberg</b> - <a href="mailto:{{email}}">{{email}}</a></p>
   </div>
   <div class="items-right">
     <p>
-      <span *ngFor="let s of social" id="item--social-media">
-        <a id="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i></a>
+      <span *ngFor="let s of social">
+        <a id="{{s.title}}" title="{{s.title}}" class="social-media" href="{{s.url}}"><i class="fa {{s.fa_icon}}" aria-hidden="true"></i></a>
       </span>
       <span id="copyright-information" class="copyright-information"> | <i class="fa fa-copyright" aria-hidden="true"></i> {{getCurrentYear()}}</span>
     <p>

@@ -15,7 +15,7 @@
 
   <!-- STATE: Component is not loading and does not have an error -->
   <ng-template [ngIf]="!componentHasError">
-    <div id="container--portfolio-item" role="container--portfolio-item" class="container--portfolio-item" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+    <main id="container--portfolio-item" class="container--portfolio-item" class="container--portfolio-item" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
       <!-- Nav left -->
       <div class="container--nav-left" id="container--nav-left">
         <div [hidden]="!hasPrev" class="nav-left" id="nav-left" (click)="navPrev()">
@@ -37,6 +37,6 @@
           <i class="material-icons">keyboard_arrow_right</i>
         </div>
       </div>
-    </div>
+    </main>
   </ng-template>  
 </ng-template>

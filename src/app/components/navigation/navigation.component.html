@@ -5,7 +5,7 @@
 <div *ngIf="!displayMobileView" class="container--app-header">
   <!-- App Header -->
   <div *ngFor="let item of navigationItemList" class="{{item.getType()}} desktop">
-    <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
+    <a id="desktop-nav-item--{{item.getTitle()}}" title="desktop-nav-item--{{item.getTitle()}}" routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
       <span>{{item.getTitle()}}</span>
     </a>
   </div>
@@ -16,7 +16,7 @@
   <!-- App Header -->
   <div class="container--app-header">
     <div *ngFor="let item of mobileNavigationItemList" class="{{item.getType()}} mobile">
-      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
+      <a id="mobile-nav-item--{{item.getTitle()}}" title="mobile-nav-item--{{item.getTitle()}}" routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
         <span>{{item.getTitle()}}</span>
       </a>    
     </div>
@@ -25,7 +25,7 @@
   <!-- Bottom Tabs -->
   <div class="container--bottom-tabs">
     <div *ngFor="let item of navigationItemList" class="{{item.getType()}} nav-item">
-      <a routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
+      <a id="mobile-tab-item--{{item.getTitle()}}" title="mobile-tab-item--{{item.getTitle()}}" routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
         <span><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
       </a>
     </div>

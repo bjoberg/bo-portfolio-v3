@@ -5,26 +5,10 @@
 @import '../../../../style-helpers/fonts';
 @import '../../../../style-helpers/viewports-helper';
 
-#navigation-component {
-  visibility: hidden !important;
-}
-
-// ****************************************************************************
-// Loading image
-// ****************************************************************************
-[role=loading-image] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-}
-
 // ****************************************************************************
 // Portfolio Item
 // ****************************************************************************
-[role=container--portfolio-item] {  
+.container--portfolio-item {  
   
   .container--nav-left {
     position: absolute;

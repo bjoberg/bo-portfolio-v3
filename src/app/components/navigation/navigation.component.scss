@@ -52,16 +52,16 @@ a span {
   
   a {
     text-decoration: none !important;
-    color: $dark-gray !important;
+    color: $black !important;
     
     &:hover {
       text-decoration: none !important;
-      color: $dark-gray !important;
+      color: $black !important;
     }
 
     &:visited {
       text-decoration: none !important;
-      color: $dark-gray !important;      
+      color: $black !important;      
     }
   }
 
@@ -72,7 +72,7 @@ a span {
       padding-bottom: none !important;
       border-bottom: none !important;
       font-weight: $font-weight--heavy;
-      color: $dark-gray !important;
+      color: $black !important;
     }
   }
   
@@ -81,14 +81,14 @@ a span {
     
     &.is-active {
       padding-bottom: 2px !important;
-      border-bottom: 2px solid $dark-gray !important;
-      color: $dark-gray !important;
+      border-bottom: 2px solid $black !important;
+      color: $black !important;
     }
 
     &:hover {
       padding-bottom: 2px !important;
-      border-bottom: 2px solid $dark-gray !important;
-      color: $dark-gray !important;      
+      border-bottom: 2px solid $black !important;
+      color: $black !important;      
     }
   }
 
@@ -148,17 +148,17 @@ a span {
     color: $medium-gray !important;
 
     &.is-active i {
-      color: $dark-gray !important;
+      color: $black !important;
       border-bottom: none !important;      
     }
 
     &:hover {
-      color: $dark-gray !important;
+      color: $black !important;
       border-bottom: none !important;
     } 
 
     &:visited {
-      color: $dark-gray !important;
+      color: $black !important;
       border-bottom: none !important;
     }
   }
