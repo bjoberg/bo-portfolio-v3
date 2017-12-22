@@ -5,8 +5,8 @@ var fs = require('fs');
 var http2 = require('http2');
 
 const port = process.env.PORT || 5000;
-var node_env = process.env.node_env || 'development';
-console.log(node_env);
+var node_env = process.env.NODE_ENV || 'development';
+console.log(process.env.NODE_ENV);
 express.request.__proto__ = http2.IncomingMessage.prototype;
 express.response.__proto__ = http2.ServerResponse.prototype;
 
