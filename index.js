@@ -19,19 +19,19 @@ app.get('/[^\.]+$', function(req, res) {
 
 let options = null;
 
-if (node_env === 'development') {
+// if (node_env === 'development') {
   options = {
     allowHTTP1: true,
-    key: fs.readFileSync('./certs/localhost.key'),
-    cert: fs.readFileSync('./certs/localhost.crt')
+    key: fs.readFileSync('./certs/server.key'),
+    cert: fs.readFileSync('./certs/server.crt')
   }
-} else {
-  options = {
-    allowHTTP1: true,
-    key: process.env.CERT,
-    cert: process.env.CERT_KEY
-  }
-}
+// } else {
+//   options = {
+//     allowHTTP1: true,
+//     key: process.env.CERT,
+//     cert: process.env.CERT_KEY
+//   }
+// }
 console.log(options);
 http2.createServer(options, app).listen(app.get('port'), (err) => {
   if (err) {
