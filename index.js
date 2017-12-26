@@ -7,7 +7,6 @@ const port = process.env.PORT || 5000;
 const node_env = process.env.NODE_ENV || 'development';
 
 function requireHttps(req, res, next) {
-  console.log("in require https");
   if (!req.secure && req.get('x-forwarded-proto') !== 'https' && node_env !== "development") {
     return res.redirect('https://' + req.get('host') + req.url);
   }
