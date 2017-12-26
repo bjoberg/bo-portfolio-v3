@@ -14,10 +14,10 @@ app.all('*', function(req, res) {
   res.sendFile(path.join(__dirname, '/dist/index.html'));
   console.log("here");
   // Redirect all http traffic to https
-  // if (node_env === 'production' && !req.secure) {
-  //   console.log("redirecting...");
-  //   res.redirect('https://' + req.headers.host + req.url);
-  // }
+  if (node_env === 'production' && !req.secure) {
+    console.log("redirecting...");
+    return res.redirect('https://' + req.headers.host + req.url);
+  }
 });
 
 app.listen(app.get('port'), function() {
