@@ -22,6 +22,8 @@
 // Photo grid
 // ****************************************************************************
 .photo-grid {
+  overflow: hidden !important;
+  
   mat-grid-tile:hover {
     cursor: pointer;
   }

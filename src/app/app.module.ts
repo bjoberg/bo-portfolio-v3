@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+// Service Worker
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 // Routing
 import { Routing } from './app.routing';
 
@@ -26,6 +29,7 @@ import { ImageService } from './services/image.service';
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,8 @@ import { MatButtonModule, MatGridListModule, MatMenuModule, MatProgressBarModule
     MatMenuModule,
     MatProgressBarModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     Title,
