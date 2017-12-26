@@ -9,7 +9,10 @@ app.set('port', port);
 app.use(compression());
 app.use(express.static(__dirname + '/dist'));
 app.get('/[^\.]+$', function(req, res) {
-  res.set('Content-Type', 'text/html').sendFile(path.join(__dirname, '/dist/index.html'));
+  console.log(req.headers['user-agent']);
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
 
 app.listen(app.get('port'), function() {
