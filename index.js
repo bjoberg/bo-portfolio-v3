@@ -6,18 +6,22 @@ var app = express();
 const port = process.env.PORT || 5000;
 const node_env = process.env.NODE_ENV || 'development';
 
+function requireHttps(req, res, next) {
+  console.log("in require https");
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && node_env !== "development") {
+    return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+}
+
 app.set('port', port);
 app.use(compression());
 app.use(express.static(__dirname + '/dist'));
+app.use(requireHttps);
+
 app.all('*', function(req, res) {
   res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, '/dist/index.html'));
-  console.log("here");
-  // Redirect all http traffic to https
-  if (node_env === 'production' && !req.secure) {
-    console.log("redirecting...");
-    return res.redirect('https://' + req.headers.host + req.url);
-  }
 });
 
 app.listen(app.get('port'), function() {
