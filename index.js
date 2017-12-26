@@ -4,7 +4,7 @@ var path = require('path');
 var app = express();
 
 const port = process.env.PORT || 5000;
-var node_env = process.env.NODE_ENV || 'development';
+const node_env = process.env.NODE_ENV || 'development';
 
 app.set('port', port);
 app.use(compression());
@@ -12,9 +12,10 @@ app.use(express.static(__dirname + '/dist'));
 app.get('*', function(req, res) {
   res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, '/dist/index.html'));
-
+  console.log("here");
   // Redirect all http traffic to https
-  if (node_env === 'production' && req.secure === false) {
+  if (node_env === 'production' && !req.secure) {
+    console.log("redirecting...");
     res.redirect('https://' + req.headers.host + req.url);
   }
 });
