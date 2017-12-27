@@ -58,7 +58,6 @@ export class PhotographyPortfolioComponent implements OnInit {
   public getPortfolioImages(batch: number, skip: number): void {
     this.imageService.getPortfolioImages(this.portfolioRoute, batch, skip).then(data => {
       this.portfolio = data;
-      console.log(data);
       this.portfolioImages = this.portfolioImages.concat(this.portfolio.images);
       this.portfolioImagesReceived = true;
       this.currIndex = this.currIndex + this.querySize;
@@ -84,9 +83,6 @@ export class PhotographyPortfolioComponent implements OnInit {
   }
 
   public onScroll() {
-    console.log("scrolled");
-    console.log(this.querySize);
-    console.log(this.currIndex);
     this.getPortfolioImages(this.querySize, this.currIndex);
   }
   
