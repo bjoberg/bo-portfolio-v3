@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 // Local
 import { ImageService } from '../../../services/image.service';
-import { ImageGroup } from '../../../classes/image-group';
+import { Image } from '../../../classes/image';
 
 
 @Component({
@@ -18,10 +18,16 @@ export class PhotographyPortfolioComponent implements OnInit {
   componentIsLoading: boolean = true;
   componentHasError: boolean = false;
   error: string = null;
-  portfolioReceived: boolean = false;
-  errReceivingPortfolio: boolean = false;
+  portfolioImagesReceived: boolean = false;
+  errReceivingPortfolioImages: boolean = false;
+  portfolioMetaReceived: boolean = false;
+  errReceivingPortfolioMeta: boolean = false;
   portfolioRoute: string = "";
-  portfolio: ImageGroup = null;
+  portfolioImages: Array<Image> = [];
+  portfolio = null;
+  portfolioMeta = null;
+  querySize: number = 10;
+  currIndex: number = 0;
   gridCols: number = 0;
 
   constructor(private route: ActivatedRoute, private titleService: Title, private imageService: ImageService) {}
@@ -34,31 +40,54 @@ export class PhotographyPortfolioComponent implements OnInit {
     this.route.params.subscribe((params) => this.portfolioRoute = params.imageGroup);
 
     // Get the portfolio
-    this.getImageGroup();
+    this.getPortfolioImages(this.querySize, this.currIndex);
+    this.getPortfolioMeta();
   }
 
   public loadComponent(): void {
-    if (this.portfolioReceived === true) {
+    if (this.portfolioImagesReceived === true && this.portfolioMetaReceived === true) {
       this.calculateGridCols(window.innerWidth);
       this.componentIsLoading = false;
       this.componentHasError = false;
-    } else if (this.errReceivingPortfolio === true) {
+    } else if (this.errReceivingPortfolioImages === true || this.errReceivingPortfolioMeta === true) {
       this.componentIsLoading = false;
       this.componentHasError = true;
     }
   }
 
-  public getImageGroup(): void {
-    this.imageService.getImageGroup(this.portfolioRoute).then(data => {
+  public getPortfolioImages(batch: number, skip: number): void {
+    this.imageService.getPortfolioImages(this.portfolioRoute, batch, skip).then(data => {
       this.portfolio = data;
-      this.titleService.setTitle(this.portfolio.getTitle() + " - Brett Oberg");
-      this.portfolioReceived = true;
+      console.log(data);
+      this.portfolioImages = this.portfolioImages.concat(this.portfolio.images);
+      this.portfolioImagesReceived = true;
+      this.currIndex = this.currIndex + this.querySize;
       this.loadComponent();
     }).catch(err => {
-      this.errReceivingPortfolio = true;
+      this.errReceivingPortfolioImages = true;
       this.error = err;
       this.loadComponent();
-    });    
+    });
+  }
+
+  public getPortfolioMeta(): void {
+    this.imageService.getPortfolioMeta(this.portfolioRoute).then(data => {
+      this.portfolioMeta = data;
+      this.titleService.setTitle(this.portfolioMeta.title + " - Brett Oberg");
+      this.portfolioMetaReceived = true;
+      this.loadComponent();
+    }).catch(err => {
+      this.errReceivingPortfolioMeta = true;
+      this.error = err;
+      this.loadComponent();
+    })
+  }
+
+  public onScroll() {
+    console.log("scrolled");
+    console.log(this.querySize);
+    console.log(this.currIndex);
+    this.getPortfolioImages(this.querySize, this.currIndex);
   }
   
   @HostListener('window:resize', ['$event'])

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 // Service Worker
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -51,6 +52,7 @@ import { environment } from '../environments/environment';
     HttpModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
+    InfiniteScrollModule,
     MatButtonModule, 
     MatGridListModule,
     MatMenuModule,

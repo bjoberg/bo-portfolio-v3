@@ -88,6 +88,54 @@ export class ImageService {
     return images;
   }
 
+  public async getPortfolioMeta(portfolioRoute: string): Promise<Object> {
+    let meta = null;
+
+    for(let i = 0; i < PhotographyPortfolios.length; i++) {
+      if (PhotographyPortfolios[i].route === portfolioRoute) {
+        let group = PhotographyPortfolios[i];
+        meta = {
+          id: group.id,
+          title: group.title,
+          imageUrl: group.imageUrl,
+          placeholderImageUrl: group.placeholderImageUrl,
+          route: group.route,
+          children: group.children,
+        }
+      }
+    }
+    return meta;
+  }
+
+  public async getPortfolioImages(portfolioRoute: string, batch: number, skip: number): Promise<Object> {
+    let imageObj = {
+      images: null,
+      finished: false,
+    };
+
+    for(let i = 0; i < PhotographyPortfolios.length; i++) {
+      if (PhotographyPortfolios[i].route === portfolioRoute) {
+        let group = PhotographyPortfolios[i];
+        imageObj.images = [];
+        if (skip > group.items.length) {
+          imageObj.finished = true;
+        } else {
+          for (let n = skip; n < group.items.length; n++) {
+            if (imageObj.images.length < batch) {
+              if (n >= group.items.length - 1) {
+                imageObj.finished = true;
+              }
+              let image = group.items[n];
+              imageObj.images.push(new Image(image.id, image.title, image.imageUrl, image.placeholderImageUrl));
+            }
+          }
+        }
+      }
+    }
+
+    return imageObj;    
+  }
+
   /**
    * Get an image within a specific photography portfolio
    * 
