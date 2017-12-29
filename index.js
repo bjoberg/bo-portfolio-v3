@@ -18,6 +18,11 @@ app.use(compression());
 app.use(express.static(__dirname + '/dist'));
 app.use(requireHttps);
 
+app.get('/robots.txt', function(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.sendFile(path.join(__dirname, '/robots.txt'));
+});
+
 app.all('*', function(req, res) {
   res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, '/dist/index.html'));
