@@ -29,5 +29,19 @@
         "/assets/**"
       ]
     }
+  }],
+  "dataGroups": [{
+    "name": "api-freshness",
+    "urls": [
+      "/about",
+      "/photography",
+      "/photography/**"
+    ],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": "1d",
+      "timeout": "5s"
+    }
   }]
 }
