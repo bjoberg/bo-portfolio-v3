@@ -6,12 +6,17 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.brettoberg.com/about</loc>
+    <loc>http://www.brettoberg.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.brettoberg.com/photography</loc>
+    <loc>http://www.brettoberg.com/photography</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/natural-landscape</loc>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
