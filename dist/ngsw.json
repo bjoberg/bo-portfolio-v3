@@ -91,7 +91,21 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "api-freshness",
+      "patterns": [
+        "\\/about",
+        "\\/photography",
+        "\\/photography\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "version": 1
+    }
+  ],
   "hashTable": {
     "/inline.2f6960831b7c97e3d7b3.bundle.js": "62e7f7939c6e174500c2d661dd965b027f08c7ca",
     "/assets/manifest.json": "36623ba0498df92973e8f79e520ff8eb04b1ca0b",
@@ -101,7 +115,7 @@
     "/assets/favicons/android-chrome-512x512.png": "a3106b43b4bf71d619b1fb99bc8f59adba1170c4",
     "/styles.d8e74101ebe2ebb44d44.bundle.css": "f79de59b912513a86be391cda64d9e0fbe524e0e",
     "/assets/favicons/apple-touch-icon.png": "5aab26b509b527b6b6b111d7976f7e5c443579c0",
-    "/index.html": "df560fbb51e611239ce058d46e71ba0f5d64dcec",
+    "/index.html": "7371abd0281a7a213004d9c8176c8b95b153d39b",
     "/assets/favicons/browserconfig.xml": "974aea18bda5a95802c06b80126ab1d96d91d708",
     "/assets/favicons/favicon.ico": "6701d49e7f9680d8adb64871aba604ef5f13e06d",
     "/assets/favicons/favicon-16x16.png": "7d2991733eb5435ce5ae3707f417f979a715f70d",

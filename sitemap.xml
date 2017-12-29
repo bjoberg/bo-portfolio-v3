@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.brettoberg.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.brettoberg.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.brettoberg.com/photography</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+</urlset>
