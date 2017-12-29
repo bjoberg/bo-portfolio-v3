@@ -18,6 +18,11 @@ app.use(compression());
 app.use(express.static(__dirname + '/dist'));
 app.use(requireHttps);
 
+app.get('/sitemap.xml', function(req, res) {
+  res.setHeader('Content-Type', 'text/xml');
+  res.sendFile(path.join(__dirname, '/sitemap.xml'));
+});
+
 app.get('/robots.txt', function(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.sendFile(path.join(__dirname, '/robots.txt'));
