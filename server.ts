@@ -5,6 +5,7 @@ import 'reflect-metadata';
 import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
+import * as compression from 'compression';
 import { join } from 'path';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
@@ -15,6 +16,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main.bundle');
@@ -30,6 +32,20 @@ app.engine('html', ngExpressEngine({
     provideModuleMap(LAZY_MODULE_MAP)
   ]
 }));
+
+// Route to https
+function requireHttps(req, res, next) {
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && NODE_ENV !== "development") {
+    return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+}
+
+// Compress all files
+app.use(compression());
+
+// Always serve the application over https
+app.use(requireHttps);
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
@@ -61,3 +77,53 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
 });
+
+// //////////////////////////////////////////////////////////////////
+// HTTP/2 Implementation
+// //////////////////////////////////////////////////////////////////
+
+// var express = require('express');
+// var path = require('path');
+// var app = express();
+// var fs = require('fs');
+// var http2 = require('http2');
+
+// const port = process.env.PORT || 5000;
+// var node_env = process.env.NODE_ENV || 'development';
+// console.log(process.env.NODE_ENV);
+// console.log(node_env);
+// express.request.__proto__ = http2.IncomingMessage.prototype;
+// express.response.__proto__ = http2.ServerResponse.prototype;
+
+// app.set('port', port);
+// app.use(express.static(__dirname + '/dist'));
+// app.get('/[^\.]+$', function(req, res) {
+//   res.set('Content-Type', 'text/html').sendFile(path.join(__dirname, '/dist/index.html'));
+// });
+
+// let options = null;
+
+// // if (node_env === 'development') {
+//   options = {
+//     allowHTTP1: true,
+//     key: fs.readFileSync(__dirname + '/certs/server.key'),
+//     cert: fs.readFileSync(__dirname + '/certs/server.crt')
+//   }
+// // } else {
+// //   options = {
+// //     allowHTTP1: true,
+// //     key: process.env.CERT,
+// //     cert: process.env.CERT_KEY
+// //   }
+// // }
+// console.log(options);
+// http2.createServer(options, app).listen(app.get('port'), (err) => {
+//   if (err) {
+//     throw new Error(err);
+//   }
+//   console.log('Node app is running at localhost: ' + app.get('port'));
+// });
+
+// // app.listen(app.get('port'), function() {
+// //   console.log("Node app is running at localhost:" + app.get('port'));
+// // });
