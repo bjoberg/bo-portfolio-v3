@@ -131,8 +131,8 @@ export class PhotographyPortfolioItemComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   onKey(event: KeyboardEvent) {
-    event.preventDefault();
-    event.returnValue = false;
+    // event.preventDefault();
+    // event.returnValue = false;
     switch (event.keyCode) {
       case 39: // Right
         this.navNext();
