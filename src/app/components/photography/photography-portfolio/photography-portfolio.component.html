@@ -33,9 +33,11 @@
       <!-- Image list -->
       <div class="photo-grid">
         <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-          <mat-grid-tile routerLink="/photography/{{portfolioMeta.route}}/{{item.id}}" *ngFor="let item of portfolioImages">
-            <img [hidden]="false" class="progressive-placeholder" id="placeholder - {{item.id}}" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>
-            <img [hidden]="true" class="progressive" alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event, item.id)"/>
+          <mat-grid-tile *ngFor="let item of portfolioImages">
+            <a title="{{item.id}}" routerLink="/photography/{{portfolioMeta.route}}/{{item.id}}">
+              <img [hidden]="false" class="progressive-placeholder" id="placeholder - {{item.id}}" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>
+              <img [hidden]="true" class="progressive" alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event, item.id)"/>
+            </a>
           </mat-grid-tile>
         </mat-grid-list>  
       </div>

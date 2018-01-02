@@ -24,10 +24,12 @@
       <!-- Image list -->
       <div class="photo-grid">
         <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-          <mat-grid-tile routerLink="/photography/{{item.route}}" *ngFor="let item of portfolios">
-            <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
-            <img [hidden]=false class="progressive-placeholder" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>
-            <img [hidden]=true class="progressive" alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event)"/>
+          <mat-grid-tile *ngFor="let item of portfolios">
+            <a title="{{item.route}}" routerLink="/photography/{{item.route}}">
+              <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
+              <img [hidden]=false class="progressive-placeholder" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>
+              <img [hidden]=true class="progressive" alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event)"/>
+            </a>
           </mat-grid-tile>
         </mat-grid-list>  
       </div>
