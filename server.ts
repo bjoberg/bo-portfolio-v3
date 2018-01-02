@@ -42,6 +42,16 @@ app.get('/api/*', (req, res) => {
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
 
+// Sitemap.xml file
+app.get('/sitemap.xml', function(req, res) {
+  res.render(join(DIST_FOLDER, 'browser', 'sitemap.xml'), { req });
+});
+
+// Robots.txt file
+app.get('/robots.txt', function(req, res) {
+  res.render(join(DIST_FOLDER, 'browser', 'robots.txt'), { req });
+});
+
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
   res.render(join(DIST_FOLDER, 'browser', 'index.html'), { req });
