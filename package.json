@@ -2,6 +2,10 @@
   "name": "brettoberg",
   "version": "2.0.0",
   "license": "MIT",
+  "main": "dist/server.js",
+  "engines": {
+    "node": "8.4.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +17,7 @@
     "serve:universal": "node dist/server.js",
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
-    "postinstall": "npm run build:universal"
+    "postinstall": "npm install && npm run build:universal"
   },
   "private": true,
   "dependencies": {
