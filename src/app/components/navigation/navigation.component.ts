@@ -2,6 +2,7 @@
 import { Component, HostListener, OnInit  } from '@angular/core';
 
 // Local
+import { DocumentRef } from '../../services/documentRef.service';
 import { NavigationItem } from '../../classes/navigation-item';
 import { NavigationConfig } from '../../config/navigation.config';
 
@@ -18,7 +19,7 @@ export class NavigationComponent implements OnInit {
   breakpoint: number;
   width: number;
 
-  constructor() { }
+  constructor(private docRef: DocumentRef) { }
 
   ngOnInit(): void {
     this.createNavigationItems();
@@ -27,7 +28,7 @@ export class NavigationComponent implements OnInit {
     this.breakpoint = 960;
 
     // Decide what should should be displayed based on screen onResize
-    this.width = window.innerWidth;
+    this.width = this.docRef.bodyWidth;
     this.setNavigationState(this.width);
   }
 
@@ -42,7 +43,7 @@ export class NavigationComponent implements OnInit {
 
     // Process navigation configuration file
     NavigationConfig.navigationItems.forEach(element => {
-      let navItem = new NavigationItem(element.title, element.route, new URL(element.url), element.type, element.icon);
+      let navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
       this.navigationItemList.push(navItem);
     });
   }
@@ -59,7 +60,7 @@ export class NavigationComponent implements OnInit {
     // Process navigation configuration file
     NavigationConfig.navigationItems.forEach(element => {
       if (element.mobile === "true") {
-        let navItem = new NavigationItem(element.title, element.route, new URL(element.url), element.type, element.icon);
+        let navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
         this.mobileNavigationItemList.push(navItem);
       }
     });

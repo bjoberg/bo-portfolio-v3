@@ -1,11 +1,11 @@
 export class NavigationItem {
   private title: string;
   private route: string;
-  private url: URL;
+  private url: string;
   private type: string;
   private icon: string;
 
-  constructor(title: string, route: string, url: URL, type: string, icon: string) {
+  constructor(title: string, route: string, url: string, type: string, icon: string) {
     this.title = title;
     this.route = route;
     this.url = url;
@@ -29,11 +29,11 @@ export class NavigationItem {
     this.route = text;
   }
 
-  public getUrl(): URL {
+  public getUrl(): string {
     return this.url;
   }
 
-  public setUrl(url: URL) {
+  public setUrl(url: string) {
     this.url = url;
   }
 

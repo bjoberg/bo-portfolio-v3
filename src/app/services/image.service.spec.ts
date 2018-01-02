@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PhotographyPortfolioService } from './photography-portfolio.service';
+import { ImageService } from './image.service';
 
 describe('PhotographyPortfolioService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PhotographyPortfolioService]
+      providers: [ImageService]
     });
   });
 
-  it('should be created', inject([PhotographyPortfolioService], (service: PhotographyPortfolioService) => {
+  it('should be created', inject([ImageService], (service: ImageService) => {
     expect(service).toBeTruthy();
   }));
 });

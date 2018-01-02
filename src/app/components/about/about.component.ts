@@ -32,7 +32,7 @@ export class AboutComponent implements OnInit {
   constructor(private titleService: Title) {}
 
   ngOnInit():void  {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     this.titleService.setTitle("About - Brett Oberg");
     this.getUserInformation();
   }

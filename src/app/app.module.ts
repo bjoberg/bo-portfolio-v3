@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 // Services
 import { ImageService } from './services/image.service';
+import { DocumentRef } from './services/documentRef.service';
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,7 +47,7 @@ import { environment } from '../environments/environment';
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'brett-oberg-portfolio' }),
     Routing,
     FormsModule,
     HttpModule,
@@ -63,7 +64,8 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     Title,
-    ImageService
+    ImageService,
+    DocumentRef
   ],
   bootstrap: [AppComponent]
 })

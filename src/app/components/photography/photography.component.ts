@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 // Local
 import { ImageService } from '../../services/image.service';
 import { ImageGroup } from '../../classes/image-group';
+import { DocumentRef } from '../../services/documentRef.service';
 
 @Component({
   selector: 'photography-component',
@@ -21,11 +22,14 @@ export class PhotographyComponent implements OnInit {
   portfolios: Array<ImageGroup> = null;
   gridCols: number = 2;
 
-  constructor(private titleService: Title, private imageService: ImageService) {}
+  constructor(
+    private titleService: Title, 
+    private imageService: ImageService,
+    private docRef: DocumentRef) {}
 
   ngOnInit() {
     // Scroll to the top of the page every time a user navigates to this page
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     
     // Get the portfolios
     this.getImageGroups();
@@ -37,7 +41,7 @@ export class PhotographyComponent implements OnInit {
 
   public loadComponent():void {
     if (this.portfoliosReceived === true) {
-      this.calculateGridCols(window.innerWidth);
+      this.calculateGridCols(this.docRef.bodyWidth);
       this.componentIsLoading = false;
       this.componentHasError = false;
     } else if (this.errReceivingPortfolios === true) {

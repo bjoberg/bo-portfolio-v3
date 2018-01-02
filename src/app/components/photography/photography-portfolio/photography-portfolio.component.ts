@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 // Local
 import { ImageService } from '../../../services/image.service';
 import { Image } from '../../../classes/image';
-
+import { DocumentRef } from '../../../services/documentRef.service';
 
 @Component({
   selector: 'photography-portfolio',
@@ -30,11 +30,15 @@ export class PhotographyPortfolioComponent implements OnInit {
   currIndex: number = 0;
   gridCols: number = 0;
 
-  constructor(private route: ActivatedRoute, private titleService: Title, private imageService: ImageService) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private titleService: Title, 
+    private imageService: ImageService,
+    private docRef: DocumentRef) {}
 
   ngOnInit(): void {
     // Scroll to the top of the page every time a user navigates to this page
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
 
     // Get the route
     this.route.params.subscribe((params) => this.portfolioRoute = params.imageGroup);
@@ -46,7 +50,7 @@ export class PhotographyPortfolioComponent implements OnInit {
 
   public loadComponent(): void {
     if (this.portfolioImagesReceived === true && this.portfolioMetaReceived === true) {
-      this.calculateGridCols(window.innerWidth);
+      this.calculateGridCols(this.docRef.bodyWidth);
       this.componentIsLoading = false;
       this.componentHasError = false;
     } else if (this.errReceivingPortfolioImages === true || this.errReceivingPortfolioMeta === true) {
