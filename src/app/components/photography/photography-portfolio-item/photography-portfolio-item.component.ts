@@ -89,7 +89,6 @@ export class PhotographyPortfolioItemComponent implements OnInit {
         this.loadComponent();          
       }
     }).catch(err => {
-      console.log("Error");
       this.errReceivingImage = true;
       this.error = err;
       this.loadComponent();      

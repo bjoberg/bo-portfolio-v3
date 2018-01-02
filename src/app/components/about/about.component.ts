@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 // Internal
+import { DocumentRef } from '../../services/documentRef.service';
 import { UserConfig } from '../../config/user.config';
 
 @Component({
@@ -29,7 +30,9 @@ export class AboutComponent implements OnInit {
   skills: Array<Object> = [];
   recognition: Array<Object> = [];
 
-  constructor(private titleService: Title) {}
+  constructor(
+    private titleService: Title,
+    private docRef: DocumentRef) {}
 
   ngOnInit():void  {
     // window.scrollTo(0, 0);
@@ -38,7 +41,7 @@ export class AboutComponent implements OnInit {
   }
   
   ngAfterViewChecked(): void {
-    let el  = document.getElementById('content-description-long');
+    let el  = this.docRef.nativeElement.getElementById('content-description-long');
 
     if (el !== null && el !== undefined) {
       el.innerHTML = this.descriptionLong;

@@ -5,6 +5,10 @@ import { DOCUMENT } from '@angular/platform-browser';
 export class DocumentRef {
   constructor(@Inject(DOCUMENT) private document: any) {}
 
+  get nativeElement() : any {
+    return this.document;
+  }
+
    get bodyWidth() : any {
      return this.document.body.clientWidth;
    }
