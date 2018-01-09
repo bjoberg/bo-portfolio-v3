@@ -21,6 +21,11 @@
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>http://www.brettoberg.com/photography/adventure</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
     <loc>http://www.brettoberg.com/photography/natural-landscape/11</loc>
   </url>
   <url>
@@ -91,5 +96,41 @@
   </url>
   <url>
     <loc>http://www.brettoberg.com/photography/natural-landscape/124</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/21</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/22</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/23</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/24</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/25</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/26</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/27</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/28</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/29</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/210</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/211</loc>
+  </url>
+  <url>
+    <loc>http://www.brettoberg.com/photography/adventure/212</loc>
   </url>
 </urlset>

@@ -17,8 +17,8 @@ export class ImageService {
     let imageGroupRoutes = null;
 
     if(PhotographyPortfolios.length >= 0) {
+      imageGroupRoutes = [];
       for(let i = 0; i < PhotographyPortfolios.length; i++) {
-        imageGroupRoutes = [];
         let group = PhotographyPortfolios[i];
         imageGroupRoutes.push(group.route);
       }  
@@ -34,8 +34,8 @@ export class ImageService {
     let portfolioGroups: Array<ImageGroup> = null;
 
     if(PhotographyPortfolios.length >= 0) {
+      portfolioGroups = [];
       for(let i = 0; i < PhotographyPortfolios.length; i++) {
-        portfolioGroups = [];
         let group = PhotographyPortfolios[i];
         portfolioGroups.push(new ImageGroup(group.id, group.title, group.imageUrl, group.placeholderImageUrl, group.route));
       }  

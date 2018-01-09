@@ -3,7 +3,7 @@ export const PhotographyPortfolios = [
     id: 1,
     title: 'Natural Landscape',
     imageUrl: '/assets/images/natural-landscape/EchoLake_10-2017.jpg',
-    placeholderImageUrl: '/assets/placeholders/natural-landscape-placeholders/EchoLake_10-2017.jpg',
+    placeholderImageUrl: '/assets/images/natural-landscape-placeholders/EchoLake_10-2017.jpg',
     route: 'natural-landscape',
     children: [],
     items: [
@@ -31,6 +31,28 @@ export const PhotographyPortfolios = [
       { id: 122, title: 'The Grand Tetons, June 2017', description: '', imageUrl: '/assets/images/natural-landscape/TheGrandTetons_06-2017.jpg', placeholderImageUrl: "/assets/images/natural-landscape-placeholders/TheGrandTetons_06-2017.jpg" },
       { id: 123, title: 'Waning Gibbous, February 2017', description: '', imageUrl: '/assets/images/natural-landscape/WaningGibbous_02-2017.jpg', placeholderImageUrl: "/assets/images/natural-landscape-placeholders/WaningGibbous_02-2017.jpg" },
       { id: 124, title: 'White Horse Ledge, October 2017', description: '', imageUrl: '/assets/images/natural-landscape/WhiteHorseLedge_10-2017.jpg', placeholderImageUrl: "/assets/images/natural-landscape-placeholders/WhiteHorseLedge_10-2017.jpg" },
+    ]   
+  },
+  {
+    id: 2,
+    title: 'Adventure',
+    imageUrl: '/assets/images/adventure/IceAgeNationalScenicTrail_01-2017.jpg',
+    placeholderImageUrl: '/assets/images/adventure-placeholders/IceAgeNationalScenicTrail_01-2017.jpg',
+    route: 'adventure',
+    children: [],
+    items: [
+      { id: 21, title: '17 Mile Drive, May 2017', description: '', imageUrl: '/assets/images/adventure/17MileDrive_05-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/17MileDrive_05-2017.jpg" },
+      { id: 22, title: 'Alpine Garden Trail, August 2017', description: '', imageUrl: '/assets/images/adventure/AlpineGardenTrail_08-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/AlpineGardenTrail_08-2017.jpg" },
+      { id: 23, title: 'Corona Arch, May 2017', description: '', imageUrl: '/assets/images/adventure/CoronaArch_05-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/CoronaArch_05-2017.jpg" },
+      { id: 24, title: 'Devils Lake East Bluff, January 2017', description: '', imageUrl: '/assets/images/adventure/DevilsLakeEastBluff_01-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/DevilsLakeEastBluff_01-2017.jpg" },
+      { id: 25, title: 'D L Bliss State Park, June 2017', description: '', imageUrl: '/assets/images/adventure/DLBlissStatePark_06-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/DLBlissStatePark_06-2017.jpg" },
+      { id: 26, title: 'Emerald Bay, June 2017', description: '', imageUrl: '/assets/images/adventure/EmeraldBay_06-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/EmeraldBay_06-2017.jpg" },
+      { id: 27, title: 'Ice Age National Scenic Trail, January 2017', description: '', imageUrl: '/assets/images/adventure/IceAgeNationalScenicTrail_01-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/IceAgeNationalScenicTrail_01-2017.jpg" },
+      { id: 28, title: 'Irwin Idaho, June 2017', description: '', imageUrl: '/assets/images/adventure/IrwinIdaho_06-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/IrwinIdaho_06-2017.jpg" },
+      { id: 29, title: 'Nelson Crag Trailhead, August 2017', description: '', imageUrl: '/assets/images/adventure/NelsonCragTrailhead_08-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/NelsonCragTrailhead_08-2017.jpg" },
+      { id: 210, title: 'Owl Rock, West Crack, Arches National Park, May 2017', description: '', imageUrl: '/assets/images/adventure/OwlRockWestCrack_05-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/OwlRockWestCrack_05-2017.jpg" },
+      { id: 211, title: 'Puerto Vallarta, Mexico, March 2017', description: '', imageUrl: '/assets/images/adventure/PuertoVallartaMexico_03-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/PuertoVallartaMexico_03-2017.jpg" },
+      { id: 212, title: 'Race Point Beach, October 2017', description: '', imageUrl: '/assets/images/adventure/RacePointBeach_10-2017.jpg', placeholderImageUrl: "/assets/images/adventure-placeholders/RacePointBeach_10-2017.jpg" }
     ]   
   } 
 ];
