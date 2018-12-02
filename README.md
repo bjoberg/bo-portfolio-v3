@@ -14,6 +14,7 @@ The following details should give you a high level overview of the project and h
 * [Angular Material](https://material.angular.io/)
 * [HammerJS](http://hammerjs.github.io/)
 * [Angular CLI](https://cli.angular.io/)
+* [Angular Universal](https://angular.io/guide/universal)
 * [Heroku](https://www.heroku.com/about)
 
 ## Contributing
