@@ -14,32 +14,31 @@ import { DocumentRef } from '../../services/documentRef.service';
 })
 
 export class PhotographyComponent implements OnInit {
-  componentIsLoading: boolean = true;
-  componentHasError: boolean = false;
+  componentIsLoading = true;
+  componentHasError = false;
   error: string = null;
-  portfoliosReceived: boolean = false;
-  errReceivingPortfolios: boolean = false;
+  portfoliosReceived = false;
+  errReceivingPortfolios = false;
   portfolios: Array<ImageGroup> = null;
-  gridCols: number = 2;
+  gridCols = 2;
 
   constructor(
-    private titleService: Title, 
+    private titleService: Title,
     private imageService: ImageService,
     private docRef: DocumentRef) {}
 
   ngOnInit() {
     // Scroll to the top of the page every time a user navigates to this page
     // window.scrollTo(0, 0);
-    
     // Get the portfolios
     this.getImageGroups();
   }
 
-  ngAfterViewInit(): void {
+  AfterViewInit(): void {
     // console.log(this.placeholder);
-}
+  }
 
-  public loadComponent():void {
+  public loadComponent(): void {
     if (this.portfoliosReceived === true) {
       this.calculateGridCols(this.docRef.bodyWidth);
       this.componentIsLoading = false;
@@ -53,7 +52,7 @@ export class PhotographyComponent implements OnInit {
   public getImageGroups(): void {
     this.imageService.getAllImageGroups().then(data => {
       this.portfolios = data;
-      this.titleService.setTitle("Photography - Brett Oberg");
+      this.titleService.setTitle('Photography - Brett Oberg');
       this.portfoliosReceived = true;
       this.loadComponent();
     }).catch(err => {

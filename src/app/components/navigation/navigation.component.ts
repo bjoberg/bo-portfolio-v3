@@ -24,7 +24,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
     this.createNavigationItems();
     this.createMobileNavigationItems();
-    this.displayMobileView = false
+    this.displayMobileView = false;
     this.breakpoint = 960;
 
     // Decide what should should be displayed based on screen onResize
@@ -43,7 +43,7 @@ export class NavigationComponent implements OnInit {
 
     // Process navigation configuration file
     NavigationConfig.navigationItems.forEach(element => {
-      let navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
+      const navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
       this.navigationItemList.push(navItem);
     });
   }
@@ -55,12 +55,12 @@ export class NavigationComponent implements OnInit {
       // If mobile navigation list is empty, initialize it
       if (this.mobileNavigationItemList === undefined) {
         this.mobileNavigationItemList = [];
-      } 
+      }
 
     // Process navigation configuration file
     NavigationConfig.navigationItems.forEach(element => {
-      if (element.mobile === "true") {
-        let navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
+      if (element.mobile === 'true') {
+        const navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
         this.mobileNavigationItemList.push(navItem);
       }
     });
@@ -68,7 +68,7 @@ export class NavigationComponent implements OnInit {
 
   /**
    * When the window is scaled update the navigation panel's UI.
-   * 
+   *
    * @param event window resize event
    */
   @HostListener('window:resize', ['$event'])
@@ -78,7 +78,7 @@ export class NavigationComponent implements OnInit {
 
   /**
    * Set the state (desktop or mobile) of the navigation panel based on the screen width.
-   * 
+   *
    * @param width current width of the screen
    */
   private setNavigationState(width: number) {

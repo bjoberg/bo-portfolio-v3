@@ -12,6 +12,6 @@ export class ErrorComponent implements OnInit {
   constructor(private titleService: Title) {  }
 
   ngOnInit() {
-    this.titleService.setTitle("Error");
+    this.titleService.setTitle('Error');
   }
 }

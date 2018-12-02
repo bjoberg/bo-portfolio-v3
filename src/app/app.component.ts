@@ -10,10 +10,10 @@ import { ImageService } from './services/image.service';
 })
 
 export class AppComponent implements OnInit {
-  componentIsLoading: boolean = true;
-  componentHasError: boolean = false;
-  routeDataReceived: boolean = false;
-  errReceivingRouteData: boolean = false;
+  componentIsLoading = true;
+  componentHasError = false;
+  routeDataReceived = false;
+  errReceivingRouteData = false;
   error: Error = null;
   imageGroupRoutes: Array<string>;
 
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
       this.errReceivingRouteData = true;
       this.error = err;
       this.loadComponent();
-    });    
+    });
   }
 
   public loadComponent(): void {
@@ -46,11 +46,11 @@ export class AppComponent implements OnInit {
   }
 
   public hide() {
-    let urlComponents = this.router.url.split('/');
+    const urlComponents = this.router.url.split('/');
     if (this.imageGroupRoutes !== null && this.imageGroupRoutes !== undefined) {
-      for(let i = 0; i < this.imageGroupRoutes.length; i++) {
-        let item = this.imageGroupRoutes[i];
-        if (this.router.url.includes("/photography/" + item)) {
+      for (let i = 0; i < this.imageGroupRoutes.length; i++) {
+        const item = this.imageGroupRoutes[i];
+        if (this.router.url.includes('/photography/' + item)) {
           if (urlComponents.length === 4) {
             return true;
           }

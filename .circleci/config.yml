@@ -35,11 +35,6 @@ jobs:
           name: Install npm
           command: npm install
 
-      # Install the Angular CLI defined in package.json
-      # - run:
-      #     name: Install Angular CLI
-      #     command: npm install -g @angular/cli
-
       # Save new / updated dependencies
       - save_cache:
           paths:

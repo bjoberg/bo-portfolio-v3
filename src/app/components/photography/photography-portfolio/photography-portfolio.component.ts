@@ -15,30 +15,30 @@ import { DocumentRef } from '../../../services/documentRef.service';
 })
 
 export class PhotographyPortfolioComponent implements OnInit {
-  componentIsLoading: boolean = true;
-  componentHasError: boolean = false;
+  componentIsLoading = true;
+  componentHasError = false;
   error: string = null;
-  portfolioImagesReceived: boolean = false;
-  errReceivingPortfolioImages: boolean = false;
-  portfolioMetaReceived: boolean = false;
-  errReceivingPortfolioMeta: boolean = false;
-  portfolioRoute: string = "";
+  portfolioImagesReceived = false;
+  errReceivingPortfolioImages = false;
+  portfolioMetaReceived = false;
+  errReceivingPortfolioMeta = false;
+  portfolioRoute = '';
   portfolioImages: Array<Image> = [];
   portfolio = null;
   portfolioMeta = null;
-  querySize: number = 10;
-  currIndex: number = 0;
-  gridCols: number = 0;
+  querySize = 10;
+  currIndex = 0;
+  gridCols = 0;
 
   constructor(
-    private route: ActivatedRoute, 
-    private titleService: Title, 
+    private route: ActivatedRoute,
+    private titleService: Title,
     private imageService: ImageService,
     private docRef: DocumentRef) {}
 
   ngOnInit(): void {
     // Scroll to the top of the page every time a user navigates to this page
-    //window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     // Get the route
     this.route.params.subscribe((params) => this.portfolioRoute = params.imageGroup);
@@ -76,20 +76,20 @@ export class PhotographyPortfolioComponent implements OnInit {
   public getPortfolioMeta(): void {
     this.imageService.getPortfolioMeta(this.portfolioRoute).then(data => {
       this.portfolioMeta = data;
-      this.titleService.setTitle(this.portfolioMeta.title + " - Brett Oberg");
+      this.titleService.setTitle(this.portfolioMeta.title + ' - Brett Oberg');
       this.portfolioMetaReceived = true;
       this.loadComponent();
     }).catch(err => {
       this.errReceivingPortfolioMeta = true;
       this.error = err;
       this.loadComponent();
-    })
+    });
   }
 
   public onScroll() {
     this.getPortfolioImages(this.querySize, this.currIndex);
   }
-  
+
   @HostListener('window:resize', ['$event'])
   resize(event) {
     this.calculateGridCols(event.target.innerWidth);

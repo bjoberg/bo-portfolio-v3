@@ -8,12 +8,12 @@ import { Title } from '@angular/platform-browser';
 })
 
 export class SoftwareComponent implements OnInit {
-  
+
   constructor(private titleService: Title) {}
 
   ngOnInit(): void {
     // Scroll to the top of the page every time a user navigates to this page
-    //window.scrollTo(0, 0);
-    this.titleService.setTitle("Software - Brett Oberg");
+    // window.scrollTo(0, 0);
+    this.titleService.setTitle('Software - Brett Oberg');
   }
 }

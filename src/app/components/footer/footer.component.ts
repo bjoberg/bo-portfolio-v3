@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   // About
   email;
 
-  // Social 
+  // Social
   social;
 
   constructor() {}
@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     // Configure about data
     this.email = UserConfig.about.email;
-    
+
     // Configure social data
     this.social = UserConfig.social;
   }

@@ -8,9 +8,9 @@ export class Image {
     this.id = id;
     this.title = title;
     this.imageUrl = imageUrl;
-    this.placeholderImageUrl = placeholderImageUrl; 
+    this.placeholderImageUrl = placeholderImageUrl;
   }
-  
+
   public getId(): number {
     return this.id;
   }

@@ -9,7 +9,7 @@ export const UserConfig = {
   },
   skills: [
     {
-      title: "Web",
+      title: 'Web',
       components: [
         { title: 'Angular 2', url: 'https://angular.io/' },
         { title: 'CSS 3', url: 'https://www.w3schools.com/css' },
@@ -22,21 +22,21 @@ export const UserConfig = {
       ]
     },
     {
-      title: "Mobile",
+      title: 'Mobile',
       components: [
         { title: 'Swift', url: 'https://developer.apple.com/swift/' },
         { title: 'Java', url: 'https://www.java.com/en/' },
       ]
     },
     {
-      title: "Database",
+      title: 'Database',
       components: [
         { title: 'MySQL', url: 'https://www.mysql.com/' },
         { title: 'MongoDb', url: 'https://www.mongodb.com/' },
       ]
     },
     {
-      title: "Photography",
+      title: 'Photography',
       components: [
         { title: 'Photoshop', url: 'http://www.adobe.com/products/photoshop.html' },
         { title: 'Lightroom', url: 'http://www.adobe.com/products/photoshop-lightroom.html' },
@@ -51,6 +51,6 @@ export const UserConfig = {
     { title: 'LinkedIn', url: 'https://www.linkedin.com/in/brett-oberg-7bb5a594/', fa_icon: 'fa-linkedin' },
   ],
   recognition: [
-    {title: 'Healing Touch Madison', description: 'Featured background image.', url: "http://www.healingtouchmadison.com/" },
+    {title: 'Healing Touch Madison', description: 'Featured background image.', url: 'http://www.healingtouchmadison.com/' },
   ]
 };

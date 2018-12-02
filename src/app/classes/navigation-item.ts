@@ -18,11 +18,11 @@ export class NavigationItem {
   }
 
   public setTitle(text: string) {
-    this.title = text
+    this.title = text;
   }
 
   public getRoute(): string {
-    return this.route
+    return this.route;
   }
 
   public setRoute(text: string) {
@@ -51,5 +51,5 @@ export class NavigationItem {
 
   public setIcon(icon: string) {
     this.icon = icon;
-  }  
+  }
 }
