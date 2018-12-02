@@ -97,7 +97,7 @@ workflows:
       - test:
           requires:
             - setup
-      - build:
-          requires:
-            - setup
-            - test
+      # - build:
+      #     requires:
+      #       - setup
+      #       - test

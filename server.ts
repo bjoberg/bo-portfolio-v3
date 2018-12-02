@@ -35,7 +35,7 @@ app.engine('html', ngExpressEngine({
 
 // Route to https
 function requireHttps(req, res, next) {
-  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && NODE_ENV !== "development") {
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && NODE_ENV !== 'development') {
     return res.redirect('https://' + req.get('host') + req.url);
   }
   next();
