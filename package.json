@@ -9,7 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node dist/server.js",
-    "heroku-prebuild": "npm run build:universal",
+    "heroku-postbuild": "npm run build:universal",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
