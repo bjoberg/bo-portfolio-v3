@@ -87,6 +87,8 @@ jobs:
           command: npm run build:universal
 
   deploy:
+    working_directory: ~/brettoberg.com
+    steps:
       - checkout
       - run:
           name: Deploy to Heroku
@@ -109,8 +111,8 @@ workflows:
             - setup
             - test
             - build
-          filters:
-            branches:
-              only:
-                - master
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
 
