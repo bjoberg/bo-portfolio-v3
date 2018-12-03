@@ -40,7 +40,8 @@ export class AboutComponent implements OnInit {
     this.getUserInformation();
   }
 
-  AfterViewChecked(): void {
+  /* tslint:disable:use-life-cycle-interface */
+  ngAfterViewChecked(): void {
     const el  = this.docRef.nativeElement.getElementById('content-description-long');
 
     if (el !== null && el !== undefined) {

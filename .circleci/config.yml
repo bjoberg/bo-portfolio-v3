@@ -66,25 +66,25 @@ jobs:
           name: Run lint tests
           command: npm run lint
 
-  # build:
-  #   docker:
-  #     # specify the node version
-  #     - image: circleci/node:11.1.0-browsers
+  build:
+    docker:
+      # specify the node version
+      - image: circleci/node:11.1.0-browsers
 
-  #   working_directory: ~/brettoberg.com
+    working_directory: ~/brettoberg.com
 
-  #   steps:
-  #     - checkout
+    steps:
+      - checkout
 
-  #     # Download and cache dependencies
-  #     - restore_cache:
-  #         keys:
-  #         - dependency-cache-{{ checksum "package.json" }}
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - dependency-cache-{{ checksum "package.json" }}
 
-  #     # Run the unit tests
-  #     - run:
-  #         name: Run unit tests
-  #         command: npm run test --single-run
+      # Build the application (Angular Universal)
+      - run:
+          name: Build application
+          command: npm run build:universal
 
   # deploy:
     # TODO
@@ -97,7 +97,7 @@ workflows:
       - test:
           requires:
             - setup
-      # - build:
-      #     requires:
-      #       - setup
-      #       - test
+      - build:
+          requires:
+            - setup
+            - test
