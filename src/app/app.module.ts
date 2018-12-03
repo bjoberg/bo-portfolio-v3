@@ -3,8 +3,8 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 // Service Worker
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -54,7 +54,7 @@ import { environment } from '../environments/environment';
     FlexLayoutModule,
     BrowserAnimationsModule,
     InfiniteScrollModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatGridListModule,
     MatMenuModule,
     MatProgressBarModule,

@@ -25,8 +25,8 @@ export class ImageGroup {
   }
 
   public setTitle(text: string) {
-      this.title = text
-  }  
+      this.title = text;
+  }
 
   public getImageUrl(): string {
     return this.imageUrl;
@@ -45,7 +45,7 @@ export class ImageGroup {
   }
 
   public getRoute(): string {
-    return this.route
+    return this.route;
   }
 
   public setRoute(route: string) {
@@ -53,7 +53,7 @@ export class ImageGroup {
   }
 
   public getImages(): Array<Image> {
-    return this.images
+    return this.images;
   }
 
   public setImages(images: Array<Image>) {

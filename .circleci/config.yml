@@ -4,16 +4,47 @@
 #
 version: 2
 jobs:
-  build:
+  setup:
     docker:
-      # specify the version you desire here
+      # specify the node version
       - image: circleci/node:11.1.0-browsers
 
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+    working_directory: ~/brettoberg.com
+
+    steps:
+      - checkout
+
+      # Update npm to the latest version
+      - run:
+          name: Update npm 
+          command: sudo npm install -g npm@latest
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - dependency-cache-{{ checksum "package.json" }}
+
+      # Change npm's default directory: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+      - run: mkdir ~/.npm-global
+      - run: npm config set prefix '~/.npm-global'
+      - run: echo "export PATH=~/.npm-global/bin:$PATH" >> ~/.profile
+      - run: source ~/.profile
+
+      # Install dependencies that were not cached
+      - run:
+          name: Install npm
+          command: npm install
+
+      # Save new / updated dependencies
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependency-cache-{{ checksum "package.json" }}
+
+  test:
+    docker:
+      # specify the node version
+      - image: circleci/node:11.1.0-browsers
 
     working_directory: ~/brettoberg.com
 
@@ -23,37 +54,43 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - dependency-cache-{{ checksum "package.json" }}
 
-      - run: npm install
-      # - run: npm install @angular/cli
+      # Run the unit tests
+      - run:
+          name: Run unit tests
+          command: npm run test
 
-      # - save_cache:
-      #     paths:
-      #       - node_modules
-      #     key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      # - run: ng test
+      # Run the lint tests
+      - run:
+          name: Run lint tests
+          command: npm run lint
 
   deploy:
     docker:
-      - image: circleci/node:7.10
-    working_directory: ~/brettoberg.com/dist
+      # specify the node version
+      - image: circleci/node:11.1.0-browsers
+    working_directory: ~/brettoberg.com
     steps:
+      - checkout
       - run:
-          name: Deploy
-          command: echo 'done' 
+          name: Deploy to Heroku
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
 workflows:
   version: 2
-  build_and_deploy:
+  default_workflow:
     jobs:
-      - build
+      - setup
+      - test:
+          requires:
+            - setup
       - deploy:
           requires:
-            - build
+            - setup
+            - test
           filters:
             branches:
-              only: feature/Jenkins
+              only:
+                - master
+

@@ -1,7 +1,7 @@
 export const UserConfig = {
   about: {
     avatar: '/assets/images/headshot.jpg',
-    description_long: `<p>My name is Brett Oberg and I am a software engineer specializing in front-end web development.</p><p>Professionally, I am interested in computer programming, UI / UX design, web development, and entrepreurship. I have 6 years of general work experience, and since 2015 have been contributing to and building numerous web applications. Finally, I graduated from the University of Wisconsin - Madison with a degrees in Information Systems, Operations Management, and Computer Science at the University of Wisconsin - Madison.</p><p>Personally, I am a very active person interested in: golf, running, working out, hiking, camping, listening to music, and traveling.</p><p>Thanks for taking the time to visit this site. If you have concerns, advice, or just want someone to discuss design techniques with, please say hello.</p>`,
+    description_long: '<p>My name is Brett Oberg and I am a software engineer specializing in front-end web development.</p><p>Professionally, I am interested in computer programming, UI / UX design, web development, and entrepreurship. I have 6 years of general work experience, and since 2015 have been contributing to and building numerous web applications. Finally, I graduated from the University of Wisconsin - Madison with a degrees in Information Systems, Operations Management, and Computer Science at the University of Wisconsin - Madison.</p><p>Personally, I am a very active person interested in: golf, running, working out, hiking, camping, listening to music, and traveling.</p><p>Thanks for taking the time to visit this site. If you have concerns, advice, or just want someone to discuss design techniques with, please say hello.</p>',
     description_short: 'Software Engineer by trade. Landscape, travel, and lifestyle photographer by passion.',
     email: 'brett@obergmail.com',
     location: 'Boston, MA',
@@ -9,7 +9,7 @@ export const UserConfig = {
   },
   skills: [
     {
-      title: "Web",
+      title: 'Web',
       components: [
         { title: 'Angular 2', url: 'https://angular.io/' },
         { title: 'CSS 3', url: 'https://www.w3schools.com/css' },
@@ -22,21 +22,21 @@ export const UserConfig = {
       ]
     },
     {
-      title: "Mobile",
+      title: 'Mobile',
       components: [
         { title: 'Swift', url: 'https://developer.apple.com/swift/' },
         { title: 'Java', url: 'https://www.java.com/en/' },
       ]
     },
     {
-      title: "Database",
+      title: 'Database',
       components: [
         { title: 'MySQL', url: 'https://www.mysql.com/' },
         { title: 'MongoDb', url: 'https://www.mongodb.com/' },
       ]
     },
     {
-      title: "Photography",
+      title: 'Photography',
       components: [
         { title: 'Photoshop', url: 'http://www.adobe.com/products/photoshop.html' },
         { title: 'Lightroom', url: 'http://www.adobe.com/products/photoshop-lightroom.html' },
@@ -51,6 +51,6 @@ export const UserConfig = {
     { title: 'LinkedIn', url: 'https://www.linkedin.com/in/brett-oberg-7bb5a594/', fa_icon: 'fa-linkedin' },
   ],
   recognition: [
-    {title: 'Healing Touch Madison', description: 'Featured background image.', url: "http://www.healingtouchmadison.com/" },
+    {title: 'Healing Touch Madison', description: 'Featured background image.', url: 'http://www.healingtouchmadison.com/' },
   ]
 };

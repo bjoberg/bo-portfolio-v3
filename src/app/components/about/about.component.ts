@@ -14,18 +14,18 @@ import { UserConfig } from '../../config/user.config';
 
 export class AboutComponent implements OnInit {
   // Page state
-  componentIsLoading: boolean = true;
-  componentHasError: boolean = false;
+  componentIsLoading = true;
+  componentHasError = false;
   error: string = null;
 
   // Page Information
-  title = "About";
-  avatar: string = "";
-  descriptionLong: string = "";
-  descriptionShort: string = "";
-  email: string = "";
-  location: string = "";
-  currently: string = "";
+  title = 'About';
+  avatar = '';
+  descriptionLong = '';
+  descriptionShort = '';
+  email = '';
+  location = '';
+  currently = '';
   social: Array<Object> = [];
   skills: Array<Object> = [];
   recognition: Array<Object> = [];
@@ -34,14 +34,15 @@ export class AboutComponent implements OnInit {
     private titleService: Title,
     private docRef: DocumentRef) {}
 
-  ngOnInit():void  {
+  ngOnInit(): void  {
     // window.scrollTo(0, 0);
-    this.titleService.setTitle("About - Brett Oberg");
+    this.titleService.setTitle('About - Brett Oberg');
     this.getUserInformation();
   }
-  
+
+  /* tslint:disable:use-life-cycle-interface */
   ngAfterViewChecked(): void {
-    let el  = this.docRef.nativeElement.getElementById('content-description-long');
+    const el  = this.docRef.nativeElement.getElementById('content-description-long');
 
     if (el !== null && el !== undefined) {
       el.innerHTML = this.descriptionLong;

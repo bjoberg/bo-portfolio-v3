@@ -8,7 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 // Photography
 import { PhotographyComponent } from './components/photography/photography.component';
 import { PhotographyPortfolioComponent } from './components/photography/photography-portfolio/photography-portfolio.component';
-import { PhotographyPortfolioItemComponent } from './components/photography/photography-portfolio-item/photography-portfolio-item.component';
+import {PhotographyPortfolioItemComponent } from './components/photography/photography-portfolio-item/photography-portfolio-item.component';
 
 // Software
 import { SoftwareComponent } from './components/software/software.component';
@@ -18,9 +18,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const AppRoutes: Routes = [
-  { 
+  {
     path: '',
-    redirectTo: "/about",
+    redirectTo: '/about',
     pathMatch: 'full'
   },
   {
@@ -49,12 +49,12 @@ const AppRoutes: Routes = [
     component: SoftwareComponent
   },
   {
-    path: '404', 
+    path: '404',
     component: PageNotFoundComponent
   },
-  { 
-    path: '**', 
-    redirectTo: '404' 
+  {
+    path: '**',
+    redirectTo: '404'
   }
 ];
 

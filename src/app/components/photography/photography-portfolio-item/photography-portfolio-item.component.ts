@@ -16,27 +16,27 @@ import { browser } from 'protractor';
 
 export class PhotographyPortfolioItemComponent implements OnInit {
   // Page state
-  componentIsLoading: boolean = true;
-  componentHasError: boolean = false;
+  componentIsLoading = true;
+  componentHasError = false;
   error: string = null;
 
   // Image state
-  imageReceived: boolean = false;
-  errReceivingImage: boolean = false;
+  imageReceived = false;
+  errReceivingImage = false;
 
   // Next item state
-  nextItemReceived: boolean = false;
-  errReceivingNextItem: boolean = false;
+  nextItemReceived = false;
+  errReceivingNextItem = false;
 
   // Previous item state
-  prevItemReceived: boolean = false;
-  errReceivingPrevItem: boolean = false;
+  prevItemReceived = false;
+  errReceivingPrevItem = false;
 
   // Other
-  hasNext: boolean = false;
-  hasPrev: boolean = false;
-  imageGroupRoute: string = "";
-  imageRoute: string = "";
+  hasNext = false;
+  hasPrev = false;
+  imageGroupRoute = '';
+  imageRoute = '';
   image: Image = null;
   nextImageRoute: number = null;
   prevImageRoute: number = null;
@@ -46,7 +46,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
 
   ngOnInit(): void {
     // Scroll to the top of the page every time a user navigates to this page
-    //window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     // Get the routes
     this.getRoutes();
@@ -73,25 +73,25 @@ export class PhotographyPortfolioItemComponent implements OnInit {
   }
 
   public setRoute(imageGroupRoute: string, imageRoute: string): void {
-    this.router.navigate(['/photography/' + imageGroupRoute + "/" + imageRoute]);
+    this.router.navigate(['/photography/' + imageGroupRoute + '/' + imageRoute]);
   }
 
   public getImage(imageGroupRoute: string, imageRoute: string): void {
     this.imageService.getImage(imageGroupRoute, parseInt(imageRoute)).then(data => {
       if (data !== null && data !== undefined) {
         this.image = data;
-        this.titleService.setTitle(this.image.getTitle() + " - Brett Oberg");
+        this.titleService.setTitle(this.image.getTitle() + ' - Brett Oberg');
         this.imageReceived = true;
         this.loadComponent();
       } else {
         this.errReceivingImage = true;
-        this.error = "getImage data === null";
-        this.loadComponent();          
+        this.error = 'getImage data === null';
+        this.loadComponent();
       }
     }).catch(err => {
       this.errReceivingImage = true;
       this.error = err;
-      this.loadComponent();      
+      this.loadComponent();
     });
   }
 
@@ -108,7 +108,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
     }).catch(err => {
       this.errReceivingNextItem = true;
       this.error = err;
-      this.loadComponent();         
+      this.loadComponent();
     });
   }
 
@@ -125,7 +125,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
     }).catch(err => {
       this.errReceivingPrevItem = true;
       this.error = err;
-      this.loadComponent();       
+      this.loadComponent();
     });
   }
 
@@ -139,7 +139,7 @@ export class PhotographyPortfolioItemComponent implements OnInit {
         break;
       case 37: // Left
         this.navPrev();
-        break; 
+        break;
       case 27: // Escape
         this.navClose();
         break;
@@ -151,11 +151,11 @@ export class PhotographyPortfolioItemComponent implements OnInit {
   public swipe(action) {
     switch (action) {
       case this.SWIPE_ACTION.LEFT:
-        this.navNext();      
+        this.navNext();
         break;
       case this.SWIPE_ACTION.RIGHT:
-        this.navPrev();      
-        break;    
+        this.navPrev();
+        break;
       default:
         break;
     }
@@ -176,10 +176,10 @@ export class PhotographyPortfolioItemComponent implements OnInit {
       this.getImage(this.imageGroupRoute, this.prevImageRoute.toString());
       this.getNextImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());
       this.getPrevImageRoute(this.imageGroupRoute, this.prevImageRoute.toString());
-    }    
+    }
   }
 
   public navClose(): void {
-    this.setRoute(this.imageGroupRoute, "");
+    this.setRoute(this.imageGroupRoute, '');
   }
 }
