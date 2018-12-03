@@ -1,6 +1,7 @@
 # BrettOberg.com
 
 [![Heroku](https://heroku-badge.herokuapp.com/?app=brett-oberg-portfolio)](https://www.heroku.com/about)
+[![CircleCI](https://circleci.com/gh/bjoberg/brettoberg.com/tree/master.svg?style=svg)](https://circleci.com/gh/bjoberg/brettoberg.com/tree/master)
 
 This is my portfolio website.
 
