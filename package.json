@@ -1,0 +1,12 @@
+{
+    "name": "brett-oberg-portfolio",
+    "version": "2.0.0",
+    "main": "dist/server.js",
+    "engines": {
+      "node": "11.1.0"
+    },
+    "scripts": {
+      "start": "node dist/server.js"
+    },
+    "dependencies": { }
+  }
