@@ -87,6 +87,9 @@ jobs:
           command: npm run build:universal
 
   deploy:
+    docker:
+      # specify the node version
+      - image: circleci/node:11.1.0-browsers
     working_directory: ~/brettoberg.com
     steps:
       - checkout
