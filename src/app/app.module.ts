@@ -13,7 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { Routing } from './app.routing';
 
 // Components
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app/app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';

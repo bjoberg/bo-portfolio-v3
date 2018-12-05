@@ -15,6 +15,7 @@
 
   <!-- STATE: Component is not loading and does not have an error -->
   <ng-template [ngIf]="!componentHasError">
+    <navigation-component id="navigation-component"></navigation-component>
     <div id="container--photography" class="container">
       <!-- Page title -->
       <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
@@ -34,5 +35,6 @@
         </mat-grid-list>  
       </div>
     </div>
+    <footer-component id="footer-component"></footer-component> 
   </ng-template>  
 </ng-template>
