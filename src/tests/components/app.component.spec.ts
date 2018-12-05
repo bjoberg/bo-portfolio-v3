@@ -2,10 +2,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 // Component being tested
 import { AppComponent } from '../../app/components/app/app.component';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
 
