@@ -1,7 +1,4 @@
-// External
 import { Component, OnInit  } from '@angular/core';
-
-// Internal
 import { UserConfig } from '../../config/user.config';
 
 @Component({
@@ -10,24 +7,20 @@ import { UserConfig } from '../../config/user.config';
   styleUrls: ['./footer.component.scss']
 })
 
-export class FooterComponent implements OnInit {
-  // About
-  email;
+export class FooterComponent {
+  email: String;
+  social: Object[];
 
-  // Social
-  social;
-
-  constructor() {}
-
-  ngOnInit(): void {
-    // Configure about data
+  constructor() {
     this.email = UserConfig.about.email;
-
-    // Configure social data
     this.social = UserConfig.social;
   }
 
-  getCurrentYear() {
+  /**
+   * Get the current year
+   * @returns the current year
+   */
+  getCurrentYear(): number {
     return new Date().getFullYear();
   }
 }

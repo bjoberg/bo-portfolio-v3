@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
 // Components
-import { Routing } from '../app/app.routing';
 import { AppRoutes } from '../app/app.routing';
 import { NavigationComponent } from '../app/components/navigation/navigation.component';
 import { FooterComponent } from '../app/components/footer/footer.component';
@@ -66,7 +65,7 @@ describe('Router', () => {
     router.initialNavigation();
   });
 
-  it(`: navigate to "" redirects your to /about and displays <about-component>`, () => {
+  it(': navigate to "" redirects your to /about and displays <about-component>', () => {
     router.navigate(['']).then(() => {
       expect(location.path()).toBe('/about');
       fixture.detectChanges();

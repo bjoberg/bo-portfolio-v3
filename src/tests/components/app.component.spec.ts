@@ -9,9 +9,9 @@ import { AppComponent } from '../../app/components/app/app.component';
 
 describe('AppComponent', () => {
 
-  let comp: AppComponent;
+  let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
-  let de: DebugElement;
+  let el: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,18 +23,17 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
-    comp = fixture.componentInstance;
+    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it(': should create', () => {
-    expect(comp).toBeDefined();
+    expect(component).toBeDefined();
   });
 
   it(': should contain router-outlet', () => {
-    de = fixture.debugElement.query(By.css('#router-outlet'));
-
-    expect(de).not.toBe(undefined);
-    expect(de).not.toBe(null);
+    el = fixture.debugElement.query(By.css('#router-outlet'));
+    expect(el).not.toBe(undefined);
+    expect(el).not.toBe(null);
   });
 });
