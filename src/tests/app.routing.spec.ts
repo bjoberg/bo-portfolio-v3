@@ -1,6 +1,6 @@
 // Angular stuff
 import { Location } from '@angular/common';
-import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
@@ -64,56 +64,77 @@ describe('Router', () => {
     location = TestBed.get(Location);
     fixture = TestBed.createComponent(AppComponent);
     router.initialNavigation();
-    fixture.detectChanges();
   });
 
-  it(': navigate to "" redirects your to /about', fakeAsync(() => {
+  it(`: navigate to "" redirects your to /about and displays <about-component>`, () => {
     router.navigate(['']).then(() => {
       expect(location.path()).toBe('/about');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('about-component')).not.toBe(null);
     });
-  }));
+  });
 
-  it(': navigate to "about" redirects your to /about', fakeAsync(() => {
+  it(': navigate to "about" redirects your to /about and displays <about-component>', () => {
     router.navigate(['about']).then(() => {
       expect(location.path()).toBe('/about');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('about-component')).not.toBe(null);
     });
-  }));
+  });
 
-  it(': navigate to "photography" redirects your to /photography', fakeAsync(() => {
+  it(': navigate to "photography" redirects your to /photography and displays <photography-component>', () => {
     router.navigate(['photography']).then(() => {
       expect(location.path()).toBe('/photography');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('photography-component')).not.toBe(null);
     });
-  }));
+  });
 
-  it(': navigate to "photography/:imageGroup" redirects your to /photography/imageGroup', fakeAsync(() => {
-    // router.navigate(['photography']).then(() => {
-    //   expect(location.path()).toBe('/photography');
-    // });
-    expect(false).toEqual(true);
-  }));
+  it(': navigate to "photography/:imageGroup" redirects your to /photography/imageGroup and displays <photography-portfolio>', () => {
+    router.navigate(['photography', 'natural-landscape']).then(() => {
+      expect(location.path()).toBe('/photography/natural-landscape');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('photography-portfolio')).not.toBe(null);
+    });
+  });
 
-  it(': navigate to "photography/:imageGroup/:image" redirects your to /photography/imageGroup/image', fakeAsync(() => {
-    // router.navigate(['photography']).then(() => {
-    //   expect(location.path()).toBe('/photography');
-    // });
-    expect(false).toEqual(true);
-  }));
+  it(': navigate to "photography/:imageGroup/:image" redirects your to /photography/imageGroup/image and displays <photography-portfolio-item>', () => {
+    router.navigate(['photography', 'natural-landscape', '1']).then(() => {
+      expect(location.path()).toBe('/photography/natural-landscape/1');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('photography-portfolio-item')).not.toBe(null);
+    });
+  });
 
-  it(': navigate to "software" redirects your to /software', fakeAsync(() => {
+  it(': navigate to "software" redirects your to /software and displays <software-component>', () => {
     router.navigate(['software']).then(() => {
       expect(location.path()).toBe('/software');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('software-component')).not.toBe(null);
     });
-  }));
+  });
 
-  it(': navigate to "404" redirects your to /404', fakeAsync(() => {
+  it(': navigate to "404" redirects your to /404 and displays <page-not-found-component>', () => {
     router.navigate(['404']).then(() => {
       expect(location.path()).toBe('/404');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('page-not-found-component')).not.toBe(null);
     });
-  }));
+  });
 
-  it(': navigate to "**" redirects your to /404', fakeAsync(() => {
+  it(': navigate to "**" redirects your to /404 and displays <page-not-found-component>', () => {
     router.navigate(['**']).then(() => {
       expect(location.path()).toBe('/404');
+      fixture.detectChanges();
+      const el = fixture.debugElement.nativeElement;
+      expect(el.querySelector('page-not-found-component')).not.toBe(null);
     });
-  }));
+  });
 });

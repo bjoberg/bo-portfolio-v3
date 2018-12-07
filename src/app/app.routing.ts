@@ -14,7 +14,6 @@ import { PhotographyPortfolioItemComponent } from './components/photography/phot
 import { SoftwareComponent } from './components/software/software.component';
 
 // Error
-import { ErrorComponent } from './components/error/error.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const AppRoutes: Routes = [
