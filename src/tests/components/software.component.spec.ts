@@ -15,8 +15,7 @@ describe('SoftwareComponent', () => {
 
   let comp: SoftwareComponent;
   let fixture: ComponentFixture<SoftwareComponent>;
-  let de: DebugElement;
-  let el: HTMLElement;
+  let el: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -49,44 +48,44 @@ describe('SoftwareComponent', () => {
   });
 
   it(': should contain navigation-component', () => {
-    de = fixture.debugElement.query(By.css('#navigation-component'));
+    el = fixture.debugElement.query(By.css('#navigation-component'));
 
-    expect(de).not.toBe(undefined);
-    expect(de).not.toBe(null);
+    expect(el).not.toBe(undefined);
+    expect(el).not.toBe(null);
   });
 
   it(': should contain title', () => {
-    de = fixture.debugElement.query(By.css('#software--title'));
+    el = fixture.debugElement.query(By.css('#software--title'));
 
-    expect(de).not.toBe(undefined);
-    expect(de).not.toBe(null);
+    expect(el).not.toBe(undefined);
+    expect(el).not.toBe(null);
   });
 
   it(': display correct title', () => {
-    de = fixture.debugElement.query(By.css('#software--title'));
-    el = de.nativeElement;
+    el = fixture.debugElement.query(By.css('#software--title'));
+    const text = el.nativeElement;
 
-    expect(el.innerText).toEqual('Software');
+    expect(text.innerText).toEqual('Software');
   });
 
   it(': should contain content', () => {
-    de = fixture.debugElement.query(By.css('#software--content'));
+    el = fixture.debugElement.query(By.css('#software--content'));
 
-    expect(de).not.toBe(undefined);
-    expect(de).not.toBe(null);
+    expect(el).not.toBe(undefined);
+    expect(el).not.toBe(null);
   });
 
   it(': display correct content', () => {
-    de = fixture.debugElement.query(By.css('#software--content'));
-    el = de.nativeElement;
+    el = fixture.debugElement.query(By.css('#software--content'));
+    const text = el.nativeElement;
 
-    expect(el.innerText).toEqual('This page is currently under construction.');
+    expect(text.innerText).toEqual('This page is currently under construction.');
   });
 
   it(': should contain footer-component', () => {
-    de = fixture.debugElement.query(By.css('#footer-component'));
+    el = fixture.debugElement.query(By.css('#footer-component'));
 
-    expect(de).not.toBe(undefined);
-    expect(de).not.toBe(null);
+    expect(el).not.toBe(undefined);
+    expect(el).not.toBe(null);
   });
 });

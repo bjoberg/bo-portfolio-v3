@@ -46,6 +46,12 @@ describe('FooterComponent', () => {
     expect(el).not.toBe(null);
   });
 
+  it(': #footer--items-left should contain valid text', () => {
+    el = fixture.debugElement.query(By.css('#footer--items-left'));
+    const text =  el.nativeElement.innerText;
+    expect(text).toBe('Brett Oberg - brett@obergmail.com');
+  });
+
   it(': #footer--social should contain valid social items', () => {
     el = fixture.debugElement.query(By.css('#footer--items-right'));
     const nativeEl = el.nativeElement;
