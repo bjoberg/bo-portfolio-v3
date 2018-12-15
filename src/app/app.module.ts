@@ -2,7 +2,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -50,7 +50,7 @@ import { environment } from '../environments/environment';
     BrowserModule.withServerTransition({ appId: 'brett-oberg-portfolio' }),
     Routing,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
     InfiniteScrollModule,
