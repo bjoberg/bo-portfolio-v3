@@ -17,7 +17,7 @@
     "build:universal": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:universal": "node dist/server.js",
     "build:client-and-server-bundles": "ng build --prod --project brett-oberg-portfolio --output-hashing=none && ng run brett-oberg-portfolio:server",
-    "webpack:server": "webpack --config webpack.server.config.js --mode=production --progress --colors"
+    "webpack:server": "webpack --config webpack.server.config.js --mode=development --progress --colors"
   },
   "private": true,
   "dependencies": {
