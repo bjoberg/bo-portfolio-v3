@@ -61,13 +61,6 @@ describe('PageNotFoundComponent', () => {
     expect(text).toEqual('Sorry, page not found.');
   });
 
-  it(': should contain photography button', () => {
-    el = fixture.debugElement.query(By.css('#page-not-found--photography-btn'));
-
-    expect(el).not.toBe(undefined);
-    expect(el).not.toBe(null);
-  });
-
   it(': photography button should have valid link', () => {
     el = fixture.debugElement.query(By.css('#page-not-found--photography-btn'));
     const link = el.nativeElement.getAttribute('href');

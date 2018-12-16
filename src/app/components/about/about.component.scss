@@ -17,12 +17,12 @@ img {
 }
 
 @media (min-width: $breakPoint--small) {
-  #group-overview {
+  #about--overview-group {
     margin-right: 3%;
     min-width: 300px;
   }
   
-  #group-details {
+  #about--details-group {
     margin-left: 3%;
   }
 }
