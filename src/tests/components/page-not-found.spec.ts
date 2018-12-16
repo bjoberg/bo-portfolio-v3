@@ -6,23 +6,23 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Title } from '@angular/platform-browser';
 
 // Component being tested
-import { SoftwareComponent } from '../../app/components/software/software.component';
+import { PageNotFoundComponent } from '../../app/components/page-not-found/page-not-found.component';
 import { NavigationComponent } from '../../app/components/navigation/navigation.component';
 import { FooterComponent } from '../../app/components/footer/footer.component';
 import { DocumentRef } from '../../app/services/documentRef.service';
 
-describe('SoftwareComponent', () => {
+describe('PageNotFoundComponent', () => {
 
-  let comp: SoftwareComponent;
-  let fixture: ComponentFixture<SoftwareComponent>;
+  let comp: PageNotFoundComponent;
+  let fixture: ComponentFixture<PageNotFoundComponent>;
   let el: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        SoftwareComponent,
+        PageNotFoundComponent,
         NavigationComponent,
-        FooterComponent, ],
+        FooterComponent ],
       imports: [ RouterTestingModule ],
       providers: [
         Title,
@@ -33,7 +33,7 @@ describe('SoftwareComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SoftwareComponent);
+    fixture = TestBed.createComponent(PageNotFoundComponent);
     comp = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -44,7 +44,7 @@ describe('SoftwareComponent', () => {
 
   it(': should have the correct (meta) page title', () => {
     const pageTitle = TestBed.get(Title);
-    expect(pageTitle.getTitle()).toBe('Software - Brett Oberg');
+    expect(pageTitle.getTitle()).toBe('Page not found');
   });
 
   it(': should contain navigation-component', () => {
@@ -54,32 +54,32 @@ describe('SoftwareComponent', () => {
     expect(el).not.toBe(null);
   });
 
-  it(': should contain title', () => {
-    el = fixture.debugElement.query(By.css('#software--title'));
+  it(': should display valid title', () => {
+    el = fixture.debugElement.query(By.css('#page-not-found--title'));
+    const text = el.nativeElement.innerText;
+
+    expect(text).toEqual('Sorry, page not found.');
+  });
+
+  it(': should contain photography button', () => {
+    el = fixture.debugElement.query(By.css('#page-not-found--photography-btn'));
 
     expect(el).not.toBe(undefined);
     expect(el).not.toBe(null);
   });
 
-  it(': display correct title', () => {
-    el = fixture.debugElement.query(By.css('#software--title'));
-    const text = el.nativeElement.innerText;
+  it(': photography button should have valid link', () => {
+    el = fixture.debugElement.query(By.css('#page-not-found--photography-btn'));
+    const link = el.nativeElement.getAttribute('href');
 
-    expect(text).toEqual('Software');
+    expect(link).toEqual('/photography');
   });
 
-  it(': should contain content', () => {
-    el = fixture.debugElement.query(By.css('#software--content'));
-
-    expect(el).not.toBe(undefined);
-    expect(el).not.toBe(null);
-  });
-
-  it(': display correct content', () => {
-    el = fixture.debugElement.query(By.css('#software--content'));
+  it(': photography button displays valid text', () => {
+    el = fixture.debugElement.query(By.css('#page-not-found--photography-btn'));
     const text = el.nativeElement.innerText;
 
-    expect(text).toEqual('This page is currently under construction.');
+    expect(text).toEqual('Photography Portfolio');
   });
 
   it(': should contain footer-component', () => {

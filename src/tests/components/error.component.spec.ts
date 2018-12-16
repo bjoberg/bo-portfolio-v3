@@ -42,6 +42,11 @@ describe('ErrorComponent', () => {
     expect(comp).toBeDefined();
   });
 
+  it(': should have the correct (meta) page title', () => {
+    const pageTitle = TestBed.get(Title);
+    expect(pageTitle.getTitle()).toBe('Error');
+  });
+
   it(': should contain #error--title', () => {
     el = fixture.debugElement.query(By.css('#error--title'));
     expect(el).not.toBe(undefined);
