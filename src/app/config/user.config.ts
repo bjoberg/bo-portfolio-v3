@@ -1,11 +1,11 @@
 export const UserConfig = {
   about: {
     avatar: '/assets/images/headshot.jpg',
-    description_long: '<p>My name is Brett Oberg and I am a software engineer specializing in front-end web development.</p><p>Professionally, I am interested in computer programming, UI / UX design, web development, and entrepreurship. I have 6 years of general work experience, and since 2015 have been contributing to and building numerous web applications. Finally, I graduated from the University of Wisconsin - Madison with a degrees in Information Systems, Operations Management, and Computer Science at the University of Wisconsin - Madison.</p><p>Personally, I am a very active person interested in: golf, running, working out, hiking, camping, listening to music, and traveling.</p><p>Thanks for taking the time to visit this site. If you have concerns, advice, or just want someone to discuss design techniques with, please say hello.</p>',
+    description_long: '<p>I am an outdoor enthusiast with a passion for developing software that makes our life a little easier.</p><p>Colleagues know me as a hardworking, passionate person who will go to any length to complete a project. I am not afraid of getting involved outside of my immediate job to help build team spirit and fix the hard problems. I work fine alone, but I excel while collaborating with others.</p><p>Personally, I am a very active person interested in: golf, running, working out, hiking, camping, listening to music, and traveling.</p><p>When I am not working, you can probably find me at the top of a mountain taking pictures of the sunset. I am inspired by nature and I use photography as an excuse to experience and capture its beauty. Some other activities that I like to do are hiking, biking, weight lifting, camping, and cooking.</p><p>I love meeting new people and talking with them about their passions. So, please say hello and let’s chat about your favorite things in life!</p>',
     description_short: 'Software Engineer by trade. Landscape, travel, and lifestyle photographer by passion.',
     email: 'brett@obergmail.com',
-    location: 'Boston, MA',
-    currently: 'Software Engineer @ GE',
+    location: 'Chicago, IL',
+    job: 'Software Engineer @ GE',
   },
   skills: [
     {
@@ -44,10 +44,8 @@ export const UserConfig = {
     }
   ],
   social: [
-    { title: '500px', url: 'https://500px.com/bjoberg', fa_icon: 'fa-500px' },
     { title: 'Instagram', url: 'https://www.instagram.com/brett.oberg/', fa_icon: 'fa-instagram' },
     { title: 'Github', url: 'https://github.com/bjoberg', fa_icon: 'fa-github' },
-    { title: 'Google+', url: 'https://plus.google.com/114593328028628529895', fa_icon: 'fa-google' },
     { title: 'LinkedIn', url: 'https://www.linkedin.com/in/brett-oberg-7bb5a594/', fa_icon: 'fa-linkedin' },
   ],
   recognition: [

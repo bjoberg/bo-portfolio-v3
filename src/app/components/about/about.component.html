@@ -1,78 +1,39 @@
-<!-- STATE: Component is loading -->
-<ng-template [ngIf]="componentIsLoading">
-  <div id="progress-bar--about-component" class="progress-bar margin-for-navbar">
-    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
-  </div>
-</ng-template>
-
-<!-- STATE: Component is not loading -->
-<ng-template [ngIf]="!componentIsLoading">
-
-  <!-- STATE: Component is not loading but has an error -->
-  <ng-template [ngIf]="componentHasError">
-    <error-component id="error-component" [error]="error"></error-component>
-  </ng-template>
-
-  <!-- STATE: Component is not loading and does not have an error -->
-  <ng-template [ngIf]="!componentHasError">
-    <navigation-component id="navigation-component"></navigation-component>
-    <div id="container--about" class="container">
-      <div id="flex-container" class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-        <!-- Overview Group -->
-        <div id="group-overview" class="flex-item" fxFlex.xl="25%" fxFlex.lg="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
-          <!-- Avatar -->
-          <img id="img-profile-picture" src="{{avatar}}" alt="Brett Oberg" />
-          
-          <!-- Portfolio(s) -->
-          <!-- <a id="btn-software-portfolio" title="software-portfolio" routerLink="/software" class="component-is--primary btn full-width" mat-raised-button>Software Portfolio</a> -->
-          <a id="btn-photography-portfolio" title="photography-portfolio" routerLink="/photography" class="component-is--primary btn full-width" mat-raised-button>Photography Portfolio</a>
-    
-          <!-- Overview -->
-          <h2 id="title-overview">Overview</h2>
-          <ul id="list-overview" class="no-bullets">
-            <li id="content-currently"><i class="fa fa-id-card-o" aria-hidden="true"></i> {{currently}}</li>
-            <li id="content-location"><i class="fa fa-home" aria-hidden="true"></i> {{location}}</li>
-            <li id="content-email"><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:{{email}}">{{email}}</a></li>
-          </ul>
-    
-          <!-- Social Media -->
-          <h2 id="title-social-media">Social Media</h2>
-          <ul id="list-social-media" class="no-bullets">
-            <li id="list-item-{{s.title}}" *ngFor="let s of social">
-                <i id="icon-{{s.title}}" class="fa {{s.fa_icon}}" aria-hidden="true"></i><a id="content-{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
-            </li>
-          </ul>
-        </div>
-    
-        <!-- Details Group -->
-        <div id="group-details" class="flex-item" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
-          <!-- About -->
-          <h1 id="title-about">About</h1>
-          <p id="content-description-long" class="description-long"><!-- NOTE: Do not just inject descriptionLong her, because descriptionLong is stored as html content --></p>
-    
-          <!-- Skills -->
-          <h1 id="title-skills">Skills</h1>
-          <div id="group-of-skills">
-            <div id="group-{{skill.title}}" *ngFor="let skill of skills">
-              <h2 id="title-skill-{{skill.title}}">{{skill.title}}</h2>
-              <ul id="list-{{skill.title}}">
-                <li id="list-{{skill.title}}-item-{{component.title}}" *ngFor="let component of skill.components">
-                    <a id="content-{{component.title}}" class="skill" href="{{component.url}}">{{component.title}}</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-    
-          <!-- Recognition -->
-          <h1 id="title-recognition">Recognition</h1>
-            <ul id="list-recognition" class="no-bullets">
-              <li id="list-item-{{r.title}}" *ngFor="let r of recognition">
-                <a id="content-link-{{r.title}}" class="recognition" href="{{r.url}}">{{r.title}}</a> - {{r.description}}
-              </li>
-            </ul>
-        </div>
-      </div>
+<navigation-component id="navigation-component"></navigation-component>
+<div class="container">
+  <div id="about--flex-container" class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+    <div id="about--overview-group" class="flex-item" fxFlex.xl="25%" fxFlex.lg="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+      <img id="about--avatar" src="{{avatar}}" alt="Brett Oberg" />
+      <a id="about--photography-btn" routerLink="/photography" class="component-is--primary btn full-width" mat-raised-button>Photography Portfolio</a>
+      
+      <h2 id="about--overview-title">Overview</h2>
+      <ul class="no-bullets">
+        <li>
+          <i class="fa fa-id-card-o" aria-hidden="true"></i>
+          <span id="about--job">{{job}}</span>
+        </li>
+        <li>
+          <i class="fa fa-home" aria-hidden="true"></i>
+          <span id="about--location">{{location}}</span>
+        </li>
+        <li>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <a id="about--email" href="mailto:{{email}}">{{email}}</a>
+        </li>
+      </ul>
+      
+      <h2 id="about--social-media-title">Social Media</h2>
+      <ul id="about--social-media-list" class="no-bullets">
+        <li *ngFor="let s of social">
+          <i class="fa {{s.fa_icon}}" aria-hidden="true"></i>
+          <a id="about--social-media-{{s.title}}" class="social-media" href="{{s.url}}">{{s.title}}</a>
+        </li>
+      </ul>
     </div>
-    <footer-component id="footer-component"></footer-component> 
-  </ng-template>  
-</ng-template>
+
+    <div id="about--details-group" class="flex-item" fxFlex.xl="75%" fxFlex.lg="75%" fxFlex.md="75%" fxFlex.sm="75%" fxFlex.xs="100%">
+      <h1 id="about--details-title">About</h1>
+      <p id="about--content-description-long" class="description-long"><!-- NOTE: Do not just inject descriptionLong her, because descriptionLong is stored as html content --></p>
+    </div>
+  </div>
+</div>
+<footer-component id="footer-component"></footer-component> 
