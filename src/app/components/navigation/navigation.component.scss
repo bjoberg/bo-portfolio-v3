@@ -32,7 +32,7 @@ a span {
 // ****************************************************************************
 // App Header
 // ****************************************************************************
-.container--app-header {
+.navigation--container-toolbar {
   z-index: 1000 !important;
   position: fixed;
   // top: $toolbar--height !important;
@@ -65,7 +65,7 @@ a span {
     }
   }
 
-  .title a {
+  a.title {
     font-weight: $font-weight--heavy;
     
     &:hover {
@@ -76,8 +76,9 @@ a span {
     }
   }
   
-  .normal a {
+  a.normal {
     font-weight: $font-weight--normal;
+    padding: 0px;
     
     &.is-active {
       padding-bottom: 2px !important;
@@ -92,19 +93,23 @@ a span {
     }
   }
 
-  .title.desktop {
+  .desktop .title {
     font-size: 20px;
     margin-right: 40px;
     font-weight: $font-weight--heavy;
   }
 
-  .title.mobile {
-    font-size: 20px;
-    font-weight: $font-weight--heavy;
-    text-align: center;
-    margin: 0px;
-    min-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
-    max-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
+  .mobile {
+    width: 100% !important;
+    text-align: center !important;
+    
+    .title {
+      font-size: 20px;
+      font-weight: $font-weight--heavy;
+      margin: 0px;
+      min-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
+      max-width: calc(100vw - #{$container--padding-right} - #{$container--padding-left}) !important;
+    }
   }
   
   .normal {
@@ -116,7 +121,7 @@ a span {
 // ****************************************************************************
 // Mobile
 // ****************************************************************************
-.container--bottom-tabs {
+.navigation--container-tab-bar {
   z-index: 1000 !important;
   z-index: 1000 !important;
   min-width: 100vw;
