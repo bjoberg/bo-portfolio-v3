@@ -10,15 +10,15 @@ import { UserConfig } from '../../config/user.config';
 })
 
 export class AboutComponent implements OnInit, AfterViewChecked {
-  private avatar: String = UserConfig.about.avatar;
-  private descriptionLong: String = UserConfig.about.description_long;
-  private descriptionShort: String = UserConfig.about.description_short;
-  private email: String = UserConfig.about.email;
-  private location: String = UserConfig.about.location;
-  private job: String = UserConfig.about.job;
-  private social: Array<Object> = UserConfig.social;
-  private skills: Array<Object> = UserConfig.skills;
-  private recognition: Array<Object> = UserConfig.recognition;
+  public avatar: String = UserConfig.about.avatar;
+  public descriptionLong: String = UserConfig.about.description_long;
+  public descriptionShort: String = UserConfig.about.description_short;
+  public email: String = UserConfig.about.email;
+  public location: String = UserConfig.about.location;
+  public job: String = UserConfig.about.job;
+  public social: Array<Object> = UserConfig.social;
+  public skills: Array<Object> = UserConfig.skills;
+  public recognition: Array<Object> = UserConfig.recognition;
 
   constructor(private titleService: Title, private docRef: DocumentRef) {}
 
