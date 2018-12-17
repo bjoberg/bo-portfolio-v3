@@ -1,33 +1,29 @@
-<!-- Toolbar -->
-<!-- <div class="toolbar"></div> -->
-
 <!-- STATE: Navigation if the application is not mobile -->
-<div *ngIf="!displayMobileView" class="container--app-header">
-  <!-- App Header -->
-  <div *ngFor="let item of navigationItemList" class="{{item.getType()}} desktop">
-    <a id="desktop-nav-item--{{item.getTitle()}}" title="desktop-nav-item--{{item.getTitle()}}" routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
-      <span>{{item.getTitle()}}</span>
-    </a>
+<span *ngIf="!displayMobileView">
+  <div id="navigation--toolbar-desktop" class="navigation--container-toolbar">
+    <div id="navigation--toolbar-list-desktop" *ngFor="let item of desktopNavigationItemList" class="desktop">
+      <a class="{{item.type}}" routerLink={{item.route}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
+        <span>{{item.title}}</span>
+      </a>
+    </div>
   </div>
-</div>
+</span>
 
 <!-- STATE: Navigation if the application is mobile -->
-<div *ngIf="displayMobileView">
-  <!-- App Header -->
-  <div class="container--app-header">
-    <div *ngFor="let item of mobileNavigationItemList" class="{{item.getType()}} mobile">
-      <a id="mobile-nav-item--{{item.getTitle()}}" title="mobile-nav-item--{{item.getTitle()}}" routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
-        <span>{{item.getTitle()}}</span>
+<span *ngIf="displayMobileView">
+  <div id="navigation--toolbar-mobile" class="navigation--container-toolbar">
+    <div id="navigation--toolbar-list-mobile" *ngFor="let item of mobileNavigationItemList" class="mobile">
+      <a class="{{item.type}}" routerLink={{item.route}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
+        <span>{{item.title}}</span>
       </a>    
     </div>
   </div>
 
-  <!-- Bottom Tabs -->
-  <div class="container--bottom-tabs">
-    <div *ngFor="let item of navigationItemList" class="{{item.getType()}} nav-item">
-      <a id="mobile-tab-item--{{item.getTitle()}}" title="mobile-tab-item--{{item.getTitle()}}" routerLink={{item.getRoute()}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
-        <span><i class="fa fa-{{item.getIcon()}}" aria-hidden="true"></i></span>
+  <div id="navigation--tab-bar" class="navigation--container-tab-bar">
+    <div id="navigation--tab-bar-list" *ngFor="let item of desktopNavigationItemList" class="nav-item">
+      <a class="{{item.type}}" title="{{item.title}}" routerLink={{item.route}} routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:false}">
+        <i class="fa fa-{{item.icon}}" aria-hidden="true"></i>
       </a>
     </div>
   </div>
-</div>
+</span>

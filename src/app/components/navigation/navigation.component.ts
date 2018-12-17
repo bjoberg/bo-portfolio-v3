@@ -1,7 +1,4 @@
-// External
-import { Component, HostListener, OnInit  } from '@angular/core';
-
-// Local
+import { Component, HostListener } from '@angular/core';
 import { DocumentRef } from '../../services/documentRef.service';
 import { NavigationItem } from '../../classes/navigation-item';
 import { NavigationConfig } from '../../config/navigation.config';
@@ -12,80 +9,48 @@ import { NavigationConfig } from '../../config/navigation.config';
   styleUrls: ['./navigation.component.scss']
 })
 
-export class NavigationComponent implements OnInit {
-  navigationItemList: Array<NavigationItem>;
-  mobileNavigationItemList: Array<NavigationItem>;
-  displayMobileView: Boolean;
-  breakpoint: number;
-  width: number;
+export class NavigationComponent {
+  public desktopNavigationItemList: Array<NavigationItem> = NavigationConfig;
+  public mobileNavigationItemList: Array<NavigationItem>;
+  public displayMobileView: Boolean;
+  private breakpoint = 960;
 
-  constructor(private docRef: DocumentRef) { }
-
-  ngOnInit(): void {
-    this.createNavigationItems();
-    this.createMobileNavigationItems();
-    this.displayMobileView = false;
-    this.breakpoint = 960;
-
-    // Decide what should should be displayed based on screen onResize
-    this.width = this.docRef.bodyWidth;
-    this.setNavigationState(this.width);
+  constructor(private docRef: DocumentRef) {
+    this.mobileNavigationItemList = this.getMobileNavigationItemList(NavigationConfig);
+    this.displayMobileView = this.displayMobile(this.docRef.bodyWidth);
   }
 
   /**
-   * Process the NavigationConfig and create all of the navigation items.
-   */
-  private createNavigationItems() {
-    // If navigation list is empty, initialize it
-    if (this.navigationItemList === undefined) {
-      this.navigationItemList = [];
-    }
-
-    // Process navigation configuration file
-    NavigationConfig.navigationItems.forEach(element => {
-      const navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
-      this.navigationItemList.push(navItem);
-    });
-  }
-
-  /**
-   * Process the NavigationConfig and create all of the mobile navigation items.
-   */
-  private createMobileNavigationItems() {
-      // If mobile navigation list is empty, initialize it
-      if (this.mobileNavigationItemList === undefined) {
-        this.mobileNavigationItemList = [];
-      }
-
-    // Process navigation configuration file
-    NavigationConfig.navigationItems.forEach(element => {
-      if (element.mobile === 'true') {
-        const navItem = new NavigationItem(element.title, element.route, element.url, element.type, element.icon);
-        this.mobileNavigationItemList.push(navItem);
-      }
-    });
-  }
-
-  /**
-   * When the window is scaled update the navigation panel's UI.
-   *
+   * When the window is scaled update the view.
    * @param event window resize event
    */
   @HostListener('window:resize', ['$event'])
-  resize(event) {
-    this.setNavigationState(event.target.innerWidth);
+  resize(event): void {
+    if (event && event.target) {
+      this.displayMobileView = this.displayMobile(event.target.innerWidth);
+    }
   }
 
   /**
-   * Set the state (desktop or mobile) of the navigation panel based on the screen width.
-   *
+   * Search through an Array of NavigationItems for what should be displayed on the mobile UI
+   * @param navItems Array of NavigationItems to search through
+   */
+  public getMobileNavigationItemList(navItems: Array<NavigationItem>): Array<NavigationItem> {
+    const nav: Array<NavigationItem> = [];
+    if (navItems) {
+      navItems.forEach(element => {
+        if (element.isMobile) { nav.push(element); }
+      });
+    }
+    return nav;
+  }
+
+  /**
+   * Check to see if the mobile UI should be displayed.
    * @param width current width of the screen
    */
-  private setNavigationState(width: number) {
-    if (width <= this.breakpoint) {
-      this.displayMobileView = true;
-    } else {
-      this.displayMobileView = false;
-    }
+  public displayMobile(width: number): Boolean {
+    if (width <= this.breakpoint) { return true; }
+    return false;
   }
 }

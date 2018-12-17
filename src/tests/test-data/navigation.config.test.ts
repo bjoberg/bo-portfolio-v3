@@ -1,4 +1,4 @@
-import { NavigationItem } from '../classes/navigation-item';
+import { NavigationItem } from '../../app/classes/navigation-item';
 
 const about = new NavigationItem();
 about.icon = 'home';
@@ -16,4 +16,5 @@ photography.title = 'Photography';
 photography.type = 'normal';
 photography.url = 'http://www.brettoberg.com/photography';
 
-export const NavigationConfig: Array<NavigationItem> =  [ about, photography ];
+export const TestNavigationConfig: Array<NavigationItem> =  [ about, photography ];
+export const TestMobileNavigationConfig: Array<NavigationItem> = [ about ];
