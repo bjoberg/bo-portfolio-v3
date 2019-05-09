@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DocumentRef } from '../../services/documentRef.service';
 import { NavigationItem } from '../../classes/navigation-item';
 import { NavigationConfig } from '../../config/navigation.config';
@@ -9,13 +9,15 @@ import { NavigationConfig } from '../../config/navigation.config';
   styleUrls: ['./navigation.component.scss']
 })
 
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   public desktopNavigationItemList: Array<NavigationItem> = NavigationConfig;
   public mobileNavigationItemList: Array<NavigationItem>;
   public displayMobileView: Boolean;
   private breakpoint = 960;
 
-  constructor(private docRef: DocumentRef) {
+  constructor(private docRef: DocumentRef) { }
+
+  ngOnInit() {
     this.mobileNavigationItemList = this.getMobileNavigationItemList(NavigationConfig);
     this.displayMobileView = this.displayMobile(this.docRef.bodyWidth);
   }
