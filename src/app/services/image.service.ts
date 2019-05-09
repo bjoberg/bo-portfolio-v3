@@ -8,7 +8,9 @@ import { ImageGroup } from '../classes/image-group';
 // Data
 import { PhotographyPortfolios } from '../config/photographyPortfolios.config';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ImageService {
 
   constructor() { }

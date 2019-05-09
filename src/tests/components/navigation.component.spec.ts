@@ -39,11 +39,11 @@ describe('NavigationComponent', () => {
 
   it(': resize() should call "displayMobile()', () => {
     const spy = sinon.spy(comp, 'displayMobile');
-    const event = { target: { value: 42 }};
+    const event = { target: { innerWidth: 42 }};
 
     comp.resize(event);
 
-    expect(spy.callCount).toEqual(1);
+    expect(spy.withArgs(event.target.innerWidth).callCount).toEqual(1);
   });
 
   it(': resize() should not call "displayMobile()', () => {
@@ -110,6 +110,7 @@ describe('[Desktop] NavigationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NavigationComponent);
     comp = fixture.componentInstance;
+    fixture.detectChanges();
     comp.displayMobileView = false;
     fixture.detectChanges();
   });
@@ -157,6 +158,7 @@ describe('[Mobile] NavigationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NavigationComponent);
     comp = fixture.componentInstance;
+    fixture.detectChanges();
     comp.displayMobileView = true;
     fixture.detectChanges();
   });

@@ -1,40 +1,21 @@
-<!-- STATE: Component is loading -->
-<ng-template [ngIf]="componentIsLoading">
-  <div id="progress-bar--photography-component" class="progress-bar margin-for-navbar">
-    <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+<navigation-component id="navigation-component"></navigation-component>
+<div id="container--photography" class="container">
+  <!-- Page title -->
+  <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
+    <h1>Photography</h1>
   </div>
-</ng-template>
 
-<!-- STATE: Component is not loading -->
-<ng-template [ngIf]="!componentIsLoading">
-
-  <!-- STATE: Component is not loading but has an error -->
-  <ng-template [ngIf]="componentHasError">
-    <error-component id="error-component" [error]="error"></error-component>
-  </ng-template>
-
-  <!-- STATE: Component is not loading and does not have an error -->
-  <ng-template [ngIf]="!componentHasError">
-    <navigation-component id="navigation-component"></navigation-component>
-    <div id="container--photography" class="container">
-      <!-- Page title -->
-      <div class="flex-container" fxLayout.xl="row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="left left" fxLayoutAlign.xs="start start">
-        <h1>Photography</h1>
-      </div>
-  
-      <!-- Image list -->
-      <div class="photo-grid">
-        <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
-          <mat-grid-tile *ngFor="let item of portfolios">
-            <a title="{{item.route}}" routerLink="/photography/{{item.route}}">
-              <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
-              <img [hidden]=false class="progressive-placeholder" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>
-              <img [hidden]=true class="progressive" alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event)"/>
-            </a>
-          </mat-grid-tile>
-        </mat-grid-list>  
-      </div>
-    </div>
-    <footer-component id="footer-component"></footer-component> 
-  </ng-template>  
-</ng-template>
+  <!-- Image list -->
+  <div class="photo-grid">
+    <mat-grid-list cols="{{gridCols}}" gutterSize="5px" rowHeight="6:4">
+      <mat-grid-tile *ngFor="let item of portfolios">
+        <a title="{{item.route}}" routerLink="/photography/{{item.route}}">
+          <mat-grid-tile-header class="mat-grid-header">{{item.title}}</mat-grid-tile-header>
+          <img [hidden]=false class="progressive-placeholder" alt="placeholder - {{item.title}}" src="{{item.placeholderImageUrl}}"/>
+          <img [hidden]=true class="progressive" alt="{{item.title}}" src="{{item.imageUrl}}" (load)="loadImage($event)"/>
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>  
+  </div>
+</div>
+<footer-component id="footer-component"></footer-component> 
