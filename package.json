@@ -8,16 +8,19 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node dist/server.js",
-    "heroku-postbuild": "npm run build:universal",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:universal": "npm run build:client-and-server-bundles && npm run webpack:server",
-    "serve:universal": "node dist/server.js",
-    "build:client-and-server-bundles": "ng build --prod --project brett-oberg-portfolio --output-hashing=none && ng run brett-oberg-portfolio:server",
-    "webpack:server": "webpack --config webpack.server.config.js --mode=development --progress --colors"
+    "start": "NODE_ENV=production node dist/server.js",
+    "start:watch": "nodemon dist/server.js",
+    "heroku-postbuild": "npm run ssr:build",
+    "ssr:watch": "npm run ssr:build:browser && npm run ssr:build:server && npm run ssr:build:webpack:watch",
+    "ssr:build": "npm run ssr:build:browser && npm run ssr:build:server && npm run ssr:build:webpack",
+    "ssr:build:browser": "ng build --prod --project brett-oberg-portfolio --output-hashing=none",
+    "ssr:build:server": "ng run brett-oberg-portfolio:server",
+    "ssr:build:webpack": "webpack --config webpack.server.config.js --mode=development --progress --colors",
+    "ssr:build:webpack:watch": "webpack --config webpack.server.config.js --mode=development --progress --colors --watch"
   },
   "private": true,
   "dependencies": {
@@ -74,6 +77,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-sinon": "^1.0.5",
+    "nodemon": "^1.19.0",
     "sinon": "^7.2.2",
     "tslint": "~5.7.0",
     "webpack-cli": "^3.1.2"

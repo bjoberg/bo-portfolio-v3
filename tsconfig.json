@@ -2,13 +2,25 @@
   "compileOnSave": false,
   "compilerOptions": {
     "importHelpers": true,
+    "target": "es5",
     "outDir": "dist",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
+    "removeComments": true,
+    "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -18,5 +30,10 @@
     ],
     "module": "es2015",
     "baseUrl": "src"
-  }
+  },
+  "exclude": [
+    "./node_modules",
+    "**/*.spec.ts",
+    "./e2e"
+  ]
 }
